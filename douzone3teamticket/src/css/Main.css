@@ -25,15 +25,93 @@
     margin-top: 5rem;
 }
 
+.hotImg{
+    /*background-color: #282c34;*/
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    padding-top: 1rem;
+    padding-bottom:0.5rem
+}
+
 .hotImg img{
     width: 20rem;
 }
 
 .hotImg div{
-    display: flex;
-    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .ticketopen{
     margin-top: 5rem;
+}
+
+.open{
+    padding-bottom: 1.5rem;
+}
+
+.open1{
+    margin-top: 1rem;
+}
+
+.open1 img{
+    width: 20rem;
+}
+
+.open1 div{
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.open2 img{
+    width: 7rem;
+    margin: 0 auto;
+}
+
+.open2 div{
+    margin: 0 auto;
+    width: 50rem;
+}
+
+.slick-next:before, .slick-prev:before{
+    color: rgba(40, 40, 40, 0.78);
+}
+
+/* 각종 정보 */
+.v-line {
+    border-left : 2px solid lightgray;
+    height : 8rem;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.con-left, .con-center, .con-right{
+    margin-left:5rem;
+    margin-right:5rem;
+}
+
+.con-right{
+    display: flex;
+}
+
+.socialappdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 3rem;
+}
+
+.social{
+    margin-bottom: 1rem;
+}
+
+.social a{
+    margin-left: 0.8rem;
 }
