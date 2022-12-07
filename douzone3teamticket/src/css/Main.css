@@ -1,3 +1,8 @@
+.Mainbody{
+    margin : 3rem;
+    margin-top : 6rem;
+}
+
 .Container{
     width: 100%;
     overflow: hidden;
@@ -17,5 +22,18 @@
 }
 
 .bodyStart{
+    margin-top: 5rem;
+}
+
+.hotImg img{
+    width: 20rem;
+}
+
+.hotImg div{
+    display: flex;
+    justify-content: center;
+}
+
+.ticketopen{
     margin-top: 5rem;
 }

@@ -1,3 +1,6 @@
+import './slick';
+import './css/slick.css'
+
 import MainNav from "./MainComponents/MainNav";
 import ImgSlide from "./MainComponents/ImgSlide";
 import MainBody from "./MainComponents/MainBody";
@@ -10,7 +13,9 @@ function App() {
         <div className="App">
             <MainNav></MainNav>
             <ImgSlide></ImgSlide>
-            <MainBody></MainBody>
+            <div className={'Mainbody'}>
+                <MainBody></MainBody>
+            </div>
             <Footer></Footer>
         </div>
     );
