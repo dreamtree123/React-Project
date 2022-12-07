@@ -1,6 +1,3 @@
-import './slick';
-import './css/slick.css'
-
 import MainNav from "./MainComponents/MainNav";
 import ImgSlide from "./MainComponents/ImgSlide";
 import MainBody from "./MainComponents/MainBody";
