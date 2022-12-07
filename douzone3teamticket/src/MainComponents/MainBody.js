@@ -2,9 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 import '../css/Main.css'
 
-import '../slick';
-import '../css/slick.css'
-
 import AsNavFor from './Ticketopen'
 import DismissibleExample from './Ask'
 
