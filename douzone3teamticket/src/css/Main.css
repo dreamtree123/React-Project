@@ -1,0 +1,39 @@
+.Mainbody{
+    margin : 3rem;
+    margin-top : 6rem;
+}
+
+.Container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.Container div{
+    width: 100%;
+    display: flex;
+}
+
+.Container Button{
+    all: unset;
+    border: 1px solid coral;
+    padding: 0.5em 2em;
+    color: coral;
+    border-radius: 10px;
+}
+
+.bodyStart{
+    margin-top: 5rem;
+}
+
+.hotImg img{
+    width: 20rem;
+}
+
+.hotImg div{
+    display: flex;
+    justify-content: center;
+}
+
+.ticketopen{
+    margin-top: 5rem;
+}
