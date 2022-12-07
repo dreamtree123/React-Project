@@ -1,6 +1,7 @@
 import {Button, Container, Nav, Navbar, NavDropdown, Stack, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 
+import '../css/Main.css'
 
 function MainNav(){
 
@@ -23,12 +24,14 @@ function MainNav(){
                             <Nav.Link onClick={ ()=>{ navigate('/child'); }}>아동</Nav.Link>
                         </Nav>
 
-                        {/*<Nav>*/}
-                        {/*    <Nav.Link href="#deets">More deets</Nav.Link>*/}
-                        {/*    <Nav.Link eventKey={2} href="#memes">*/}
-                        {/*        Dank memes*/}
-                        {/*    </Nav.Link>*/}
-                        {/*</Nav>*/}
+                        <Nav>
+                            <Nav.Link onClick={ ()=>{ navigate('/login'); }}>
+                                <img className={'userImg'} src={require('../image/login.png')} alt={'login'} title={'로그인'}/>
+                            </Nav.Link>
+                            <Nav.Link onClick={ ()=>{ navigate('/join'); }}>
+                                <img className={'userImg'} src={require('../image/join.png')} alt={'join'} title={'회원가입'}/>
+                            </Nav.Link>
+                        </Nav>
 
                         <Stack direction="horizontal" gap={3}>
                             <Form.Control className="me-auto" placeholder="Enter what you want" />
