@@ -31,7 +31,7 @@ function MainNav(){
                         </Stack>
 
                         <Nav>
-                            <Nav.Link onClick={ ()=>{ navigate('/login'); }}>
+                            <Nav.Link onClick={ ()=>{ navigate('/user/login'); }}>
                                 <img className={'userImg'} src={require('../image/login.png')} alt={'login'} title={'로그인'}/>
                             </Nav.Link>
                         </Nav>

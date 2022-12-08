@@ -119,3 +119,31 @@
     width: 3rem;
     filter: invert();
 }
+
+.loginForm{
+    width: 40%;
+    height: 25rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.loginForm button{
+    width: 8rem;
+    height: 3rem;
+    margin: 1rem;
+    margin-top: 3rem;
+}
+
+.joinForm{
+    width: 40%;
+    height: 35rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.joinForm button{
+    width: 8rem;
+    height: 3rem;
+    margin: 1rem;
+    margin-top: 3rem;
+}
