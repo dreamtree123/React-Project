@@ -1,5 +1,6 @@
 import {Button, Container, Nav, Navbar, NavDropdown, Stack, Form} from "react-bootstrap";
-import {useNavigate} from "react-router-dom";
+import { Route, Routes, Link, Outlet, useNavigate } from 'react-router-dom'
+import CategoryMain from "../Category/CategoryMain";
 
 import '../css/Main.css'
 
@@ -16,7 +17,8 @@ function MainNav(){
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="me-auto">
-                            <Nav.Link onClick={ ()=>{ navigate('/concert'); }}>콘서트</Nav.Link>
+                            <Nav.Link onClick={()=>{navigate('/concert')}}>콘서트</Nav.Link>
+                            {/* <Nav.Link onClick={ ()=>{ navigate('/concert'); }}>콘서트</Nav.Link> */}
                             <Nav.Link onClick={ ()=>{ navigate('/musical'); }}>뮤지컬</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/theater'); }}>연극</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/classic'); }}>클래식</Nav.Link>
