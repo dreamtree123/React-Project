@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import '../css/Main.css'
 
+import ImgSlide from "../MainComponents/ImgSlide";
 import AsNavFor from './Ticketopen'
 import DismissibleExample from './Ask'
 
@@ -26,6 +27,9 @@ function MainBody() {
 
     return (
         <div className={'bodyStart'} {...settings}>
+            <div className={'Mainbody'}>
+                <ImgSlide></ImgSlide>
+            </div>
             <div>
                 <h1>WHAT'S HOT</h1>
                 <br/>

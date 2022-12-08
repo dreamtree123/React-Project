@@ -1,6 +1,5 @@
 .Mainbody{
-    margin : 3rem;
-    margin-top : 6rem;
+    margin-bottom: 4rem;
 }
 
 .Container{
@@ -114,4 +113,9 @@
 
 .social a{
     margin-left: 0.8rem;
+}
+
+.userImg{
+    width: 3rem;
+    filter: invert();
 }
