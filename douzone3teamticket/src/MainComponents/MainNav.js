@@ -24,20 +24,19 @@ function MainNav(){
                             <Nav.Link onClick={ ()=>{ navigate('/child'); }}>아동</Nav.Link>
                         </Nav>
 
-                        <Nav>
-                            <Nav.Link onClick={ ()=>{ navigate('/login'); }}>
-                                <img className={'userImg'} src={require('../image/login.png')} alt={'login'} title={'로그인'}/>
-                            </Nav.Link>
-                            <Nav.Link onClick={ ()=>{ navigate('/join'); }}>
-                                <img className={'userImg'} src={require('../image/join.png')} alt={'join'} title={'회원가입'}/>
-                            </Nav.Link>
-                        </Nav>
-
                         <Stack direction="horizontal" gap={3}>
                             <Form.Control className="me-auto" placeholder="Enter what you want" />
                             <Button variant="secondary">search</Button>
                             <div className="vr" />
                         </Stack>
+
+                        <Nav>
+                            <Nav.Link onClick={ ()=>{ navigate('/login'); }}>
+                                <img className={'userImg'} src={require('../image/login.png')} alt={'login'} title={'로그인'}/>
+                            </Nav.Link>
+                        </Nav>
+
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -4,18 +4,19 @@ import MainBody from "./MainComponents/MainBody";
 import Footer from "./MainComponents/Footer";
 
 import './App.css';
+import {Route, Routes} from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
             <MainNav></MainNav>
-            <ImgSlide></ImgSlide>
-            <div className={'Mainbody'}>
-                <MainBody></MainBody>
-            </div>
+            <Routes>
+                <Route path='/' element={<MainBody></MainBody>}/>
+            </Routes>
             <Footer></Footer>
         </div>
     );
 }
+
 
 export default App;
