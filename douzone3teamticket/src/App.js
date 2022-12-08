@@ -6,6 +6,7 @@ import Footer from "./MainComponents/Footer";
 // import CategoryMain from "./Category/CategoryMain";
 import Concert from "./Category/Concert";
 import Theater from "./Category/Theater";
+import Classic from "./Category/Classic";
 
 import './App.css';
 import {Route, Routes} from "react-router-dom";
@@ -19,6 +20,7 @@ function App() {
                 {/* <Route path='/concert' element={<CategoryMain/>}/> */}
                 <Route path='/concert' element={<Concert/>}/>
                 <Route path='/theater' element={<Theater/>}/>
+                <Route path='/classic' element={<Classic/>}/>
             </Routes>
             <Footer></Footer>
         </div>
