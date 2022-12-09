@@ -14,7 +14,7 @@ function Concert() {
         <table className={styles.table}>
             <thead>
                 <tr className={styles.tableTitle}>
-                    <th scope="col">대표사진</th>
+                    <th scope="col"></th>
                     <th scope="col">공연명</th>
                     <th scope="col">출연진</th>
                     <th scope="col">공연일</th>
