@@ -1,0 +1,15 @@
+.successPage{
+    height: 28rem;
+}
+
+.successPage h1{
+    /*margin: 0 auto;*/
+    margin-top: 10rem;
+    font-size: 4rem;
+}
+
+.successPage button{
+    width: 10rem;
+    height: 3rem;
+    margin-top: 6rem;
+}

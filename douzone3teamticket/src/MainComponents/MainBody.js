@@ -7,8 +7,15 @@ import AsNavFor from './Ticketopen'
 import DismissibleExample from './Ask'
 
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 function MainBody() {
+
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    let dispatch = useDispatch();
 
     let [title, setTitle] = useState(["1", "2", "3", "4", "5", "6"]);
 
@@ -27,9 +34,15 @@ function MainBody() {
 
     return (
         <div className={'bodyStart'} {...settings}>
+
+            {/* ///////////////////////////// */}
+
             <div className={'Mainbody'}>
                 <ImgSlide></ImgSlide>
             </div>
+
+            {/* ///////////////////////////// */}
+
             <div>
                 <h1>WHAT'S HOT</h1>
                 <br/>
@@ -48,6 +61,9 @@ function MainBody() {
                 </div>
             </div>
 
+            {/* ///////////////////////////// */}
+
+            {/* 티켓 오픈 */}
             <div className={'ticketopen'}>
                 <h1>TICKET OPEN</h1>
                 <AsNavFor></AsNavFor>

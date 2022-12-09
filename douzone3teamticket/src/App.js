@@ -2,8 +2,11 @@ import MainNav from "./MainComponents/MainNav";
 import ImgSlide from "./MainComponents/ImgSlide";
 import MainBody from "./MainComponents/MainBody";
 import Footer from "./MainComponents/Footer";
-import Login from "./UserComponents/Login"
-import Join from "./UserComponents/Join"
+import Login from "./UserComponents/Login";
+import Join from "./UserComponents/Join";
+import Pay from "./UserComponents/Pay";
+import Success from "./UserComponents/Success";
+
 
 import './App.css';
 import {Route, Routes} from "react-router-dom";
@@ -19,6 +22,9 @@ function App() {
                     <Route path='login' element={<Login></Login>}/>
                     <Route path='join' element={<Join></Join>}/>
                 </Route>
+
+                <Route path='/pay' element={<Pay></Pay>}/>
+                <Route path='/success' element={<Success></Success>}/>
             </Routes>
             <Footer></Footer>
         </div>

@@ -20,8 +20,6 @@ function MainNav(){
                             <Nav.Link onClick={ ()=>{ navigate('/musical'); }}>뮤지컬</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/theater'); }}>연극</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/classic'); }}>클래식</Nav.Link>
-                            <Nav.Link onClick={ ()=>{ navigate('/exhibition'); }}>전시</Nav.Link>
-                            <Nav.Link onClick={ ()=>{ navigate('/child'); }}>아동</Nav.Link>
                         </Nav>
 
                         <Stack direction="horizontal" gap={3}>

@@ -2,6 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import Slide from "./Slide";
 
+import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+
 import img1 from "../image/1.jpeg";
 import img2 from "../image/2.jpeg";
 import img3 from "../image/3.jpeg";
@@ -10,6 +13,12 @@ import img5 from "../image/5.jpeg";
 
 
 function ImgSlide() {
+
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    let dispatch = useDispatch();
 
     const settings = {
         dots: true,
