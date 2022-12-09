@@ -1,5 +1,9 @@
 import {Button, Container, Nav, Navbar, NavDropdown, Stack, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+<<<<<<< HEAD
+=======
+
+>>>>>>> shinndrome
 import '../css/Main.css'
 
 function MainNav(){
@@ -15,7 +19,11 @@ function MainNav(){
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="me-auto">
+<<<<<<< HEAD
                             <Nav.Link onClick={ ()=>{ navigate('/pagedetail'); }}>콘서트</Nav.Link>
+=======
+                            <Nav.Link onClick={ ()=>{ navigate('/concert'); }}>콘서트</Nav.Link>
+>>>>>>> shinndrome
                             <Nav.Link onClick={ ()=>{ navigate('/musical'); }}>뮤지컬</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/theater'); }}>연극</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/classic'); }}>클래식</Nav.Link>

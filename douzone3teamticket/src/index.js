@@ -5,15 +5,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store.js'
+<<<<<<< HEAD
 import {BrowserRouter} from "react-router-dom"
+=======
+import { BrowserRouter } from "react-router-dom"
+>>>>>>> shinndrome
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <Provider store={store}>
+<<<<<<< HEAD
         <BrowserRouter>
             <App/>
         </BrowserRouter>
+=======
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+>>>>>>> shinndrome
         </Provider>
     </React.StrictMode>
 );

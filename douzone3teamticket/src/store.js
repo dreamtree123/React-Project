@@ -411,6 +411,11 @@ let classicinfo = createSlice({
     ]
 })
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> shinndrome
 export default configureStore({
     reducer: {
         concert: concert.reducer,
