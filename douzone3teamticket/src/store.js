@@ -234,7 +234,7 @@ let musical = createSlice({
         },
         {
             id: 4, title: '뮤지컬 〈베토벤: Beethoven Secret', rate: '8세이상 관람가능',
-            showtime: '--', cast: '박효신, 박은태, 카이, 조정은, 옥주현, 윤공주, 이해준, 윤소호, 김진욱, 박시원, 김성민, 전민지, 최지혜, 이정수',
+            showtime: '--', cast: '박효신, 박은태, 카이, 조정은, 옥주현, 윤공주, 이해준',
             priceVIP: 170000, priceSR: 140000, priceR: 110000, priceS: 80000,
             showyear: 2023, showmonth: 1, showday: 12, starttime: 19, delivery: '현장 수령',
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221117/20221117-44155.jpg'
@@ -242,7 +242,7 @@ let musical = createSlice({
         {
             id: 5, title: '뮤지컬 〈지저스 크라이스트 수퍼스타〉 50주년 기념 한국 공연', rate: '8세 이상 관람가 (미취학 아동 입장 불가)',
             showtime: '135분 (인터미션 20분 포함)',
-            cast: '마이클리, 임태경, 한지상, 윤형렬, 백형훈, 서은광, 김보경, 장은아, 제이민, 김태한, 지현준, 육현욱, 전재현, 이한밀, 김바울, 신은총, 윤태호, 김민철, 김원빈',
+            cast: '마이클리, 임태경, 한지상, 윤형렬, 백형훈, 서은광, 김보경, 장은아, 제이민',
             priceVIP: 150000, priceSR: 120000, priceR: 80000, priceS: 60000,
             showyear: 2022, showmonth: 11, showday: 10, starttime: 19, delivery: '현장 수령만 가능',
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-43451.jpg'

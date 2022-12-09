@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
 
 // import '../css/Category.css'
 import './Category.css'
@@ -19,7 +19,7 @@ function Musical() {
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
                 {visibleList 
-                 ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
+                ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
                 : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
             </button>
 
@@ -33,7 +33,7 @@ function Musical() {
 // let Musical_list = function Musical_list() {
 function Musical_list() {
     let state = useSelector((state) => state)
-    // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
 
     return (
         <div>
@@ -49,14 +49,14 @@ function Musical_list() {
                 </thead>
                 <tbody>
                     {
-                        state.concert.map((item, i) =>
+                        state.musical.map((item, i) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <th scope="row">{state.concert[i].id}</th> */}
-                                <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td>
-                                <td >{state.concert[i].title}</td>
-                                <td>{state.concert[i].cast}</td>
-                                <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
-                                <td>{state.concert[i].showtime}</td>
+                                {/* <th scope="row">{state.musical[i].id}</th> */}
+                                <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td>
+                                <td >{state.musical[i].title}</td>
+                                <td>{state.musical[i].cast}</td>
+                                <td>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday}</td>
+                                <td>{state.musical[i].showtime}</td>
                             </tr>
                         )
                     }
