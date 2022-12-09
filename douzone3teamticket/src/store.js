@@ -411,6 +411,19 @@ let classicinfo = createSlice({
     ]
 })
 
+// 로그인 판단 유무
+let check = createSlice({
+    name: 'check',
+    initialState: ['false', '']
+})
+
+// 사용자 정보
+let userInfo = createSlice({
+    name: 'userInfo',
+    initialState: [{id : 0, name: 'King', userid: '1111', pwd: '1111', email:'123@gmail.com'},
+        {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
+})
+
 export default configureStore({
     reducer: {
         concert: concert.reducer,
@@ -420,6 +433,8 @@ export default configureStore({
         theater: theater.reducer,
         theaterinfo: theaterinfo.reducer,
         classic: classic.reducer,
-        classicinfo: classicinfo.reducer
+        classicinfo: classicinfo.reducer,
+        check: check.reducer,
+        userInfo: userInfo.reducer
     }
 })
