@@ -1,3 +1,5 @@
+import styles from "./Category.module.css";
+
 import { useDispatch, useSelector } from "react-redux";
 import React, {  useState, useEffect } from "react"; 
 
@@ -9,26 +11,26 @@ function Classic() {
   return(
     <div>
 
-        <table class="table">
-            <thead className="tableTitle">
-                <tr>
-                    <th scope="col">이미지</th>
+        <table className={styles.table}>
+            <thead>
+                <tr className={styles.tableTitle}>
+                    <th scope="col">대표사진</th>
                     <th scope="col">공연명</th>
                     <th scope="col">출연진</th>
-                    <th scope="col">상영시간</th>
                     <th scope="col">공연일</th>
+                    <th scope="col">상영시간</th>
                 </tr>
             </thead>
             <tbody>
                 {
                 state.classic.map((item, i)=> 
-                    <tr key={{i}}>
+                    <tr key={{i}} className={styles.categoryContent}>
                         {/* <th scope="row">{state.classic[i].id}</th> */}
-                        <td><img src={state.classic[i].imageadr}></img></td>
+                        <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td>
                         <td>{state.classic[i].title}</td>
                         <td>{state.classic[i].cast}</td>
-                        <td>{state.classic[i].showtime}</td>
                         <td>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday} {state.classic[i].starttime}시</td>
+                        <td>{state.classic[i].showtime}</td>
                     </tr>
                 )
                 }

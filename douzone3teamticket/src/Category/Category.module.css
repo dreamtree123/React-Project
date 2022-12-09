@@ -1,0 +1,29 @@
+.table {
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    /* margin-bottom: 50px; */
+    }
+
+.tableTitle th {
+    /* font-size: 20px; */
+    background-color: #6c757d;
+    color:white;
+    border-top: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3;
+    height: 70px;
+}
+
+.categoryContent {
+    /* text-align : center; */
+    /* justify-content : center;
+    align-items : center;  */
+    font-size: 12px;
+    line-height: 180px;
+    font-weight: bold;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.categoryImg {
+    width: 100px;
+}
