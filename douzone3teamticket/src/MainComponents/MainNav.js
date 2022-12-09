@@ -1,7 +1,5 @@
 import {Button, Container, Nav, Navbar, NavDropdown, Stack, Form} from "react-bootstrap";
 import { Route, Routes, Link, Outlet, useNavigate } from 'react-router-dom'
-import CategoryMain from "../Category/CategoryMain";
-import Theater from "../Category/Theater";
 
 import '../css/Main.css'
 
@@ -22,8 +20,6 @@ function MainNav(){
                             <Nav.Link onClick={ ()=>{ navigate('/musical'); }}>뮤지컬</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/theater'); }}>연극</Nav.Link>
                             <Nav.Link onClick={ ()=>{ navigate('/classic'); }}>클래식</Nav.Link>
-                            <Nav.Link onClick={ ()=>{ navigate('/exhibition'); }}>전시</Nav.Link>
-                            <Nav.Link onClick={ ()=>{ navigate('/child'); }}>아동</Nav.Link>
                         </Nav>
 
                         <Stack direction="horizontal" gap={3}>

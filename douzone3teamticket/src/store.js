@@ -233,7 +233,7 @@ let musical = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221205/20221205-43293.jpg'
         },
         {
-            id: 4, title: '뮤지컬 〈베토벤; Beethoven Secret', rate: '8세이상 관람가능',
+            id: 4, title: '뮤지컬 〈베토벤: Beethoven Secret', rate: '8세이상 관람가능',
             showtime: '--', cast: '박효신, 박은태, 카이, 조정은, 옥주현, 윤공주, 이해준, 윤소호, 김진욱, 박시원, 김성민, 전민지, 최지혜, 이정수',
             priceVIP: 170000, priceSR: 140000, priceR: 110000, priceS: 80000,
             showyear: 2023, showmonth: 1, showday: 12, starttime: 19, delivery: '현장 수령',

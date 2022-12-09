@@ -3,11 +3,9 @@
     width: 1200px;
     margin: auto;
     margin-top: 35px;
-    /* margin-bottom: 50px; */
     }
 
 .tableTitle th {
-    /* font-size: 20px; */
     /* background-color: #6c757d; */
     /* color:white; */
     border-top: 1px solid #D3D3D3;
@@ -29,8 +27,8 @@
     width: 100px;
 }
 
-.showContent {
+/* .showContent {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-}
+} */
