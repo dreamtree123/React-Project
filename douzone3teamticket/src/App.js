@@ -7,6 +7,8 @@ import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
 
+import DetailTest from "./DetailComponents/DetailTest";
+
 
 import './App.css';
 import {Route, Routes} from "react-router-dom";
@@ -27,6 +29,8 @@ function App() {
 
                 <Route path='/pay' element={<Pay></Pay>}/>
                 <Route path='/success' element={<Success></Success>}/>
+
+                <Route path='/datailTest' element={<DetailTest></DetailTest>}/>
 
             </Routes>
             <Footer></Footer>

@@ -424,6 +424,12 @@ let userInfo = createSlice({
         {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
 })
 
+// id 저장
+let categoryId = createSlice({
+    name: 'categoryId',
+    initialState: 0
+})
+
 export default configureStore({
     reducer: {
         concert: concert.reducer,
@@ -435,6 +441,7 @@ export default configureStore({
         classic: classic.reducer,
         classicinfo: classicinfo.reducer,
         check: check.reducer,
-        userInfo: userInfo.reducer
+        userInfo: userInfo.reducer,
+        categoryId: categoryId.reducer
     }
 })

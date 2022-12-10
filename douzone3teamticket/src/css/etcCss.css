@@ -39,3 +39,26 @@
     margin: auto;
     margin-top: 1rem;
 }
+
+.upload{
+    width: 30rem;
+    height: 34rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.upload div{
+    width:26rem;
+    height:25rem;
+    margin: 0 auto;
+}
+
+.upload img{
+    width: 15rem;
+    margin: 0 auto;
+}
+
+.upload .slick-next, .upload .slick-prev{
+    transform: rotate(270deg);
+}
+
