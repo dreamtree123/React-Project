@@ -1,12 +1,13 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import {useDispatch, useSelector} from 'react-redux';
-import '../css/PageDetailBodyCSS.css'
+import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
+import '../css/PageDetailBodyCSS.css'
+
 function MusicaldetailBody(){
     let state = useSelector((state) => state)
-    let dispatch = useDispatch();
     let [clickTab, setClickTab] = useState(0);
+
     return(
     <table class="table">
         <div>
@@ -31,6 +32,8 @@ function TabContent({clickTab}) {
   }, [clickTab])
   let state = useSelector((state) => state)
   let divstate = true;
+
+  let find = state.musicalinfo[state.performanceId]
   
   return (
       <div className= {`start  ${fade}`} >
@@ -74,12 +77,12 @@ function TabContent({clickTab}) {
                         <div class="rn08-txt" id="divPerfContent">
                             {/* <p style="text-align: center;"></p> */}
                             <p className="PageDetailImage1">
-                                <img src={state.musicalinfo[4].imageadr1} className="txc-image">
+                                <img src={find.imageadr1} className="txc-image">
                                 </img>
                             </p>
                             <p className="PageDetailImage2">
                                 
-                                <img src={state.musicalinfo[4].imageadr2} className="txc-image">
+                                <img src={find.imageadr2} className="txc-image">
                                 </img>
                             </p>
                         </div>
@@ -100,21 +103,21 @@ function TabContent({clickTab}) {
                                     <tbody>
                                         <tr>
                                             <th scope="row" class="rn08-tbl-tit2">주최/기획</th>
-                                            <td>{state.musicalinfo[4].agencyinfo}</td>
+                                            <td>{find.agencyinfo}</td>
                                             <th scope="row" class="rn08-tbl-tit2">소비자상담</th>
-                                            <td>{state.musicalinfo[4].consultation}</td>
+                                            <td>{find.consultation}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="rn08-tbl-tit2">주연</th>
-                                            <td>{state.musicalinfo[4].cast}</td>
+                                            <td>{find.cast}</td>
                                             <th scope="row" class="rn08-tbl-tit2">관람등급</th>
-                                            <td>{state.musicalinfo[4].rate}</td>
+                                            <td>{find.rate}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="rn08-tbl-tit2">공연시간</th>
-                                            <td>{state.musicalinfo[4].showtime}</td>
+                                            <td>{find.showtime}</td>
                                             <th scope="row" class="rn08-tbl-tit2">공연장소</th>
-                                            <td>{state.musicalinfo[4].place}</td>
+                                            <td>{find.place}</td>
                                         </tr>
                                         <tr><th scope="row" class="rn08-tbl-tit2">취소/환불방법</th><td colspan="3">
                                             <div class="rn08-detail-box">
