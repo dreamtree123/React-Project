@@ -426,9 +426,16 @@ let userInfo = createSlice({
         {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
 })
 
-// id 저장
+// 이미지슬라이드 -> 디테일 화면전환시 id 저장
 let categoryId = createSlice({
     name: 'categoryId',
+    initialState: 0
+})
+
+// 카테고리 -> 디테일 화면전환시 id 저장
+let performanceId = createSlice({
+    name: 'performanceId',
+    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
     initialState: 0
 })
 
@@ -444,6 +451,7 @@ export default configureStore({
         classicinfo: classicinfo.reducer,
         check: check.reducer,
         userInfo: userInfo.reducer,
-        categoryId: categoryId.reducer
+        categoryId: categoryId.reducer,
+        performanceId: performanceId.reducer
     }
 })

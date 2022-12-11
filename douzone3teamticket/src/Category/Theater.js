@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
-// import '../css/Category.css'
 import './Category.css'
 import styles from "./Category.module.css";
 
@@ -29,7 +29,7 @@ function Theater() {
 
 function Theater_list() {
     let state = useSelector((state) => state)
-    let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -47,8 +47,12 @@ function Theater_list() {
                     {
                         state.theater.map((item, i) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <th scope="row">{state.theater[i].id}</th> */}
-                                <td><img className={styles.categoryImg} src={state.theater[i].imageadr}></img></td>
+                                {/* <td><img className={styles.categoryImg} src={state.theater[i].imageadr}></img></td> */}
+                                <td>
+                                    <span onClick={ ()=>{state.performanceId = i; naviate('/theater/detail/' + i);} }>
+                                    <img className={styles.categoryImg} src={state.theater[i].imageadr}></img>
+                                    </span>
+                                </td>
                                 <td>{state.theater[i].title}</td>
                                 <td>{state.theater[i].cast}</td>
                                 <td>{state.theater[i].showyear}-{state.theater[i].showmonth}-{state.theater[i].showday}</td>
@@ -66,7 +70,7 @@ function Theater_list() {
 function Theater_album() {
 
     let state = useSelector((state) => state)
-    // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -74,10 +78,14 @@ function Theater_album() {
                 {
                     state.theater.map((item, i) =>
                         <div className="stuff">
-                            <span className="stuff_img"><img src={state.theater[i].imageadr}></img></span>
+                            {/* <span className="stuff_img"><img src={state.theater[i].imageadr}></img></span> */}
+                            
+                            <span className="stuff_img" onClick={ ()=>{state.performanceId = i; naviate('/theater/detail/' + i);} }>
+                                <img src={state.theater[i].imageadr}></img>
+                            </span>
+
                             <div className="stuff_content">
                                 <span className="stuff_title">{state.theater[i].title}</span><br />
-                                {/* <span>{state.theater[i].cast}</span><br /> */}
                                 <span>{state.theater[i].showyear}-{state.theater[i].showmonth}-{state.theater[i].showday} </span><br />
                                 <span>{state.theater[i].showtime}</span><br />  
                             </div>

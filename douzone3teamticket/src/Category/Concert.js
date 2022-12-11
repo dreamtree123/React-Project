@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
-// import '../css/Category.css'
 import './Category.css'
 import styles from "./Category.module.css";
 
@@ -29,7 +29,7 @@ function Concert() {
 
 function Concert_list() {
     let state = useSelector((state) => state)
-    let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -45,14 +45,18 @@ function Concert_list() {
                 </thead>
                 <tbody>
                     {
-                        state.concert.map((item, i) =>
-                            <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <th scope="row">{state.concert[i].id}</th> */}
-                                <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td>
-                                <td>{state.concert[i].title}</td>
-                                <td>{state.concert[i].cast}</td>
-                                <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
-                                <td>{state.concert[i].showtime}</td>
+                        state.concert.map((item, index) =>
+                            <tr key={{ index }} className={styles.categoryContent}>
+                                {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
+                                <td>
+                                    <span onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
+                                    <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
+                                    </span>
+                                </td>
+                                <td>{state.concert[index].title}</td>
+                                <td>{state.concert[index].cast}</td>
+                                <td>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday}</td>
+                                <td>{state.concert[index].showtime}</td>
                             </tr>
                         )
                     }
@@ -66,25 +70,30 @@ function Concert_list() {
 function Concert_album() {
 
     let state = useSelector((state) => state)
-    // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
             <div className="mu">
                 {
-                    state.concert.map((item, i) =>
+                    state.concert.map((item, index) =>
                         <div className="stuff">
-                            {/* <a href="/detail"> */}
-                            <span className="stuff_img"><img src={state.concert[i].imageadr}></img></span>
+                            {/* <span className="stuff_img"><Link to={"/concert/detail/" + index}> <img src={state.concert[index].imageadr}></img></Link></span> */}
+                            
+                            {/* <span className="stuff_img"><img src={state.concert[index].imageadr}></img></span>
+                            state.performanceId = {index};
+                            naviate('/concert/detail/' + {index}); */}
+                            
+                            <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
+                                <img src={state.concert[index].imageadr}></img>
+                            </span>
+                            
                             <div className="stuff_content">
-                                <span className="stuff_title">{state.concert[i].title}</span><br />
-                                {/* <span>{state.concert[i].cast}</span><br /> */}
-                                <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday} </span><br />
-                                <span>{state.concert[i].showtime}</span><br />
+                                <span className="stuff_title">{state.concert[index].title}</span><br />
+                                <span>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday} </span><br />
+                                <span>{state.concert[index].showtime}</span><br />
                             </div>
-                            {/* </a> */}
                         </div>
-
                     )
                 }
             </div>

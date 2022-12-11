@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
-// import '../css/Category.css'
 import './Category.css'
 import styles from "./Category.module.css";
 
@@ -29,7 +29,7 @@ function Classic() {
 
 function Classic_list() {
     let state = useSelector((state) => state)
-    let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -47,14 +47,16 @@ function Classic_list() {
                     {
                         state.classic.map((item, i) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <th scope="row">{state.classic[i].id}</th> */}
-                                <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td>
-                                {/* <div className={styles.showContent}> */}
+                                {/* <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td> */}
+                                <td>
+                                    <span onClick={ ()=>{state.performanceId = i; naviate('/classic/detail/' + i);} }>
+                                    <img className={styles.categoryImg} src={state.classic[i].imageadr}></img>
+                                    </span>
+                                </td>
                                 <td className={styles.showContent}>{state.classic[i].title}</td>
                                 <td className={styles.showContent}>{state.classic[i].cast}</td>
                                 <td className={styles.showContent}>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday}</td>
                                 <td className={styles.showContent}>{state.classic[i].showtime}</td>
-                                {/* </div> */}
                             </tr>
                         )
                     }
@@ -68,7 +70,7 @@ function Classic_list() {
 function Classic_album() {
 
     let state = useSelector((state) => state)
-    // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -76,10 +78,14 @@ function Classic_album() {
                 {
                     state.classic.map((item, i) =>
                         <div className="stuff">
-                            <span className="stuff_img"><img src={state.classic[i].imageadr}></img></span>
+                            {/* <span className="stuff_img"><img src={state.classic[i].imageadr}></img></span> */}
+                            
+                            <span className="stuff_img" onClick={ ()=>{state.performanceId = i; naviate('/classic/detail/' + i);} }>
+                                <img src={state.classic[i].imageadr}></img>
+                            </span>
+
                             <div className="stuff_content">
                                 <span className="stuff_title">{state.classic[i].title}</span><br />
-                                {/* <span>{state.classic[i].cast}</span><br /> */}
                                 <span>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday} </span><br />
                                 <span>{state.classic[i].showtime}</span><br />  
                             </div>

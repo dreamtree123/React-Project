@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
-// import '../css/Category.css'
 import './Category.css'
 import styles from "./Category.module.css";
 
@@ -30,10 +30,9 @@ function Musical() {
     );
 }
 
-// let Musical_list = function Musical_list() {
 function Musical_list() {
-    let state = useSelector((state) => state)
-    let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let state = useSelector((state) => state)   
+    let naviate = useNavigate()
 
     return (
         <div>
@@ -51,8 +50,12 @@ function Musical_list() {
                     {
                         state.musical.map((item, i) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <th scope="row">{state.musical[i].id}</th> */}
-                                <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td>
+                                {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
+                                 <td>
+                                    <span onClick={ ()=>{state.performanceId = i; naviate('/musical/detail/' + i);} }>
+                                    <img className={styles.categoryImg} src={state.musical[i].imageadr}></img>
+                                    </span>
+                                </td>
                                 <td >{state.musical[i].title}</td>
                                 <td>{state.musical[i].cast}</td>
                                 <td>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday}</td>
@@ -67,33 +70,31 @@ function Musical_list() {
 
 }
 
-// let Musical_album = function Musical_album() {
 function Musical_album() {
 
     let state = useSelector((state) => state)
-    // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+    let naviate = useNavigate()
 
     return (
         <div>
             <div className="mu">
-                {/* <table className="table">
-                    <tbody> */}
                 {
                     state.musical.map((item, i) =>
                         <div className="stuff">
-                            <span className="stuff_img"><img src={state.musical[i].imageadr}></img></span>
+                            {/* <span className="stuff_img"><img src={state.musical[i].imageadr}></img></span> */}
+                            
+                            <span className="stuff_img" onClick={ ()=>{state.performanceId = i; naviate('/musical/detail/' + i);} }>
+                                <img src={state.musical[i].imageadr}></img>
+                            </span>
+
                             <div className="stuff_content">
                                 <span className="stuff_title">{state.musical[i].title}</span><br />
-                                {/* <span>{state.musical[i].cast}</span><br /> */}
                                 <span>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday} </span><br />
                                 <span>{state.musical[i].showtime}</span><br />  
                             </div>
                         </div>
-
                     )
                 }
-                {/* </tbody>
-                </table> */}
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import MainNav from "./MainComponents/MainNav";
 import MainBody from "./MainComponents/MainBody";
@@ -24,6 +25,9 @@ import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
 
 function App() {
+
+    let state = useSelector((state) => state)
+
     return (
         <div className="App">
             <MainNav></MainNav>
@@ -35,11 +39,17 @@ function App() {
                 <Route path='/musical' element={<Musical/>} />
                 <Route path='/theater' element={<Theater/>}/>
                 <Route path='/classic' element={<Classic/>}/>
+            
+                {/* {
+                    state.concert.map((item, i) =>
+                      <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
+                    )
+                }   */}
 
-                <Route path='/concert/detail/' element={<Concertdetailheader></Concertdetailheader>}/>
-                <Route path='/musical/detail/' element={<Musicaldetailheader></Musicaldetailheader>}/>
-                <Route path='/theater/detail/' element={<Theaterdetailheader></Theaterdetailheader>}/>
-                <Route path='/classic/detail/' element={<Classicdetailheader></Classicdetailheader>}/>
+                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
+                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
+                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
+                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>}/>
 
                 <Route path='/' element={<MainBody></MainBody>}/>
 
@@ -67,6 +77,5 @@ function App() {
         </div>
     );
 }
-
 
 export default App;

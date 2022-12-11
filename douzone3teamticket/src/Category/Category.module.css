@@ -36,3 +36,7 @@
     display: block; 
     margin: 0px auto;
 }
+
+.categoryImg:hover{
+    transform: scale(1.1);
+}
