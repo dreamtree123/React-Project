@@ -64,7 +64,8 @@ function Concertdetailheader() {
                                 </div>
 
                                 <div className="rn-05">
-                                    <a href='' onClick='' className='rn-bb03'>예매하기</a>
+                                    {/* <a href='' onClick='' className='rn-bb03'>예매하기</a> */}
+                                    <a href='src/DetailComponents/Concertdetailheader' onClick='' className='rn-bb03'>예매하기</a>
                                 </div>
                             </div>
                         </div>

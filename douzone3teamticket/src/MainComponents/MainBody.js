@@ -6,10 +6,19 @@ import DismissibleExample from './Ask'
 import ImgSlide from "../MainComponents/ImgSlide";
 
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import CenterMode from "./Ticketopen";
+import {useNavigate} from "react-router-dom";
 
 function MainBody() {
 
-    let [title, setTitle] = useState(["1", "2", "3", "4", "5", "6"]);
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    let dispatch = useDispatch();
+
+    let navigate = useNavigate();
 
     const settings = {
         className: "center",
@@ -26,30 +35,66 @@ function MainBody() {
 
     return (
         <div className={'bodyStart'} {...settings}>
+
+            {/* ///////////////////////////// */}
+
             <div className={'Mainbody'}>
                 <ImgSlide></ImgSlide>
             </div>
+
+            {/* ///////////////////////////// */}
+
             <div>
                 <h1>WHAT'S HOT</h1>
                 <br/>
                 <div className={'hotImg'}>
                     <Slider {...settings}>
-                        {
-                            title.map(function (a) {
-                                return (
-                                    <div style={{width: 320}}>
-                                        <img src={require('../image/hotImg/h' + a + '.jpg')}/>
-                                    </div>
-                                );
-                            })
-                        }
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 0;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h1.jpg')}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 1;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h2.jpg')}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 2;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h3.jpg')}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 3;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h4.jpg')}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 4;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h5.jpg')}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            state.categoryId = 5;
+                            navigate('/datailTest');
+                        } }>
+                            <img src={require('../image/hotImg/h6.jpg')}/>
+                        </div>
                     </Slider>
                 </div>
             </div>
 
+            {/* ///////////////////////////// */}
+
+            {/* 티켓 오픈 */}
             <div className={'ticketopen'}>
                 <h1>TICKET OPEN</h1>
-                <AsNavFor></AsNavFor>
+                <CenterMode></CenterMode>
             </div>
 
 

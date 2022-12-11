@@ -52,12 +52,30 @@ function TabContext({check}) {
 }
 
 function Profile(){
+
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    function whoislogin(){
+
+        let n = state.userInfo
+
+        // console.log(state.userInfo[0].userid)
+
+        for(let i; i = n.length; i++){
+            // console.log(n[i].userid);
+            console.log(n.length)
+        }
+    }
+
     return(
         <div>
             <h1>Profile</h1>
             <hr/>
             <div>
                 이메일
+                {/*{whoislogin()}*/}
             </div>
 
         </div>

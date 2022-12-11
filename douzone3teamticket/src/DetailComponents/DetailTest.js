@@ -1,21 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
-import musical from "../store";
-import Musicaldetailbody from "./Musicaldetailbody";
+import concert from "../store";
+import {useEffect} from "react";
+import '../css/Detailheader.css';
 
-function Musicaldetailheader() {
+function DetailTest() {
 
     let state = useSelector((state) => state)
 
+    let find = state.classic[state.categoryId]
+
     return (
+
         <div>
-            {
-                state.musical.map((a, i) =>
-                    <div key={i}>
+            
                         <div className="renew-wrap">
                             <div className="renew-content">
 
                                 <div className="rn-02">
-                                    <p className="rn-big-title">{state.musical[i].title}</p>
+                                    <p className="rn-big-title">{find.title}</p>
                                 </div>
                             </div>
                         </div>
@@ -26,25 +28,25 @@ function Musicaldetailheader() {
                                 <div className="rn-03">
                                     <div className="rn-03-left">
                                         <div className="rn-product-imgbox">
-                                            <img src={state.musical[i].imageadr} />
+                                            <img src={find.imageadr} />
                                         </div>
                                     </div>
                                     <div className="rn-03-right">
                                         <div className="rn-product-area1">
                                             <dl>
                                                 <dt>등급</dt>
-                                                <dd>&nbsp;{state.musical[i].rate}</dd>
+                                                <dd>&nbsp;{find.rate}</dd>
                                                 <dt>관람시간</dt>
-                                                <dd>&nbsp;{state.musical[i].showtime}</dd>
+                                                <dd>&nbsp;{find.showtime}</dd>
                                                 <dt>출연</dt>
-                                                <dd>&nbsp;<a className='rn-product-peole'>{state.musical[i].cast}</a></dd>
+                                                <dd>&nbsp;<a className='rn-product-peole'>{find.cast}</a></dd>
                                                 <dt id="dtPrice">가격</dt>
                                                 <dd id="divPrice" className="rn-product-price">
                                                     <ul className="rn-product-price1">
-                                                        <li>VIP석 <span className='rn-red'>{state.musical[i].priceVIP}</span>원</li>
-                                                        <li>SR석 <span className='rn-red'>{state.musical[i].priceSR}</span>원</li>
-                                                        <li>R석 <span className='rn-red'>{state.musical[i].priceR}</span>원</li>
-                                                        <li>S석 <span className='rn-red'>{state.musical[i].priceS}</span>원</li>
+                                                        <li>VIP석 <span className='rn-red'>{find.priceVIP}</span>원</li>
+                                                        <li>SR석 <span className='rn-red'>{find.priceSR}</span>원</li>
+                                                        <li>R석 <span className='rn-red'>{find.priceR}</span>원</li>
+                                                        <li>S석 <span className='rn-red'>{find.priceS}</span>원</li>
                                                     </ul>
                                                 </dd>
                                                 <dd className="rn-product-dc"></dd>
@@ -54,9 +56,9 @@ function Musicaldetailheader() {
                                         <div className="rn-product-area3">
                                             <dl>
                                                 <dt>공연시간 안내</dt>
-                                                <dd>{state.musical[i].showyear}년 {state.musical[i].showmonth}월 2{state.musical[i].showday}일 오후 {state.musical[i].showtime}시</dd>
+                                                <dd>{find.showyear}년 {find.showmonth}월 2{find.showday}일 오후 {find.showtime}시</dd>
                                                 <dt id="deliveryTitle">배송정보</dt>
-                                                <dd>{state.musical[i].delivery}</dd>
+                                                <dd>{find.delivery}</dd>
                                             </dl>
                                         </div>
 
@@ -64,17 +66,12 @@ function Musicaldetailheader() {
                                 </div>
 
                                 <div className="rn-05">
-                                    {/* <a href='' onClick='' className='rn-bb03'>예매하기</a> */}
-                                    <a href='src/DetailComponents/Musicaldetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                                    <a href='src/DetailComponents/Concertdetailheader' onClick='' className='rn-bb03'>예매하기</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                )
-            }
-            <Musicaldetailbody/>
-        </div>
-    )
+                 )
 }
 
-export default Musicaldetailheader;
+export default DetailTest;
