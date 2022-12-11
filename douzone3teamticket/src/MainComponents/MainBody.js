@@ -1,10 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
 import '../css/Main.css'
-
-import ImgSlide from "../MainComponents/ImgSlide";
 import AsNavFor from './Ticketopen'
 import DismissibleExample from './Ask'
+import ImgSlide from "../MainComponents/ImgSlide";
 
 import {useState} from "react";
 

@@ -1,10 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 
-// let arrString = createSlice({
-//     name: 'arrString',
-//     initialState: ''
-// })
-
 let concert = createSlice({
     name: 'concert',
     initialState: [

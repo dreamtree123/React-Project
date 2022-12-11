@@ -16,7 +16,7 @@ function Classic() {
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
                 {visibleList 
-                 ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
+                ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
                 : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
             </button>
 
@@ -33,9 +33,9 @@ function Classic_list() {
 
     return (
         <div>
-            <table className={styles.table}>
+            <table className={styles.categoryTable}>
                 <thead>
-                    <tr className={styles.tableTitle}>
+                    <tr className={styles.categoryTableTitle}>
                         <th scope="col"></th>
                         <th scope="col">공연명</th>
                         <th scope="col">출연진</th>

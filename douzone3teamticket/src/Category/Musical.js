@@ -37,9 +37,9 @@ function Musical_list() {
 
     return (
         <div>
-            <table className={styles.table}>
+            <table className={styles.categoryTable}>
                 <thead>
-                    <tr className={styles.tableTitle}>
+                    <tr className={styles.categoryTableTitle}>
                         <th scope="col"></th>
                         <th scope="col">공연명</th>
                         <th scope="col">출연진</th>

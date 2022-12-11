@@ -33,9 +33,9 @@ function Concert_list() {
 
     return (
         <div>
-            <table className={styles.table}>
+            <table className={styles.categoryTable}>
                 <thead>
-                    <tr className={styles.tableTitle}>
+                    <tr className={styles.categoryTableTitle}>
                         <th scope="col"></th>
                         <th scope="col">공연명</th>
                         <th scope="col">출연진</th>
@@ -49,7 +49,7 @@ function Concert_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <th scope="row">{state.concert[i].id}</th> */}
                                 <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td>
-                                <td >{state.concert[i].title}</td>
+                                <td>{state.concert[i].title}</td>
                                 <td>{state.concert[i].cast}</td>
                                 <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
                                 <td>{state.concert[i].showtime}</td>
@@ -74,13 +74,15 @@ function Concert_album() {
                 {
                     state.concert.map((item, i) =>
                         <div className="stuff">
+                            {/* <a href="/detail"> */}
                             <span className="stuff_img"><img src={state.concert[i].imageadr}></img></span>
                             <div className="stuff_content">
                                 <span className="stuff_title">{state.concert[i].title}</span><br />
                                 {/* <span>{state.concert[i].cast}</span><br /> */}
                                 <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday} </span><br />
-                                <span>{state.concert[i].showtime}</span><br />  
+                                <span>{state.concert[i].showtime}</span><br />
                             </div>
+                            {/* </a> */}
                         </div>
 
                     )
