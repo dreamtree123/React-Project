@@ -1,12 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 
-import open1 from "../image/openImg/open1.jpg";
-import open2 from "../image/openImg/open2.jpg";
-import open3 from "../image/openImg/open3.jpg";
-import open4 from "../image/openImg/open4.jpg";
-import open5 from "../image/openImg/open5.jpg";
-import open6 from "../image/openImg/open6.jpg";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import '../store'
@@ -38,41 +32,41 @@ export default function CenterMode() {
     return (
         <div className={"upload"}>
             <Slider {...settings}>
-                <div onClick={ ()=>{
-                    state.categoryId = 0;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 0;
+                    navigate('/theater/detail/0');
                 } }>
-                    <img src={open1}/>
+                    <img src={state.theater[0].imageadr}/>
                 </div>
-                <div onClick={ ()=>{
-                    state.categoryId = 1;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 1;
+                    navigate('/musical/detail/1');
                 } }>
-                    <img src={open2}/>
+                    <img src={state.musical[1].imageadr}/>
                 </div>
-                <div onClick={ ()=>{
-                    state.categoryId = 2;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 2;
+                    navigate('/classic/detail/2');
                 } }>
-                    <img src={open3}/>
+                    <img src={state.classic[2].imageadr}/>
                 </div>
-                <div onClick={ ()=>{
-                    state.categoryId = 3;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 3;
+                    navigate('/concert/detail/3');
                 } }>
-                    <img src={open4}/>
+                    <img src={state.concert[3].imageadr}/>
                 </div>
-                <div onClick={ ()=>{
-                    state.categoryId = 4;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 4;
+                    navigate('/theater/detail/4');
                 } }>
-                    <img src={open5}/>
+                    <img src={state.theater[4].imageadr}/>
                 </div>
-                <div onClick={ ()=>{
-                    state.categoryId = 5;
-                    navigate('/datailTest');
+                <div style={{width: 320}} onClick={ ()=>{
+                    state.performanceId = 5;
+                    navigate('/musical/detail/5');
                 } }>
-                    <img src={open6}/>
+                    <img src={state.musical[5].imageadr}/>
                 </div>
             </Slider>
         </div>

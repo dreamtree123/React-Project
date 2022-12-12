@@ -24,6 +24,16 @@
     margin-top: 5rem;
 }
 
+.divtitle{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.divtitle:nth-child(1){
+    margin-top: 8rem;
+}
+
+
 .hotImg{
     /*background-color: #282c34;*/
     padding-left:0.5rem;
@@ -45,7 +55,7 @@
 
 .ticketopen{
     margin-top: 10rem;
-    margin-bottom: -5rem;
+    margin-bottom: 0.5rem;
 }
 
 .open{

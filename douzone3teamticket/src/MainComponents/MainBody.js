@@ -1,12 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
 
-import AsNavFor from './Ticketopen'
-import DismissibleExample from './Ask'
 import ImgSlide from "../MainComponents/ImgSlide";
 import VarietyInfo from "./varietyInfo";
 
-import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import CenterMode from "./Ticketopen";
 import {useNavigate} from "react-router-dom";
@@ -48,45 +45,45 @@ function MainBody() {
             {/* ///////////////////////////// */}
 
             <div>
-                <h1>WHAT'S HOT</h1>
+                <div className={'divtitle'}>WHAT'S HOT</div>
                 <br/>
                 <div className={'hotImg'}>
                     <Slider {...settings}>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 0;
-                            navigate('/datailTest');
+                            state.performanceId = 0;
+                            navigate('/classic/detail/0');
                         } }>
-                            <img src={require('../image/hotImg/h1.jpg')}/>
+                            <img src={state.classic[0].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 1;
-                            navigate('/datailTest');
+                            state.performanceId = 1;
+                            navigate('/concert/detail/1');
                         } }>
-                            <img src={require('../image/hotImg/h2.jpg')}/>
+                            <img src={state.concert[1].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 2;
-                            navigate('/datailTest');
+                            state.performanceId = 2;
+                            navigate('/theater/detail/2');
                         } }>
-                            <img src={require('../image/hotImg/h3.jpg')}/>
+                            <img src={state.theater[2].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 3;
-                            navigate('/datailTest');
+                            state.performanceId = 3;
+                            navigate('/musical/detail/3');
                         } }>
-                            <img src={require('../image/hotImg/h4.jpg')}/>
+                            <img src={state.musical[3].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 4;
-                            navigate('/datailTest');
+                            state.performanceId = 4;
+                            navigate('/classic/detail/4');
                         } }>
-                            <img src={require('../image/hotImg/h5.jpg')}/>
+                            <img src={state.classic[4].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.categoryId = 5;
-                            navigate('/datailTest');
+                            state.performanceId = 5;
+                            navigate('/concert/detail/5');
                         } }>
-                            <img src={require('../image/hotImg/h6.jpg')}/>
+                            <img src={state.concert[5].imageadr}/>
                         </div>
                     </Slider>
                 </div>
@@ -96,7 +93,7 @@ function MainBody() {
 
             {/* 티켓 오픈 */}
             <div className={'ticketopen'}>
-                <h1>TICKET OPEN</h1>
+                <div className={'divtitle'}>TICKET OPEN</div>
                 <CenterMode></CenterMode>
             </div>
 

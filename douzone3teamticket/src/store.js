@@ -247,9 +247,6 @@ let musical = createSlice({
 
 // export let { changeName, userNameChange, increase } = user.actions
 
-
-
-
 let musicalinfo = createSlice({
     name: 'musicalinfo',
     initialState: [
@@ -307,7 +304,6 @@ let musicalinfo = createSlice({
         }
     ]
 })
-
 
 let classic = createSlice({
     name: 'classic',
@@ -411,8 +407,6 @@ let classicinfo = createSlice({
     ]
 })
 
-
-
 // 로그인 판단 유무
 let check = createSlice({
     name: 'check',
@@ -426,11 +420,6 @@ let userInfo = createSlice({
         {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
 })
 
-// 이미지슬라이드 -> 디테일 화면전환시 id 저장
-let categoryId = createSlice({
-    name: 'categoryId',
-    initialState: 0
-})
 
 // 카테고리 -> 디테일 화면전환시 id 저장
 let performanceId = createSlice({
@@ -451,7 +440,6 @@ export default configureStore({
         classicinfo: classicinfo.reducer,
         check: check.reducer,
         userInfo: userInfo.reducer,
-        categoryId: categoryId.reducer,
         performanceId: performanceId.reducer
     }
 })
