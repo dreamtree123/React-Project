@@ -30,9 +30,10 @@ function Concert() {
 function Concert_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -45,21 +46,33 @@ function Concert_list() {
                 </thead>
                 <tbody>
                     {
-                        state.concert.map((item, index) =>
-                            <tr key={{ index }} className={styles.categoryContent}>
-                                {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
+                        state.concert.map((item, i) => [item].filter((val) => {
+
+                            if (search == "") {
+                                return val
+                            }
+                            else if
+                                (item.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, k) =>
+                            <tr key={{ i }} className={styles.categoryContent}>
+                                {/* <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', index); naviate('/concert/detail/' + index); }}>
-                                        <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
+                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i); }}>
+                                        <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
                                     </span>
                                 </td>
-                                <td>{state.concert[index].title}</td>
-                                <td>{state.concert[index].cast}</td>
-                                <td>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday}</td>
-                                <td>{state.concert[index].showtime}</td>
+                                <td >{state.concert[i].title}</td>
+                                <td>{state.concert[i].cast}</td>
+                                <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
+                                <td>{state.concert[i].showtime}</td>
                             </tr>
+
+                        )
                         )
                     }
+
                 </tbody>
             </table>
         </div>

@@ -33,10 +33,12 @@ function Musical() {
 function Musical_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <table className={styles.categoryTable}>
+
                 <thead>
                     <tr className={styles.categoryTableTitle}>
                         <th scope="col"></th>
@@ -48,7 +50,16 @@ function Musical_list() {
                 </thead>
                 <tbody>
                     {
-                        state.musical.map((item, i) =>
+                        state.musical.map((item, i) => [item].filter((val) => {
+
+                            if (search == "") {
+                                return val
+                            }
+                            else if
+                                (item.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
                                 <td>
@@ -61,8 +72,11 @@ function Musical_list() {
                                 <td>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday}</td>
                                 <td>{state.musical[i].showtime}</td>
                             </tr>
+
+                        )
                         )
                     }
+
                 </tbody>
             </table>
         </div>
@@ -76,11 +90,13 @@ function Musical_album() {
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
     return (
-        <div>
+
+        < div >
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
                 {
                     state.musical.map((item, i) => [item].filter((val) => {
+
                         if (search == "") {
                             return val
                         }
@@ -90,8 +106,11 @@ function Musical_album() {
                         }
                     }).map((val, k) => {
                         return (
-                            <div className="stuff">
-                                <span className="stuff_img"><img src={state.musical[i].imageadr}></img></span>
+                            <div className="stuff" key={{ i }}>
+                                {console.log(i)}
+                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                    <img src={state.musical[i].imageadr}></img>
+                                </span>
                                 <div className="stuff_content">
                                     <span className="stuff_title">{state.musical[i].title}</span><br />
                                     {/* <span>{state.musical[i].cast}</span><br /> */}
@@ -99,6 +118,7 @@ function Musical_album() {
                                     <span>{state.musical[i].showtime}</span><br />
                                 </div>
                             </div>
+
                         )
                     }))
                 }

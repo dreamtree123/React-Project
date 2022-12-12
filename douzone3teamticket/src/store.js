@@ -410,11 +410,15 @@ let classicinfo = createSlice({
 // 사용자 정보
 let userInfo = createSlice({
     name: 'userInfo',
-    initialState: [{id : 0, name: 'King', userid: '1111', pwd: '1111', email:'123@gmail.com'},
-        {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
+    initialState: [{ id: 0, name: 'King', userid: '1111', pwd: '1111', email: '123@gmail.com' },
+    { id: 1, name: 'Smile', userid: '2222', pwd: '2222', email: '456@gmail.com' }]
 })
 
-
+let performanceId = createSlice({
+    name: 'performanceId',
+    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
+    initialState: 0
+})
 export default configureStore({
     reducer: {
         concert: concert.reducer,
@@ -425,6 +429,7 @@ export default configureStore({
         theaterinfo: theaterinfo.reducer,
         classic: classic.reducer,
         classicinfo: classicinfo.reducer,
-        userInfo: userInfo.reducer
+        userInfo: userInfo.reducer,
+        performanceId: performanceId.reducer
     }
 })

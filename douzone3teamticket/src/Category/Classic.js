@@ -31,9 +31,10 @@ function Classic() {
 function Classic_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -46,7 +47,16 @@ function Classic_list() {
                 </thead>
                 <tbody>
                     {
-                        state.classic.map((item, i) =>
+                        state.classic.map((item, i) => [item].filter((val) => {
+
+                            if (search == "") {
+                                return val
+                            }
+                            else if
+                                (item.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td> */}
                                 <td>
@@ -54,13 +64,16 @@ function Classic_list() {
                                         <img className={styles.categoryImg} src={state.classic[i].imageadr}></img>
                                     </span>
                                 </td>
-                                <td className={styles.showContent}>{state.classic[i].title}</td>
-                                <td className={styles.showContent}>{state.classic[i].cast}</td>
-                                <td className={styles.showContent}>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday}</td>
-                                <td className={styles.showContent}>{state.classic[i].showtime}</td>
+                                <td >{state.classic[i].title}</td>
+                                <td>{state.classic[i].cast}</td>
+                                <td>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday}</td>
+                                <td>{state.classic[i].showtime}</td>
                             </tr>
+
+                        )
                         )
                     }
+
                 </tbody>
             </table>
         </div>
