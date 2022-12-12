@@ -15,9 +15,9 @@ function Concert() {
         <div>
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
-                {visibleList 
-                ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
-                : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
+                {visibleList
+                    ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
             </button>
 
             {visibleList && <Concert_list />}
@@ -49,8 +49,8 @@ function Concert_list() {
                             <tr key={{ index }} className={styles.categoryContent}>
                                 {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
                                 <td>
-                                    <span onClick={ ()=>{localStorage.setItem('performanceId', index); naviate('/concert/detail/' + index);} }>
-                                    <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
+                                    <span onClick={() => { localStorage.setItem('performanceId', index); naviate('/concert/detail/' + index); }}>
+                                        <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
                                     </span>
                                 </td>
                                 <td>{state.concert[index].title}</td>
@@ -71,31 +71,35 @@ function Concert_album() {
 
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
                 {
-                    state.concert.map((item, index) =>
-                        <div className="stuff">
-                            {/* <span className="stuff_img"><Link to={"/concert/detail/" + index}> <img src={state.concert[index].imageadr}></img></Link></span> */}
-                            
-                            {/* <span className="stuff_img"><img src={state.concert[index].imageadr}></img></span>
-                            state.performanceId = {index};
-                            naviate('/concert/detail/' + {index}); */}
-                            
-                            <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
-                                <img src={state.concert[index].imageadr}></img>
-                            </span>
-                            
-                            <div className="stuff_content">
-                                <span className="stuff_title">{state.concert[index].title}</span><br />
-                                <span>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday} </span><br />
-                                <span>{state.concert[index].showtime}</span><br />
+                    state.concert.map((item, i) => [item].filter((val) => {
+                        if (search == "") {
+                            return val
+                        }
+                        else if
+                            (item.title.toLowerCase().includes(search.toLowerCase())) {
+                            return val
+                        }
+                    }).map((val, k) => {
+                        return (
+                            <div className="stuff">
+                                <span className="stuff_img"><img src={state.concert[i].imageadr}></img></span>
+                                <div className="stuff_content">
+                                    <span className="stuff_title">{state.concert[i].title}</span><br />
+                                    {/* <span>{state.concert[i].cast}</span><br /> */}
+                                    <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday} </span><br />
+                                    <span>{state.concert[i].showtime}</span><br />
+                                </div>
                             </div>
-                        </div>
-                    )
+                        )
+                    }))
                 }
+
             </div>
         </div>
 
