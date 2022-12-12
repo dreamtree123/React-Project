@@ -49,7 +49,7 @@ function Classic_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={ ()=>{state.performanceId = i; naviate('/classic/detail/' + i);} }>
+                                    <span onClick={ ()=>{localStorage.setItem('performanceId', i); naviate('/classic/detail/' + i);} }>
                                     <img className={styles.categoryImg} src={state.classic[i].imageadr}></img>
                                     </span>
                                 </td>

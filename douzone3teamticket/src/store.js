@@ -407,12 +407,6 @@ let classicinfo = createSlice({
     ]
 })
 
-// 로그인 판단 유무
-let check = createSlice({
-    name: 'check',
-    initialState: ['false', '']
-})
-
 // 사용자 정보
 let userInfo = createSlice({
     name: 'userInfo',
@@ -420,13 +414,6 @@ let userInfo = createSlice({
         {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
 })
 
-
-// 카테고리 -> 디테일 화면전환시 id 저장
-let performanceId = createSlice({
-    name: 'performanceId',
-    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
-    initialState: 0
-})
 
 export default configureStore({
     reducer: {
@@ -438,8 +425,6 @@ export default configureStore({
         theaterinfo: theaterinfo.reducer,
         classic: classic.reducer,
         classicinfo: classicinfo.reducer,
-        check: check.reducer,
-        userInfo: userInfo.reducer,
-        performanceId: performanceId.reducer
+        userInfo: userInfo.reducer
     }
 })

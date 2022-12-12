@@ -49,7 +49,7 @@ function Concert_list() {
                             <tr key={{ index }} className={styles.categoryContent}>
                                 {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
                                 <td>
-                                    <span onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
+                                    <span onClick={ ()=>{localStorage.setItem('performanceId', index); naviate('/concert/detail/' + index);} }>
                                     <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
                                     </span>
                                 </td>

@@ -36,7 +36,7 @@ function MainNav(){
 
                         <Nav>
                             <Nav.Link onClick={ ()=>{
-                                state.check[0] === 'true' ? navigate('/mypage') : navigate('/user/login');
+                                localStorage.getItem('userId') !== '' ? navigate('/mypage') : navigate('/user/login');
                             }}>
                                 <img className={'userImg'} src={require('../image/login.png')} alt={'login'} title={'로그인'}/>
                             </Nav.Link>

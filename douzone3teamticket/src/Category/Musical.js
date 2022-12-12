@@ -52,7 +52,7 @@ function Musical_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
                                  <td>
-                                    <span onClick={ ()=>{state.performanceId = i; naviate('/musical/detail/' + i);} }>
+                                    <span onClick={ ()=>{localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i);} }>
                                     <img className={styles.categoryImg} src={state.musical[i].imageadr}></img>
                                     </span>
                                 </td>

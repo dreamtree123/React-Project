@@ -26,7 +26,7 @@ function Mypage(){
                     <li className="list-group-item" onClick={ ()=>{setCheck(2)} }>문의하기</li>
                 </ul>
                 <button type="button" className="btn btn-dark logout" onClick={ ()=>{
-                    state.check = ["false", ""]
+                    localStorage.setItem('userId', '');
                     navigate('/');
                 }}>LogOut</button>
                 <button type="button" className="btn btn-dark" onClick={ ()=>{ navigate('/'); }}>장바구니</button>

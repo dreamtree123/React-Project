@@ -50,37 +50,37 @@ function MainBody() {
                 <div className={'hotImg'}>
                     <Slider {...settings}>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 0;
+                            localStorage.setItem('performanceId', 0);
                             navigate('/classic/detail/0');
                         } }>
                             <img src={state.classic[0].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 1;
+                            localStorage.setItem('performanceId', 1);
                             navigate('/concert/detail/1');
                         } }>
                             <img src={state.concert[1].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 2;
+                            localStorage.setItem('performanceId', 2);
                             navigate('/theater/detail/2');
                         } }>
                             <img src={state.theater[2].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 3;
+                            localStorage.setItem('performanceId', 3);
                             navigate('/musical/detail/3');
                         } }>
                             <img src={state.musical[3].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 4;
+                            localStorage.setItem('performanceId', 4);
                             navigate('/classic/detail/4');
                         } }>
                             <img src={state.classic[4].imageadr}/>
                         </div>
                         <div style={{width: 320}} onClick={ ()=>{
-                            state.performanceId = 5;
+                            localStorage.setItem('performanceId', 5);
                             navigate('/concert/detail/5');
                         } }>
                             <img src={state.concert[5].imageadr}/>

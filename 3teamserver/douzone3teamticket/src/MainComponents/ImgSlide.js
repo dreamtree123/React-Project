@@ -39,19 +39,19 @@ function ImgSlide() {
         <div>
             <Slider {...settings}>
                 <div onClick={ ()=>{
-                    state.performanceId = 0;
+                    localStorage.setItem('performanceId', 0);
                     navigate('/musical/detail/0');
                 } }>
                     <img src={'http://tkfile.yes24.com/Upload2/Display/202210/20221017/wel_mv_2022.jpg/dims/quality/70/'}/>
                 </div>
                 <div onClick={ ()=>{
-                    state.performanceId = 1;
+                    localStorage.setItem('performanceId', 1);
                     navigate('/musical/detail/1');
                 } }>
                     <img src={'http://tkfile.yes24.com/Upload2/Display/202212/20221208/wel_,mv_43998.jpg/dims/quality/70/'}/>
                 </div>
                 <div onClick={ ()=>{
-                    state.performanceId = 3;
+                    localStorage.setItem('performanceId', 3);
                     navigate('/concert/detail/3');
                 } }>
                     <img src={'http://tkfile.yes24.com/Upload2/Display/202205/20220510/wel_mv_42123_2.jpg/dims/quality/70/'}/>

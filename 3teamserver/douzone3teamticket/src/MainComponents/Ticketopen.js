@@ -33,37 +33,37 @@ export default function CenterMode() {
         <div className={"upload"}>
             <Slider {...settings}>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 0;
+                    localStorage.setItem('performanceId', 0);
                     navigate('/theater/detail/0');
                 } }>
                     <img src={state.theater[0].imageadr}/>
                 </div>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 1;
+                    localStorage.setItem('performanceId', 1);
                     navigate('/musical/detail/1');
                 } }>
                     <img src={state.musical[1].imageadr}/>
                 </div>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 2;
+                    localStorage.setItem('performanceId', 2);
                     navigate('/classic/detail/2');
                 } }>
                     <img src={state.classic[2].imageadr}/>
                 </div>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 3;
+                    localStorage.setItem('performanceId', 3);
                     navigate('/concert/detail/3');
                 } }>
                     <img src={state.concert[3].imageadr}/>
                 </div>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 4;
+                    localStorage.setItem('performanceId', 4);
                     navigate('/theater/detail/4');
                 } }>
                     <img src={state.theater[4].imageadr}/>
                 </div>
                 <div style={{width: 320}} onClick={ ()=>{
-                    state.performanceId = 5;
+                    localStorage.setItem('performanceId', 5);
                     navigate('/musical/detail/5');
                 } }>
                     <img src={state.musical[5].imageadr}/>

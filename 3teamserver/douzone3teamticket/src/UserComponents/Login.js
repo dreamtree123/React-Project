@@ -30,7 +30,9 @@ function Login() {
             <div className={"b"}>
                 <button type="button" className="btn btn-dark" onClick={ ()=>{
                     let c = document.getElementById('floatingInput').value;
-                    state.check = ['true', c];
+
+                    localStorage.setItem('userId', c);
+
                     navigate('/');
                 }}>Login</button>
                 <button type="button" className="btn btn-dark" onClick={ ()=>{ navigate('/user/join'); }}>Join</button>
