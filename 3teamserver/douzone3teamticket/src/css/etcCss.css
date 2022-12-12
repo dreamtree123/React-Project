@@ -88,3 +88,19 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+
+.profileTable{
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 60%;
+    height: 8rem;
+}
+.profileTable tr, .profileTable td{
+    border: 1px solid darkgray;
+    padding-top: 0.8rem;
+}
+
+.profileTable td:nth-child(1){
+    background-color: #cccccc;
+}
+

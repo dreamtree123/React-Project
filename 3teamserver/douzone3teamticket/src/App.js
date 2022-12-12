@@ -11,8 +11,7 @@ import Join from "./UserComponents/Join";
 import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
-
-import DetailTest from "./DetailComponents/DetailTest";
+import Basket from "./BasketComponents/Basket";
 
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
@@ -63,7 +62,7 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>}/>
                 <Route path='/success' element={<Success></Success>}/>
 
-                <Route path='/datailTest' element={<DetailTest></DetailTest>}/>
+                <Route path='/basket' element={<Basket></Basket>}/>
 
             </Routes>
 
