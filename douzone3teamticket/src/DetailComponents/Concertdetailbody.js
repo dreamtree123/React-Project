@@ -6,6 +6,7 @@ import '../css/PageDetailBodyCSS.css'
 
 function Concertdetailbody(){
     let state = useSelector((state) => state)
+    
     let [clickTab, setClickTab] = useState(0);
     
     return(
@@ -35,7 +36,8 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-    let find = state.concert[localStorage.getItem('performanceId')]
+    let find = state.concertinfo[localStorage.getItem('performanceId2')]
+    console.log({find})
   
   return (
       <div className= {`start  ${fade}`} >

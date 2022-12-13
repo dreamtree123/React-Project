@@ -5,26 +5,30 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Category.css'
 import styles from "./Category.module.css";
 
+import PerformanceSort from "./PerformanceSort";
+
 function Theater() {
     const [visibleList, setVisibleList] = useState(true);
     const [visibleAlbum, setVisibleAlbum] = useState(false);
+
     return (
+        <div className={styles.categoryCont}>
+        <PerformanceSort/>
         
         <div>
-            <button className="switchBtn"
+            <button className={styles.switchBtn}
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
-                {visibleList 
-                ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
-                : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
                 {visibleList
                     ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
-                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
+                }
             </button>
 
             {visibleList && <Theater_list />}
             {visibleAlbum && <Theater_album />}
 
         </div >
+        </div>
     );
 }
 
@@ -34,7 +38,7 @@ function Theater_list() {
     const [search, setSearch] = useState('')
     return (
         <div>
-            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -43,6 +47,7 @@ function Theater_list() {
                         <th scope="col">출연진</th>
                         <th scope="col">공연일</th>
                         <th scope="col">상영시간</th>
+                        <th scope="col">가격 (S석 기준)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,6 +73,7 @@ function Theater_list() {
                                 <td>{state.theater[i].cast}</td>
                                 <td>{state.theater[i].showyear}-{state.theater[i].showmonth}-{state.theater[i].showday}</td>
                                 <td>{state.theater[i].showtime}</td>
+                                <td>{state.theater[i].priceS}원</td>
                             </tr>
 
                         )
@@ -88,7 +94,7 @@ function Theater_album() {
     const [search, setSearch] = useState('')
     return (
         < div >
-            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
                 {
                     state.theater.map((item, i) => [item].filter((val) => {
@@ -112,6 +118,7 @@ function Theater_album() {
                                     {/* <span>{state.theater[i].cast}</span><br /> */}
                                     <span>{state.theater[i].showyear}-{state.theater[i].showmonth}-{state.theater[i].showday} </span><br />
                                     <span>{state.theater[i].showtime}</span><br />
+                                    <span>{state.theater[i].priceS}원</span><br />
                                 </div>
                             </div>
 

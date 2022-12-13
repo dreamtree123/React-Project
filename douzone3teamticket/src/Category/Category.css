@@ -49,9 +49,3 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-.switchBtn {
-    margin-top: 20px;
-    margin-left: 100px;
-    border: 0;
-}

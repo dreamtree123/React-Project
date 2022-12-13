@@ -1,9 +1,13 @@
+.categoryCont {
+    height: 1500px;
+}
+
 .categoryTable {
-    /* width: 70%; */
     width: 1200px;
     margin: auto;
     margin-top: 35px;
     table-layout: fixed;
+    position: relative;
     }
 
 .categoryTable td {
@@ -41,12 +45,23 @@
     transform: scale(1.1);
 }
 
+.switchBtn {
+    margin-top: -20px;
+    margin-left: -1000px;
+    border: 0;
+}
+
+.searchInput {
+    margin-right: -1000px;
+}
+
 .sort_performance {
-    display: flex;
-    float: right;
-    /* width: 85%; */
+    display: inline-flex;
+    position: sticky;
     margin-top: 20px;
-    padding-right: 850px;
+    margin-bottom: -150px;
+    margin-right: -1000px;
+    
 }
 
 .sort_performance p {

@@ -36,7 +36,7 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-    let find = state.theater[localStorage.getItem('performanceId')]
+    let find = state.theaterinfo[localStorage.getItem('performanceId')]
   
   return (
       <div className= {`start  ${fade}`} >

@@ -45,6 +45,7 @@ function App() {
                     )
                 }   */}
                 
+                {/* <Route path='/concert/detail' element={<Concertdetailheader></Concertdetailheader>}/> */}
                 <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
                 <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>

@@ -441,11 +441,11 @@ let userInfo = createSlice({
     { id: 1, name: 'Smile', userid: '2222', pwd: '2222', email: '456@gmail.com' }]
 })
 
-let performanceId = createSlice({
-    name: 'performanceId',
-    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
-    initialState: 0
-})
+// let performanceId = createSlice({
+//     name: 'performanceId',
+//     // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
+//     initialState: 0
+// })
 
 export default configureStore({
     reducer: {
@@ -457,7 +457,7 @@ export default configureStore({
         theaterinfo: theaterinfo.reducer,
         classic: classic.reducer,
         classicinfo: classicinfo.reducer,
-        userInfo: userInfo.reducer,
-        performanceId: performanceId.reducer
+        userInfo: userInfo.reducer
+        //,performanceId: performanceId.reducer
     }
 })

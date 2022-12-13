@@ -5,6 +5,7 @@ function Concertdetailheader() {
 
     let state = useSelector((state) => state)
     let find = state.concert[localStorage.getItem('performanceId')]
+    console.log({find}); //localStorage.getItem('performanceId')해서 꺼내면 정렬후id가 아닌 정렬전id가 가져와지는 문제...
 
     return (
         <div>
