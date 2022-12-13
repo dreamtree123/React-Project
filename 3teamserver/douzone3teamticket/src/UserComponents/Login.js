@@ -33,7 +33,9 @@ function Login() {
 
                     localStorage.setItem('userId', c);
 
-                    navigate('/');
+                    if (c !== ''){
+                        navigate('/');
+                    }
                 }}>Login</button>
                 <button type="button" className="btn btn-dark" onClick={ ()=>{ navigate('/user/join'); }}>Join</button>
             </div>
