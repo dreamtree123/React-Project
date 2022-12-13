@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import Musicaldetailbody from "./Musicaldetailbody";
+import {useNavigate} from "react-router-dom";
 
 function Musicaldetailheader() {
 
@@ -7,6 +8,7 @@ function Musicaldetailheader() {
 
     let find = state.musical[localStorage.getItem('performanceId')]
 
+    let navigate = useNavigate();
     return (
             <div>
                 <div className="renew-wrap">
@@ -62,7 +64,15 @@ function Musicaldetailheader() {
                         </div>
 
                         <div className="rn-05">
-                            <a href='src/DetailComponents/Musicaldetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                            <a onClick={ () => {
+                                if (localStorage.getItem('userId') == ''){
+                                    alert('로그인 필요');
+                                    navigate('/user/login');
+                                }else{
+                                    state.gocategory = 'musical';
+                                    navigate('/seat');
+                                }
+                            } } className='rn-bb03'>예매하기</a>
                         </div>
                         <Musicaldetailbody/>
                     </div>

@@ -49,7 +49,7 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-  let find = state.theaterinfo[state.performanceId]
+  let find = state.theaterinfo[localStorage.getItem('performanceId')]
   let find2 = state.theater[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
@@ -443,7 +443,7 @@ export default TheaterdetailBody;
 
 const Location=()=>{
     let state = useSelector((state) => state);
-    let find = state.theaterinfo[state.performanceId];
+    let find = state.theaterinfo[localStorage.getItem('performanceId')];
     const {kakao} = window;
     useEffect(()=>{
       var container = document.getElementById('map');

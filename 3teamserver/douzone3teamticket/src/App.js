@@ -23,6 +23,7 @@ import Musicaldetailheader from "./DetailComponents/Musicaldetailheader";
 import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
 
+import Seat from "./Ticket/Seat";
 
 function App() {
 
@@ -64,6 +65,8 @@ function App() {
                 <Route path='/success' element={<Success></Success>}/>
 
                 <Route path='/basket' element={<Basket></Basket>}/>
+
+                <Route path='/seat' element={<Seat></Seat>}/>
 
             </Routes>
 
