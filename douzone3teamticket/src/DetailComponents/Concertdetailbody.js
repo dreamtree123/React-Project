@@ -47,8 +47,8 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-  let find = state.concertinfo[state.performanceId]
-  let find2 = state.concert[state.performanceId]
+  let find = state.concertinfo[localStorage.getItem('performanceId')]
+  let find2 = state.concert[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
@@ -441,15 +441,17 @@ export default Concertdetailbody;
 
 const Location=()=>{
     let state = useSelector((state) => state);
-    let find = state.concertinfo[state.performanceId];
+    let find = state.concertinfo[localStorage.getItem('performanceId')]
+
     const {kakao} = window;
+
     useEffect(()=>{
       var container = document.getElementById('map');
       var options = {
         center: new kakao.maps.LatLng(find.latitude, find.longitude),
         level: 3
       };
-  
+
       var map = new kakao.maps.Map(container, options);
       var markerPosition  = new kakao.maps.LatLng(find.latitude, find.longitude); 
       var marker = new kakao.maps.Marker({

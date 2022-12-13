@@ -5,7 +5,7 @@ function Musicaldetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.musical[state.performanceId]
+    let find = state.musical[localStorage.getItem('performanceId')]
 
     return (
             <div>

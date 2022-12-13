@@ -19,6 +19,8 @@ function ImgSlide() {
         return state;
     });
 
+    let navigate = useNavigate();
+
     let dispatch = useDispatch();
 
     const settings = {
@@ -33,44 +35,26 @@ function ImgSlide() {
         autoplaySpeed: 6000
     };
 
-    let naviate = useNavigate()
-
     return (
         <div>
             <Slider {...settings}>
                 <div onClick={ ()=>{
-                    state.categoryId = 0;
-                    naviate('/datailTest');
+                    localStorage.setItem('performanceId', 0);
+                    navigate('/musical/detail/0');
                 } }>
-                    <Slide img={img1} />
+                    <img src={'http://tkfile.yes24.com/Upload2/Display/202210/20221017/wel_mv_2022.jpg/dims/quality/70/'}/>
                 </div>
-
                 <div onClick={ ()=>{
-                    state.categoryId = 1;
-                    naviate('/datailTest');
+                    localStorage.setItem('performanceId', 1);
+                    navigate('/musical/detail/1');
                 } }>
-                    <Slide img={img2}/>
+                    <img src={'http://tkfile.yes24.com/Upload2/Display/202212/20221208/wel_,mv_43998.jpg/dims/quality/70/'}/>
                 </div>
-
                 <div onClick={ ()=>{
-                    state.categoryId = 2;
-                    naviate('/datailTest');
+                    localStorage.setItem('performanceId', 3);
+                    navigate('/concert/detail/3');
                 } }>
-                    <Slide img={img3}/>
-                </div>
-
-                <div onClick={ ()=>{
-                    state.categoryId = 3;
-                    naviate('/datailTest');
-                } }>
-                    <Slide img={img4}/>
-                </div>
-
-                <div onClick={ ()=>{
-                    state.categoryId = 4;
-                    naviate('/datailTest');
-                } }>
-                    <Slide img={img5}/>
+                    <img src={'http://tkfile.yes24.com/Upload2/Display/202205/20220510/wel_mv_42123_2.jpg/dims/quality/70/'}/>
                 </div>
             </Slider>
         </div>

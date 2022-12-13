@@ -5,7 +5,7 @@ function Theaterdetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.theater[state.performanceId]
+    let find = state.theater[localStorage.getItem('performanceId')]
 
     return (
         <div>

@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import '../css/Detailbody.css'
 import DetailMaps from './DetailMap';
-import MovieSeatPicker from "../Ticket/MovieSeatPicker";
 
 function Classicdetailbody(){
     let state = useSelector((state) => state)
@@ -49,8 +48,8 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
   
-  let find = state.classicinfo[state.performanceId]
-  let find2 = state.classic[state.performanceId]
+  let find = state.classicinfo[localStorage.getItem('performanceId')]
+  let find2 = state.classic[localStorage.getItem('performanceId')]
 
   return (
       <div className= {`start  ${fade}`} >
@@ -447,7 +446,7 @@ export default Classicdetailbody;
 
 const Location=()=>{
     let state = useSelector((state) => state);
-    let find = state.classicinfo[state.performanceId];
+    let find = state.classicinfo[localStorage.getItem('performanceId')];
     const {kakao} = window;
     useEffect(()=>{
       var container = document.getElementById('map');

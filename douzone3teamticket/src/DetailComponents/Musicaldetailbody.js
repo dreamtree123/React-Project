@@ -47,8 +47,8 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-  let find = state.musicalinfo[state.performanceId]
-  let find2 = state.musical[state.performanceId]
+  let find = state.musicalinfo[localStorage.getItem('performanceId')]
+  let find2 = state.musical[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
@@ -442,7 +442,7 @@ export default MusicaldetailBody;
 
 const Location=()=>{
     let state = useSelector((state) => state);
-    let find = state.musicalinfo[state.performanceId];
+    let find = state.musicalinfo[localStorage.getItem('performanceId')]
     const {kakao} = window;
     useEffect(()=>{
       var container = document.getElementById('map');

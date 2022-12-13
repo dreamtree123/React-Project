@@ -5,7 +5,7 @@ function Classicdetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.classic[state.performanceId]
+    let find = state.classic[localStorage.getItem('performanceId')]
 
     return (
         <div>

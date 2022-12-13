@@ -61,3 +61,46 @@
 .upload .slick-next, .upload .slick-prev{
     transform: rotate(270deg);
 }
+
+
+/*FAQ*/
+.reserFAQ{
+    border: 1px solid black;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+}
+
+.reserFAQ th {
+    background-color: darkgray;
+}
+.reserFAQ tr, .reserFAQ td, .reserFAQ th{
+    border: 1px solid black;
+    padding-top: 0.3rem;
+}
+
+.infoCenter{
+    display: flex;
+}
+
+.infoCenter button{
+    width: 6rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.profileTable{
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 60%;
+    height: 8rem;
+}
+.profileTable tr, .profileTable td{
+    border: 1px solid darkgray;
+    padding-top: 0.8rem;
+}
+
+.profileTable td:nth-child(1){
+    background-color: #cccccc;
+}
+

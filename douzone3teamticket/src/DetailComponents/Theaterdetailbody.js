@@ -50,7 +50,7 @@ function TabContent({clickTab}) {
   let divstate = true;
 
   let find = state.theaterinfo[state.performanceId]
-  let find2 = state.musical[state.performanceId]
+  let find2 = state.theater[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
