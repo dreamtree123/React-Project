@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Category.css'
 import styles from "./Category.module.css";
 
-import PerformanceSort from "./PerformanceSort";
+import {ConcertSort} from "./PerformanceSort";
 
 function Concert() {
     const [visibleList, setVisibleList] = useState(true);
@@ -13,7 +13,7 @@ function Concert() {
 
     return (
         <div className={styles.categoryCont}>
-        <PerformanceSort/>
+        <ConcertSort/>
 
         <div>
             <button className={styles.switchBtn}
@@ -27,12 +27,13 @@ function Concert() {
             {visibleList && <Concert_list />}
             {visibleAlbum && <Concert_album />}
 
-        </div >
+        </div>
         </div>
     );
 }
 
 function Concert_list() {
+
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
@@ -53,7 +54,6 @@ function Concert_list() {
                 <tbody>
                     {
                         state.concert.map((item, i) => [item].filter((val) => {
-
                             if (search == "") {
                                 return val
                             }
@@ -63,11 +63,12 @@ function Concert_list() {
                             }
                         }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td> */}
                                 <td>
-                                    {/* <span onClick={ ()=>{localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + localStorage.getItem('performanceId'));} }> */}
-                                    <span onClick={ ()=>{localStorage.setItem('performanceId', i); naviate('/concert/detail/' + localStorage.getItem('performanceId'));} }>
-                                    {/* <span onClick={ ()=>{localStorage.setItem('performanceId', i); localStorage.setItem('performanceId2', i); naviate('/concert/detail');} }>  */}
+                                    {/* <span onClick={ ()=>{localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i);} }> */}
+                                    {/* 위처럼 히면 디테일헤더는 잘나오지만 디테일바디가 모두 박진영만 나옴 */}
+                                    
+                                    <span onClick={ ()=>{localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id);} }>
+                                    {/* 위처럼 히면 디테일헤더는 잘나오지만 디테일바디가 원래 정렬되어있던 id값으로 나옴 */}
                                           <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
                                     </span>
                                 </td>

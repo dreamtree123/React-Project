@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Category.css'
 import styles from "./Category.module.css";
 
-import PerformanceSort from "./PerformanceSort";
+import {MusicalSort} from "./PerformanceSort";
 
 function Musical() {
     const [visibleList, setVisibleList] = useState(true);
@@ -13,7 +13,7 @@ function Musical() {
 
     return (
         <div className={styles.categoryCont}>
-         <PerformanceSort/>
+        <MusicalSort/>
 
         <div>
             <button className={styles.switchBtn}
@@ -27,7 +27,7 @@ function Musical() {
             {visibleList && <Musical_list />}
             {visibleAlbum && <Musical_album />}
 
-        </div >
+        </div>
         </div>
     );
 }
@@ -36,6 +36,7 @@ function Musical_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
+    
     return (
         <div>
             <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
@@ -66,7 +67,7 @@ function Musical_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                    <span onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
                                         <img className={styles.categoryImg} src={state.musical[i].imageadr}></img>
                                     </span>
                                 </td>

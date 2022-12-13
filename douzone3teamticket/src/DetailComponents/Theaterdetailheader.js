@@ -5,10 +5,22 @@ function Theaterdetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.theater[localStorage.getItem('performanceId')]
+    let find;
+
+    function sortAfter (){
+        let i;
+        
+        for (i = 0; i < state.theater.length; i++) {
+            if(localStorage.getItem('performanceId') == state.theater[i].id){
+                find = state.theater[i];
+                break;
+            }
+        }
+    }
 
     return (
         <div>
+            {sortAfter()}
             <div className="renew-wrap">
                 <div className="renew-content">
 

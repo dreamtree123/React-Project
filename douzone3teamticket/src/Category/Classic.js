@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Category.css'
 import styles from "./Category.module.css";
 
-import PerformanceSort from "./PerformanceSort";
+import {ClassicSort} from "./PerformanceSort";
 
 function Classic() {
     const [visibleList, setVisibleList] = useState(true);
@@ -13,7 +13,7 @@ function Classic() {
 
     return (
         <div className={styles.categoryCont}>
-        <PerformanceSort/>
+        <ClassicSort/>
 
         <div>
             <button className={styles.switchBtn}
@@ -36,6 +36,7 @@ function Classic_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
+
     return (
         <div>
             <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
@@ -65,7 +66,7 @@ function Classic_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/classic/detail/' + i); }}>
+                                    <span onClick={() => { localStorage.setItem('performanceId', state.classic[i].id); naviate('/classic/detail/' + state.classic[i].id); }}>
                                         <img className={styles.categoryImg} src={state.classic[i].imageadr}></img>
                                     </span>
                                 </td>

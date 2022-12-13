@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Category.css'
 import styles from "./Category.module.css";
 
-import PerformanceSort from "./PerformanceSort";
+import {TheaterSort} from "./PerformanceSort";
 
 function Theater() {
     const [visibleList, setVisibleList] = useState(true);
@@ -13,7 +13,7 @@ function Theater() {
 
     return (
         <div className={styles.categoryCont}>
-        <PerformanceSort/>
+        <TheaterSort/>
         
         <div>
             <button className={styles.switchBtn}
@@ -65,7 +65,7 @@ function Theater_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.theater[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/theater/detail/' + i); }}>
+                                    <span onClick={() => { localStorage.setItem('performanceId', state.theater[i].id); naviate('/theater/detail/' + state.theater[i].id); }}>
                                         <img className={styles.categoryImg} src={state.theater[i].imageadr}></img>
                                     </span>
                                 </td>

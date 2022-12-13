@@ -36,9 +36,9 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-    let find = state.concertinfo[localStorage.getItem('performanceId2')]
-    console.log({find})
-  
+    let find = state.concertinfo[localStorage.getItem('performanceId')]
+    // console.log(localStorage.getItem('performanceId'));
+
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
