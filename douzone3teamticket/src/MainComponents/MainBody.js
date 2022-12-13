@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+<<<<<<< HEAD
 import '../css/Main.css'
 
 import AsNavFor from './Ticketopen'
@@ -10,6 +11,27 @@ import {useState} from "react";
 function MainBody() {
 
     let [title, setTitle] = useState(["1", "2", "3", "4", "5", "6"]);
+=======
+
+import ImgSlide from "../MainComponents/ImgSlide";
+import VarietyInfo from "./varietyInfo";
+
+import {useDispatch, useSelector} from "react-redux";
+import CenterMode from "./Ticketopen";
+import {useNavigate} from "react-router-dom";
+
+import '../css/Main.css'
+
+function MainBody() {
+
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    let dispatch = useDispatch();
+
+    let navigate = useNavigate();
+>>>>>>> origin/geonho
 
     const settings = {
         className: "center",
@@ -26,6 +48,7 @@ function MainBody() {
 
     return (
         <div className={'bodyStart'} {...settings}>
+<<<<<<< HEAD
             <div>
                 <h1>WHAT'S HOT</h1>
                 <br/>
@@ -40,17 +63,79 @@ function MainBody() {
                                 );
                             })
                         }
+=======
+
+            {/* ///////////////////////////// */}
+
+            <div className={'Mainbody'}>
+                <ImgSlide></ImgSlide>
+            </div>
+
+            {/* ///////////////////////////// */}
+
+            <div>
+                <div className={'divtitle'}>WHAT'S HOT</div>
+                <br/>
+                <div className={'hotImg'}>
+                    <Slider {...settings}>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 0);
+                            navigate('/classic/detail/0');
+                        } }>
+                            <img src={state.classic[0].imageadr}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 1);
+                            navigate('/concert/detail/1');
+                        } }>
+                            <img src={state.concert[1].imageadr}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 2);
+                            navigate('/theater/detail/2');
+                        } }>
+                            <img src={state.theater[2].imageadr}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 3);
+                            navigate('/musical/detail/3');
+                        } }>
+                            <img src={state.musical[3].imageadr}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 4);
+                            navigate('/classic/detail/4');
+                        } }>
+                            <img src={state.classic[4].imageadr}/>
+                        </div>
+                        <div style={{width: 320}} onClick={ ()=>{
+                            localStorage.setItem('performanceId', 5);
+                            navigate('/concert/detail/5');
+                        } }>
+                            <img src={state.concert[5].imageadr}/>
+                        </div>
+>>>>>>> origin/geonho
                     </Slider>
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div className={'ticketopen'}>
                 <h1>TICKET OPEN</h1>
                 <AsNavFor></AsNavFor>
+=======
+            {/* ///////////////////////////// */}
+
+            {/* 티켓 오픈 */}
+            <div className={'ticketopen'}>
+                <div className={'divtitle'}>TICKET OPEN</div>
+                <CenterMode></CenterMode>
+>>>>>>> origin/geonho
             </div>
 
 
             {/* 각종 정보 */}
+<<<<<<< HEAD
             <div className="cont">
                 <div className="con-left">
                     <p className="tell"><img src="http://tkfile.yes24.com/imgNew/main/tell.png" alt=""/></p>
@@ -95,6 +180,9 @@ function MainBody() {
                         src="http://tkfile.yes24.com/imgNew/main/deduction.png" alt=""/></a>
                 </div>
             </div>
+=======
+            <VarietyInfo></VarietyInfo>
+>>>>>>> origin/geonho
 
         </div>
     );
