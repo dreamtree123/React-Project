@@ -6,6 +6,18 @@ p,
 span {
   outline: none;
 }
+.renew-wrap {
+  width: 1300px;
+  margin: 0 auto;
+  padding-top: 55px;
+}
+.renew-content {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
 .rn-07 {
   border-bottom: 2px solid #333;
 }

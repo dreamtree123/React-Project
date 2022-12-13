@@ -4,6 +4,7 @@ import ConcertdetailBody from "./Concertdetailbody";
 function Concertdetailheader() {
 
     let state = useSelector((state) => state)
+
     let find = state.concert[state.performanceId]
 
     return (
@@ -63,9 +64,10 @@ function Concertdetailheader() {
                     <div className="rn-05">
                         <a href='src/DetailComponents/Concertdetailheader' onClick='' className='rn-bb03'>예매하기</a>
                     </div>
+                    <ConcertdetailBody/>
                 </div>
             </div>
-            <ConcertdetailBody/>
+            
         </div>
     )
 }

@@ -4,25 +4,39 @@ import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import '../css/Detailbody.css'
 import DetailMaps from './DetailMap';
+import MovieSeatPicker from "../Tiket/MovieSeatPicker";
+
 function Classicdetailbody(){
     let state = useSelector((state) => state)
     let [clickTab, setClickTab] = useState(0);
-
+    const [visible, setvisible] = useState(true);
     return(
     <table class="table">
         <div>
-
             <div class="rn-07">
-            <a href="rn-tab01" class="on"><NavLink onClick={()=>{setClickTab(0)}} eventKey="link0"><span>상세정보</span></NavLink></a>
-            <a href="rn-tab01" class="off"><NavLink onClick={()=>{setClickTab(1)}} eventKey="link0"><span>예매/취소 안내</span></NavLink></a>   
-            <TabContent clickTab={clickTab}/> 
-            {/* <Location></Location> */}
-            {/* <DetailMaps></DetailMaps> */}
+                {visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a>}
+                {!visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a>}
+                
+                <TabContent clickTab={clickTab}/> 
             </div>
-            
         </div>
-        </table>
-        
+    </table>    
     )
 }
 
@@ -162,29 +176,25 @@ function TabContent({clickTab}) {
                     <div class="rn-0806">
 					    <div class="rn-1101">
 						    <p class="rn-1101-tit">
-                                <span id="TheaterName">{state.classicinfo[4].place}</span>
+                                <span id="TheaterName">{find.place}</span>
                             </p>
 						    <p class="rn-1101-other">
-                                <span id="TheaterAddress">{state.classicinfo[4].placeadr} </span>
-                                <span id="TheaterTel">{state.classicinfo[4].placeconsultation} </span>
+                                <span id="TheaterAddress">{find.placeadr} </span>
+                                <span id="TheaterTel">{find.placeconsultation} </span>
                                 
                             </p>
 					    </div>
-					    {/* <div class="rn-1102" id="category">
-						    <a href="javascript:void(0);" class="rn-1102-btn2" id="PK6" data-order="1">주변 주차장</a>
-						    <a href="javascript:void(0);" class="rn-1102-btn3" id="FD6" data-order="2">주변 음식점</a>
-						    <a href="javascript:void(0);" class="rn-1102-btn4" id="CE7" data-order="3">주변 카페</a>
-						    <a href="javascript:void(0);" class="rn-1102-btn5" id="CS2" data-order="4">주변 편의점</a>
-					    </div> */}
 					    <div class="rn-1103">
                             <div class="rn-1103-btns">
                                 <a href="javascript:;" onclick="resetMap();">되돌아가기</a>
                                 <a href="javascript:;" onclick="quickSearch();">빠른길찾기</a>
                             </div>
-                            {/* <DetailMap /> */}
                             <Location />
                         </div>
 				    </div>
+                    {/* <div>
+                        <MovieSeatPicker />
+                    </div> */}
                 </div>
                 <div class="rn-tab-area rn-12 off" id="rn-tab05">
                 </div>
@@ -434,12 +444,6 @@ function TabContent({clickTab}) {
     
 }
 export default Classicdetailbody;
-
-
-
-
-
-
 
 const Location=()=>{
     let state = useSelector((state) => state);

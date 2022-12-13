@@ -64,9 +64,9 @@ function Musicaldetailheader() {
                         <div className="rn-05">
                             <a href='src/DetailComponents/Musicaldetailheader' onClick='' className='rn-bb03'>예매하기</a>
                         </div>
+                        <Musicaldetailbody/>
                     </div>
                 </div>
-            <Musicaldetailbody/>
         </div>
     )
 }

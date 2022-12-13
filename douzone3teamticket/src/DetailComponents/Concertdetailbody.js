@@ -2,24 +2,36 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
-import '../css/PageDetailBodyCSS.css'
+import '../css/Detailbody.css'
 
 function Concertdetailbody(){
     let state = useSelector((state) => state)
     let [clickTab, setClickTab] = useState(0);
-    
+    const [visible, setvisible] = useState(true);
     return(
     <table class="table">
         <div>
-
             <div class="rn-07">
-            <a href="rn-tab01" class="on"><NavLink onClick={()=>{setClickTab(0)}} eventKey="link0"><span>상세정보</span></NavLink></a>
-                {/* <a href="rn-tab01" class="on"><span>상세정보</span></a> */}
-                {/* <a href="rn-tab05"><span>예매/취소 안내</span></a> */}
-            <a href="rn-tab01" class="off"><NavLink onClick={()=>{setClickTab(1)}} eventKey="link0"><span>예매/취소 안내</span></NavLink></a>   
-            <TabContent clickTab={clickTab}/> 
+                {visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a>}
+                {!visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a>}
+                <TabContent clickTab={clickTab}/> 
             </div>
-            
         </div>
         </table>
         
@@ -77,7 +89,6 @@ function TabContent({clickTab}) {
                     <div class="rn-0803">
                         <p class="rn08-tit">공연정보</p>
                         <div class="rn08-txt" id="divPerfContent">
-                            {/* <p style="text-align: center;"></p> */}
                             <p className="PageDetailImage1">
                                 <img src={find.imageadr1} className="txc-image">
                                 </img>
