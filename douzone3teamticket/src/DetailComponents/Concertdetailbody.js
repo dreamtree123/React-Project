@@ -48,7 +48,7 @@ function TabContent({clickTab}) {
   let divstate = true;
 
   let find = state.concertinfo[state.performanceId]
-  
+  let find2 = state.concert[state.performanceId]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
@@ -68,8 +68,7 @@ function TabContent({clickTab}) {
                                 </p>
                                 <p class="rn-blue">※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.</p>
                                 <br />
-                                <p>※ 매수제한 : 1인 4매</p>
-                                <p>※ 일괄배송 : 2월 27일(월)</p>
+                                <p><p>※ 티켓 수령 : {find2.delivery}</p></p>
                             </div>
                         </div>
                     </div>

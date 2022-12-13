@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import '../css/Detailbody.css'
 import DetailMaps from './DetailMap';
-import MovieSeatPicker from "../Tiket/MovieSeatPicker";
+import MovieSeatPicker from "../Ticket/MovieSeatPicker";
 
 function Classicdetailbody(){
     let state = useSelector((state) => state)
@@ -50,6 +50,7 @@ function TabContent({clickTab}) {
   let divstate = true;
   
   let find = state.classicinfo[state.performanceId]
+  let find2 = state.classic[state.performanceId]
 
   return (
       <div className= {`start  ${fade}`} >
@@ -70,8 +71,7 @@ function TabContent({clickTab}) {
                                 </p>
                                 <p class="rn-blue">※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.</p>
                                 <br />
-                                <p>※ 매수제한 : 1인 4매</p>
-                                <p>※ 일괄배송 : 2월 27일(월)</p>
+                                <p>※ 티켓 수령 : {find2.delivery}</p>
                             </div>
                         </div>
                     </div>
