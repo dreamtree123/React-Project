@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"
+import { configureStore, createSlice, current } from "@reduxjs/toolkit"
 
 let concert = createSlice({
     name: 'concert',
@@ -46,8 +46,35 @@ let concert = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-44299.jpg'
         }
     ]
-})
-// export let { changeName, userNameChange, increase } = user.actions
+    , reducers : {
+        sortPerformance (state, action) {   
+
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                // console.log(state);
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                // console.log(state);
+                // state.performanceId = 
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            // console.log(state);
+            return state;
+            } 
+        }}
+    }
+)
+export let { sortPerformance } = concert.actions
 
 let concertinfo = createSlice({
     name: 'concertinfo',
@@ -435,7 +462,6 @@ let categoryId = createSlice({
 // 카테고리 -> 디테일 화면전환시 id 저장
 let performanceId = createSlice({
     name: 'performanceId',
-    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
     initialState: 0
 })
 

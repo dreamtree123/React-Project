@@ -1,18 +1,20 @@
-import { useSelector } from "react-redux";
-import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
 import './Category.css'
 import styles from "./Category.module.css";
 
+import PerformanceSort from "./PerformanceSort";
+
 function Concert() {
     const [visibleList, setVisibleList] = useState(true);
     const [visibleAlbum, setVisibleAlbum] = useState(false);
+    
     return (
-        // let state = useSelector((state) => state);
-        // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
-
         <div>
+            <PerformanceSort/>
+            
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
                 {visibleList 
@@ -24,6 +26,7 @@ function Concert() {
             {visibleAlbum && <Concert_album />}
 
         </div >
+        
     );
 }
 
@@ -41,15 +44,18 @@ function Concert_list() {
                         <th scope="col">출연진</th>
                         <th scope="col">공연일</th>
                         <th scope="col">상영시간</th>
+                        <th scope="col">가격 (S석 기준)</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         state.concert.map((item, index) =>
+                        
                             <tr key={{ index }} className={styles.categoryContent}>
                                 {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
                                 <td>
-                                    <span onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
+                                    {/* <span onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }> */}
+                                    <span onClick={ ()=>{state.performanceId = index; naviate('/concert/detail');} }>
                                     <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
                                     </span>
                                 </td>
@@ -57,7 +63,11 @@ function Concert_list() {
                                 <td>{state.concert[index].cast}</td>
                                 <td>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday}</td>
                                 <td>{state.concert[index].showtime}</td>
+                                <td>{state.concert[index].priceS}원</td>
                             </tr>
+
+                            // console.log({item.title});
+                            
                         )
                     }
                 </tbody>
@@ -65,10 +75,11 @@ function Concert_list() {
         </div>
     );
 
+    
+
 }
 
 function Concert_album() {
-
     let state = useSelector((state) => state)
     let naviate = useNavigate()
 
@@ -84,7 +95,8 @@ function Concert_album() {
                             state.performanceId = {index};
                             naviate('/concert/detail/' + {index}); */}
                             
-                            <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
+                            {/* <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }> */}
+                            <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail');} }>
                                 <img src={state.concert[index].imageadr}></img>
                             </span>
                             
@@ -92,13 +104,13 @@ function Concert_album() {
                                 <span className="stuff_title">{state.concert[index].title}</span><br />
                                 <span>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday} </span><br />
                                 <span>{state.concert[index].showtime}</span><br />
+                                <span>{state.concert[index].priceS}원</span><br />
                             </div>
                         </div>
                     )
                 }
             </div>
         </div>
-
     );
 }
 

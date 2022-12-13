@@ -1,20 +1,19 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
 import './Category.css'
 import styles from "./Category.module.css";
 
+import PerformanceSort from "./PerformanceSort";
+
 function Musical() {
     const [visibleList, setVisibleList] = useState(true);
     const [visibleAlbum, setVisibleAlbum] = useState(false);
-    return (
-        // let state = useSelector((state) => state);
-        // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
 
+    return (
         <div>
-            {/* <button onClick={() => { <Musical_album /> }}>앨범</button>
-            {/* <button onClick={() => { <Musical_list /> }}>리스트</button> */}
+            <PerformanceSort/>
 
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>

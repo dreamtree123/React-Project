@@ -40,3 +40,19 @@
 .categoryImg:hover{
     transform: scale(1.1);
 }
+
+.sort_performance {
+    display: flex;
+    float: right;
+    /* width: 85%; */
+    margin-top: 20px;
+    padding-right: 850px;
+}
+
+.sort_performance p {
+    font-weight: bold;
+}
+
+.sort_performance p:hover {
+    color : #6c757d;
+}

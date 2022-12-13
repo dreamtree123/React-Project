@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import '../css/PageDetailBodyCSS.css'
 
 function Concertdetailbody(){
-    let state = useSelector((state) => state)
     let [clickTab, setClickTab] = useState(0);
     
     return(
@@ -32,9 +31,10 @@ function TabContent({clickTab}) {
     setTimeout(() => {  setFade('end') }, 10);
     return()=>{  setFade('') }
   }, [clickTab])
-  let state = useSelector((state) => state)
+  
   let divstate = true;
 
+  let state = useSelector((state) => state)
   let find = state.concertinfo[state.performanceId]
   
   return (

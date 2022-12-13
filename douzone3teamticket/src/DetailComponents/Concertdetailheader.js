@@ -2,9 +2,7 @@ import { useSelector } from "react-redux";
 import ConcertdetailBody from "./Concertdetailbody";
 
 function Concertdetailheader() {
-
     let state = useSelector((state) => state)
-
     let find = state.concert[state.performanceId]
 
     return (
