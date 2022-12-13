@@ -4,7 +4,7 @@ import { sortConcert } from "../store";
 import { sortMusical } from "../store";
 import { sortTheater } from "../store";
 import { sortClassic } from "../store";
-import styles from "./Category.module.css";
+import styles from "../css/Category.module.css";
 
 //Concert 정렬
 const ConcertSort = () => {

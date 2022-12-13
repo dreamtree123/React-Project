@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
-import './Category.css'
-import styles from "./Category.module.css";
+import '../css/Category.css'
+import styles from "../css/Category.module.css";
 
 import {MusicalSort} from "./PerformanceSort";
 

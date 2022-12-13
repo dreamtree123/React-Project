@@ -61,7 +61,6 @@
     margin-top: 20px;
     margin-bottom: -150px;
     margin-right: -1000px;
-    
 }
 
 .sort_performance p {
@@ -70,4 +69,8 @@
 
 .sort_performance p:hover {
     color : #6c757d;
+}
+
+.sort_performance p:focus {
+    color : red;
 }
