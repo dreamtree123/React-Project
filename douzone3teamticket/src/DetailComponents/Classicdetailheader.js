@@ -64,9 +64,10 @@ function Classicdetailheader() {
                     <div className="rn-05">
                         <a href='src/DetailComponents/Classicdetailheader' onClick='' className='rn-bb03'>예매하기</a>
                     </div>
+                    <ClassicdetailBody/>
                 </div>
             </div>
-            <ClassicdetailBody/>
+            
         </div>
     )
 }
