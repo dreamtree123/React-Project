@@ -23,6 +23,7 @@ import Musicaldetailheader from "./DetailComponents/Musicaldetailheader";
 import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
 
+
 function App() {
 
     let state = useSelector((state) => state)
