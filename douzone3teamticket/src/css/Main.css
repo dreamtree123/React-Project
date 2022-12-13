@@ -1,10 +1,5 @@
 .Mainbody{
-<<<<<<< HEAD
-    margin : 3rem;
-    margin-top : 6rem;
-=======
     margin-bottom: 4rem;
->>>>>>> origin/geonho
 }
 
 .Container{
@@ -29,8 +24,6 @@
     margin-top: 5rem;
 }
 
-<<<<<<< HEAD
-=======
 .divtitle{
     font-size: 3rem;
     font-weight: bold;
@@ -41,7 +34,6 @@
 }
 
 
->>>>>>> origin/geonho
 .hotImg{
     /*background-color: #282c34;*/
     padding-left:0.5rem;
@@ -57,12 +49,6 @@
 .hotImg div{
     margin-left: 1rem;
     margin-right: 1rem;
-<<<<<<< HEAD
-}
-
-.ticketopen{
-    margin-top: 5rem;
-=======
     margin: 0 auto;
     width: 95%;
 }
@@ -70,7 +56,6 @@
 .ticketopen{
     margin-top: 10rem;
     margin-bottom: 0.5rem;
->>>>>>> origin/geonho
 }
 
 .open{
@@ -119,11 +104,7 @@
     margin-top: 10rem;
 }
 
-<<<<<<< HEAD
-.con-left, .con-center, .con-right{
-=======
 .con-left, .infoCenter, .con-right{
->>>>>>> origin/geonho
     margin-left:5rem;
     margin-right:5rem;
 }
@@ -150,9 +131,6 @@
 .userImg{
     width: 3rem;
     filter: invert();
-<<<<<<< HEAD
-}
-=======
 }
 
 .loginForm{
@@ -183,4 +161,3 @@
     margin-top: 3rem;
 }
 
->>>>>>> origin/geonho

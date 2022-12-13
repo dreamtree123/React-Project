@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import MainNav from "./MainComponents/MainNav";
-import ImgSlide from "./MainComponents/ImgSlide";
-import MainBody from "./MainComponents/MainBody";
-import Footer from "./MainComponents/Footer";
-import Classic from "./DetailComponents/Classicdetailheader";
-import Theater from "./DetailComponents/Theaterdetailheader";
-import Concert from "./DetailComponents/Concertdetailheader";
-import Musical from "./DetailComponents/Musicaldetailheader";
-
-import './App.css';
-
-function App() {
-=======
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,17 +27,10 @@ function App() {
 
     let state = useSelector((state) => state)
 
->>>>>>> origin/geonho
     return (
         <div className="App">
             <MainNav></MainNav>
 
-<<<<<<< HEAD
-            {/* <ImgSlide></ImgSlide> */}
-            <div className={'Mainbody'}>
-                {/* <MainBody></MainBody> */}
-                <Classic></Classic>
-=======
             <Routes>
                 <Route path='/' element={<MainBody></MainBody>} />
                 {/* <Route path='/' element={<Concertdetailheader></Concertdetailheader>}/> */}
@@ -90,7 +69,6 @@ function App() {
             {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
                 {/* <MainBody></MainBody> */}
->>>>>>> origin/geonho
                 
             </div>
 
@@ -99,8 +77,4 @@ function App() {
     );
 }
 
-<<<<<<< HEAD
 export default App;
-=======
-export default App;
->>>>>>> origin/geonho
