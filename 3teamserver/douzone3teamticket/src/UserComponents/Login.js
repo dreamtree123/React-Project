@@ -12,6 +12,17 @@ function Login() {
         return state;
     });
 
+    function logincheck(tf) {
+        let n = state.userInfo
+        let i;
+        for(i = 0; i < n.length; i++){
+            if(n[i].userid == localStorage.getItem('userId')){
+                return true;
+            }
+        }
+        return false;
+    }
+
     return (
 
         <div className={'loginForm'}>
@@ -33,8 +44,13 @@ function Login() {
 
                     localStorage.setItem('userId', c);
 
-                    if (c !== ''){
+                    let tf = logincheck(false);
+
+                    if (c !== '' && tf == true){
+                        alert('로그인 성공');
                         navigate('/');
+                    }else if(tf == false){
+                        alert('아이디가 없습니다.');
                     }
                 }}>Login</button>
                 <button type="button" className="btn btn-dark" onClick={ ()=>{ navigate('/user/join'); }}>Join</button>

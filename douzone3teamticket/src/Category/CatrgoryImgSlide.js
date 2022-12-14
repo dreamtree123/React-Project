@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 import '../css/CategoryImgSlide.css'
 
+
 const ConcertSlide = () => {
 
     let state = useSelector((state) => {
@@ -17,8 +18,8 @@ const ConcertSlide = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "-70px",
-        slidesToShow: 4,
+        centerPadding: "70px",
+        slidesToShow: 2,
         speed: 900,
         variableWidth: true,
         dots: true,
@@ -28,9 +29,11 @@ const ConcertSlide = () => {
 
     return (
             <div>
-                <div className={'divtitle'}>HOT</div>
+                {/* <div className={'divtitle'}>HOT</div> */}
+                <div className={'slideTitle'}>HOT CONCERT LIST</div>
                 <br/>
-                <div className={'hotImg'}>
+                {/* <div className={'hotImg'}> */}
+                <div className={'slideImg'}>
                     <Slider {...settings}>
 
                         <div style={{width: 320}} onClick={ ()=>{
@@ -40,40 +43,35 @@ const ConcertSlide = () => {
                             <img src={state.concert[0].imageadr}/>
                         </div>
 
-                        {/* <div style={{width: 320}} onClick={ ()=>{ */}
-                        <div className={'photo'} onClick={ ()=>{
+                        <div style={{width: 320}} onClick={ ()=>{
                             localStorage.setItem('performanceId', 1);
                             navigate('/concert/detail/1');
                         } }>
                             <img src={state.concert[1].imageadr}/>
                         </div>
 
-                        {/* <div style={{width: 320}} onClick={ ()=>{ */}
-                        <div className={'photo'} onClick={ ()=>{
+                        <div style={{width: 320}} onClick={ ()=>{
                             localStorage.setItem('performanceId', 2);
                             navigate('/concert/detail/2');
                         } }>
                             <img src={state.concert[2].imageadr}/>
                         </div>
 
-                        {/* <div style={{width: 320}} onClick={ ()=>{ */}
-                        <div className={'photo'} onClick={ ()=>{
+                        <div style={{width: 320}} onClick={ ()=>{
                             localStorage.setItem('performanceId', 3);
                             navigate('/concert/detail/3');
                         } }>
                             <img src={state.concert[3].imageadr}/>
                         </div>
 
-                        {/* <div style={{width: 320}} onClick={ ()=>{ */}
-                        <div className={'photo'} onClick={ ()=>{
+                        <div style={{width: 320}} onClick={ ()=>{
                             localStorage.setItem('performanceId', 4);
                             navigate('/concert/detail/4');
                         } }>
                             <img src={state.concert[4].imageadr}/>
                         </div>
 
-                        {/* <div style={{width: 320}} onClick={ ()=>{ */}
-                        <div className={'photo'} onClick={ ()=>{
+                        <div style={{width: 320}} onClick={ ()=>{
                             localStorage.setItem('performanceId', 5);
                             navigate('/concert/detail/5');
                         } }>

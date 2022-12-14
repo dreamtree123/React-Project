@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
 import ClassicdetailBody from "./Classicdetailbody";
+import {useNavigate} from "react-router-dom";
 
 function Classicdetailheader() {
 
     let state = useSelector((state) => state)
 
     let find = state.classic[localStorage.getItem('performanceId')]
+
+    let navigate = useNavigate();
 
     return (
         <div>
@@ -62,11 +65,20 @@ function Classicdetailheader() {
                     </div>
 
                     <div className="rn-05">
-                        <a href='src/DetailComponents/Classicdetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                        <a onClick={ () => {
+                            if (localStorage.getItem('userId') == ''){
+                                alert('로그인 필요');
+                                navigate('/user/login');
+                            }else{
+                                state.gocategory = 'classic';
+                                navigate('/seat');
+                            }
+                        } } className='rn-bb03'>예매하기</a>
                     </div>
+                    <ClassicdetailBody/>
                 </div>
             </div>
-            <ClassicdetailBody/>
+            
         </div>
     )
 }
