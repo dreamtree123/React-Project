@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
 
+import {ClassicSlide} from "./CatrgoryImgSlide";
 import {ClassicSort} from "./PerformanceSort";
 
 function Classic() {
@@ -13,6 +14,9 @@ function Classic() {
 
     return (
         <div className={styles.categoryCont}>
+
+        <ClassicSlide/>
+
         <ClassicSort/>
 
         <div>

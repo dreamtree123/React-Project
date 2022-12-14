@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
 
+import {MusicalSlide} from "./CatrgoryImgSlide";
 import {MusicalSort} from "./PerformanceSort";
 
 function Musical() {
@@ -13,6 +14,9 @@ function Musical() {
 
     return (
         <div className={styles.categoryCont}>
+
+        <MusicalSlide/>
+
         <MusicalSort/>
 
         <div>

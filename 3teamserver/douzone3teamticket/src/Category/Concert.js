@@ -6,8 +6,8 @@ import '../css/Main.css'
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
 
-import {ConcertSort} from "./PerformanceSort";
 import {ConcertSlide} from "./CatrgoryImgSlide";
+import {ConcertSort} from "./PerformanceSort";
 
 function Concert() {
     const [visibleList, setVisibleList] = useState(true);
@@ -16,9 +16,7 @@ function Concert() {
     return (
         <div className={styles.categoryCont}>
         
-        {/* <div className="Mainbody"> */}
-            <ConcertSlide/>
-        {/* </div> */}
+        <ConcertSlide/>
         
         <ConcertSort/>
 

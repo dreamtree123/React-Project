@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
 
+import {TheaterSlide} from "./CatrgoryImgSlide";
 import {TheaterSort} from "./PerformanceSort";
 
 function Theater() {
@@ -13,6 +14,9 @@ function Theater() {
 
     return (
         <div className={styles.categoryCont}>
+
+        <TheaterSlide/>
+
         <TheaterSort/>
         
         <div>
