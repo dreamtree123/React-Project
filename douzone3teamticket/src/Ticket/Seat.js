@@ -3,7 +3,7 @@ import SeatAllocationComponent from "./SeatAllocationComponent";
 
 export default function Seat() {
     return (
-        <div className="App">
+        <div className="Seatmap">
             <SeatAllocationComponent />
         </div>
     );

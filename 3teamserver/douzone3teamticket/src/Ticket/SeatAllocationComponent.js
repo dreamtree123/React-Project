@@ -14,6 +14,8 @@ export default function SeatAllocationComponent() {
 
     return (
         <div>
+
+
             <div style={{margin: "100px"}}>
                 <SeatPicker
                     rows= {state.seatmap}
