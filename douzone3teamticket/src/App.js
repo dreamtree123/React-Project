@@ -24,6 +24,7 @@ import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
 
 import Seat from "./Ticket/Seat";
+import FindMap from "./Ticket/FindMap";
 
 function App() {
 
@@ -67,6 +68,8 @@ function App() {
                 <Route path='/basket' element={<Basket></Basket>}/>
 
                 <Route path='/seat' element={<Seat></Seat>}/>
+
+                <Route path='/addr' element={<FindMap></FindMap>}/>
 
             </Routes>
 

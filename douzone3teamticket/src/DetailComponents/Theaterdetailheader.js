@@ -70,8 +70,8 @@ function Theaterdetailheader() {
                                 alert('로그인 필요');
                                 navigate('/user/login');
                             }else{
-                                state.gocategory = 'theater';
-                                navigate('/seat');
+                                localStorage.setItem('gocategory', 'theater');
+                                window.location.href='/seat';
                             }
                         } } className='rn-bb03'>예매하기</a>
                     </div>

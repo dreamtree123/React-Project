@@ -1,0 +1,63 @@
+input[type='checkbox']{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+    outline: none !important;
+    border-radius: 2px;
+    background: gray;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+input[type="checkbox"]:hover {
+    border-color: rgba(170, 170, 170, 0.5);
+    transform:scale(1.2);
+}
+
+input[type="checkbox"]:checked {
+    background-color: black;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.seatcs{
+    display: flex;
+    /*margin: 0 auto;*/
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.sideclass{
+    /*text-align: center;*/
+    width: 30%;
+    margin-left: 5rem;
+}
+
+.sideclass span{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.seatnum{
+    font-size: 2rem;
+    margin-top: 5rem;
+
+}
+
+.seatprice{
+    font-size: 2rem;
+    margin-top: 5rem;
+    /*color: red;*/
+}
+
+.vipclass{
+    margin-left: 5rem;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////*/
