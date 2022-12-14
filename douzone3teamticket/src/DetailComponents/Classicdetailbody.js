@@ -2,25 +2,40 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
-import '../css/PageDetailBodyCSS.css'
+import '../css/Detailbody.css'
+import DetailMaps from './DetailMap';
 
 function Classicdetailbody(){
     let state = useSelector((state) => state)
     let [clickTab, setClickTab] = useState(0);
-
+    const [visible, setvisible] = useState(true);
     return(
     <table class="table">
         <div>
-
             <div class="rn-07">
-            <a href="rn-tab01" class="on"><NavLink onClick={()=>{setClickTab(0)}} eventKey="link0"><span>상세정보</span></NavLink></a>
-            <a href="rn-tab01" class="off"><NavLink onClick={()=>{setClickTab(1)}} eventKey="link0"><span>예매/취소 안내</span></NavLink></a>   
-            <TabContent clickTab={clickTab}/> 
+                {visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(0);setvisible(true);}}>
+                        <span>상세정보</span>
+                    </NavLink>
+                </a>}
+                {!visible ? <a href="rn-tab01" class="on">
+                <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a> : <a href="rn-tab01" class="off">
+                    <NavLink onClick={()=>{setClickTab(1);setvisible(false);}}>
+                        <span>예매/취소 안내</span>
+                    </NavLink>
+                </a>}
+                
+                <TabContent clickTab={clickTab}/> 
             </div>
-            
         </div>
-        </table>
-        
+    </table>    
     )
 }
 
@@ -34,7 +49,7 @@ function TabContent({clickTab}) {
   let divstate = true;
 
     let find = state.classicinfo[localStorage.getItem('performanceId')]
-
+    let find2 = state.classic[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">
@@ -54,8 +69,7 @@ function TabContent({clickTab}) {
                                 </p>
                                 <p class="rn-blue">※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.</p>
                                 <br />
-                                <p>※ 매수제한 : 1인 4매</p>
-                                <p>※ 일괄배송 : 2월 27일(월)</p>
+                                <p>※ 티켓 수령 : {find2.delivery}</p>
                             </div>
                         </div>
                     </div>
@@ -157,6 +171,28 @@ function TabContent({clickTab}) {
                             </div>
                         </div>
                     </div>
+                    <div class="rn-0806">
+					    <div class="rn-1101">
+						    <p class="rn-1101-tit">
+                                <span id="TheaterName">{find.place}</span>
+                            </p>
+						    <p class="rn-1101-other">
+                                <span id="TheaterAddress">{find.placeadr} </span>
+                                <span id="TheaterTel">{find.placeconsultation} </span>
+                                
+                            </p>
+					    </div>
+					    <div class="rn-1103">
+                            <div class="rn-1103-btns">
+                                <a href="javascript:;" onclick="resetMap();">되돌아가기</a>
+                                <a href="javascript:;" onclick="quickSearch();">빠른길찾기</a>
+                            </div>
+                            <Location />
+                        </div>
+				    </div>
+                    {/* <div>
+                        <MovieSeatPicker />
+                    </div> */}
                 </div>
                 <div class="rn-tab-area rn-12 off" id="rn-tab05">
                 </div>
@@ -406,3 +442,32 @@ function TabContent({clickTab}) {
     
 }
 export default Classicdetailbody;
+
+const Location=()=>{
+    let state = useSelector((state) => state);
+    let find = state.classicinfo[localStorage.getItem('performanceId')];
+    const {kakao} = window;
+    useEffect(()=>{
+      var container = document.getElementById('map');
+      var options = {
+        center: new kakao.maps.LatLng(find.latitude, find.longitude),
+        level: 3
+      };
+  
+      var map = new kakao.maps.Map(container, options);
+      var markerPosition  = new kakao.maps.LatLng(find.latitude, find.longitude); 
+      var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+    marker.setMap(map);
+  
+      }, [])
+  
+  
+      return (
+          <div>
+          <div id="map" style={{width:"1200px", height:"700px"}}></div>
+         
+          </div>
+      )
+  }

@@ -6,6 +6,17 @@ p,
 span {
   outline: none;
 }
+.renew-wrap {
+  width: 1300px;
+  margin: 0 auto;
+  padding-top: 55px;
+}
+.renew-content {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
 
 .rn-07 {
   border-bottom: 2px solid #333;
@@ -426,4 +437,28 @@ p {
   height: auto;
   padding: 8px 10px 4px 22px;
   line-height: 20px;
+}
+.rn-08 div.rn-0806 {
+  padding-bottom: 0;
+}
+.rn-1101-tit {
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  padding: 85px 0 42px 0;
+}
+
+.rn-1101-other {
+  padding: 0 7px;
+  font-size: 16px;
+  color: #666;
+  letter-spacing: -0.01em;
+}
+
+.rn-1101-other span {
+  padding: 0 7px;
+  font-size: 16px;
+  color: #666;
+  letter-spacing: -0.01em;
 }

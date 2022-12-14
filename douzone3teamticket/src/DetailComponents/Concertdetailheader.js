@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import ConcertdetailBody from "./Concertdetailbody";
+import {useNavigate} from "react-router-dom";
 
 function Concertdetailheader() {
 
     let state = useSelector((state) => state)
+    let navigate = useNavigate();
     
     let find; 
 
@@ -74,11 +76,20 @@ function Concertdetailheader() {
                     </div>
 
                     <div className="rn-05">
-                        <a href='src/DetailComponents/Concertdetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                        <a onClick={ () => {
+                            if (localStorage.getItem('userId') == ''){
+                                alert('로그인 필요');
+                                navigate('/user/login');
+                            }else{
+                                state.gocategory = 'concert';
+                                navigate('/seat');
+                            }
+                        } }className='rn-bb03'>예매하기</a>
                     </div>
+                    <ConcertdetailBody/>
                 </div>
             </div>
-            <ConcertdetailBody/>
+            
         </div>
     )
 }

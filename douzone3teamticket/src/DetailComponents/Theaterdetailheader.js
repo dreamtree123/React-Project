@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import TheaterdetailBody from "./Theaterdetailbody";
+import {useNavigate} from "react-router-dom";
 
 function Theaterdetailheader() {
 
     let state = useSelector((state) => state)
+    let navigate = useNavigate();
 
     let find;
 
@@ -74,11 +76,19 @@ function Theaterdetailheader() {
                     </div>
 
                     <div className="rn-05">
-                        <a href='src/DetailComponents/Theaterdetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                        <a onClick={ () => {
+                            if (localStorage.getItem('userId') == ''){
+                                alert('로그인 필요');
+                                navigate('/user/login');
+                            }else{
+                                state.gocategory = 'theater';
+                                navigate('/seat');
+                            }
+                        } } className='rn-bb03'>예매하기</a>
                     </div>
+                    <TheaterdetailBody/>
                 </div>
             </div>
-            <TheaterdetailBody/>
         </div>
     )
 }

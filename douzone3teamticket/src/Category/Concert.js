@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
+import '../css/Main.css'
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
 
 import {ConcertSort} from "./PerformanceSort";
+import {ConcertSlide} from "./CatrgoryImgSlide";
 
 function Concert() {
     const [visibleList, setVisibleList] = useState(true);
@@ -13,6 +15,11 @@ function Concert() {
 
     return (
         <div className={styles.categoryCont}>
+        
+        {/* <div className="Mainbody"> */}
+            <ConcertSlide/>
+        {/* </div> */}
+        
         <ConcertSort/>
 
         <div>
