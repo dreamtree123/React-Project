@@ -60,6 +60,7 @@ export default function SeatAllocationComponent() {
 
     useEffect(() => {
         console.log(total);
+        state.totalprice = total;
     },[total])
 
     function choiceSeat(w){

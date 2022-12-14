@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
 
 import SeatAllocationComponent from "./SeatAllocationComponent";
-import ZZZ from "./ZZZ";
-import FindMap from "./FindMap";
-import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+
+import Seattop from "./Seattop";
+import Seatbottom from "./Seatbottom";
+import '../css/SeatTB.css'
+import '../css/Seat.css'
 
 export default function Seat() {
 
@@ -17,19 +18,18 @@ export default function Seat() {
 
     return (
         <div className="Seatmap">
-            <SeatAllocationComponent />
-            {/*<button type="button" className="btn btn-dark" onClick={() => setShow(true)}>공지사항</button>*/}
+            <div>
+                <Seattop></Seattop>
+            </div>
 
-            <Modal
-                show={show}
-                onHide={() => setShow(false)}
-                dialogClassName="modal-90w"
-                aria-labelledby="example-custom-modal-styling-title"
-            >
-                <Modal.Body>
-                    <FindMap></FindMap>
-                </Modal.Body>
-            </Modal>
+            <div>
+                <SeatAllocationComponent />
+            </div>
+
+            <div>
+            <Seatbottom></Seatbottom>
+            </div>
+
         </div>
     );
 }

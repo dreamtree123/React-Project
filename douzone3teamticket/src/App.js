@@ -11,7 +11,6 @@ import Join from "./UserComponents/Join";
 import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
-import Basket from "./BasketComponents/Basket";
 
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
@@ -24,7 +23,6 @@ import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
 
 import Seat from "./Ticket/Seat";
-import FindMap from "./Ticket/FindMap";
 
 function App() {
 
@@ -65,18 +63,11 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>}/>
                 <Route path='/success' element={<Success></Success>}/>
 
-                <Route path='/basket' element={<Basket></Basket>}/>
-
                 <Route path='/seat' element={<Seat></Seat>}/>
-
-                <Route path='/addr' element={<FindMap></FindMap>}/>
 
             </Routes>
 
-            {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
-                {/* <MainBody></MainBody> */}
-                
             </div>
 
             <Footer></Footer>
