@@ -12,6 +12,7 @@ import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
 
+
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
 import Theater from "./Category/Theater";
@@ -71,6 +72,7 @@ function App() {
             </div>
 
             <Footer></Footer>
+
         </div>
     );
 }

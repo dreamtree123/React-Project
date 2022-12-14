@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { createPath, Link, useNavigate } from 'react-router-dom'
 
 import './Category.css'
 import styles from "./Category.module.css";
@@ -32,6 +32,42 @@ function Classic_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
+
+    let data = [];
+    let temp = [];
+
+    state.concert.map((data1) => {
+        temp.push(data1)
+    })
+
+    data.push(temp)
+    temp = [];
+
+    state.musical.map((data2) => {
+        temp.push(data2)
+    })
+
+    data.push(temp);
+    temp = [];
+
+
+    state.classic.map((data3) => {
+        temp.push(data3)
+    })
+
+    data.push(temp)
+    temp = [];
+
+    state.theater.map((data4) => {
+        temp.push(data4)
+    })
+
+    data.push(temp)
+    temp = [];
+
+    // console.log(data)
+    //titel 비교z를 위한 배열
+
     return (
         <div>
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
@@ -46,37 +82,11 @@ function Classic_list() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        state.classic.map((item, i) => [item].filter((val) => {
 
-                            if (search == "") {
-                                return val
-                            }
-                            else if
-                                (item.title.toLowerCase().includes(search.toLowerCase())) {
-                                return val
-                            }
-                        }).map((val, k) =>
-                            <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <td><img className={styles.categoryImg} src={state.classic[i].imageadr}></img></td> */}
-                                <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/classic/detail/' + i); }}>
-                                        <img className={styles.categoryImg} src={state.classic[i].imageadr}></img>
-                                    </span>
-                                </td>
-                                <td >{state.classic[i].title}</td>
-                                <td>{state.classic[i].cast}</td>
-                                <td>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday}</td>
-                                <td>{state.classic[i].showtime}</td>
-                            </tr>
-
-                        )
-                        )
-                    }
 
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 
 }
@@ -86,33 +96,12 @@ function Classic_album() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
+    let arr = [];
     return (
         <div>
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
-                {
-                    state.classic.map((item, i) => [item].filter((val) => {
-                        if (search == "") {
-                            return val
-                        }
-                        else if
-                            (item.title.toLowerCase().includes(search.toLowerCase())) {
-                            return val
-                        }
-                    }).map((val, k) => {
-                        return (
-                            <div className="stuff">
-                                <span className="stuff_img"><img src={state.classic[i].imageadr}></img></span>
-                                <div className="stuff_content">
-                                    <span className="stuff_title">{state.classic[i].title}</span><br />
-                                    {/* <span>{state.classic[i].cast}</span><br /> */}
-                                    <span>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday} </span><br />
-                                    <span>{state.classic[i].showtime}</span><br />
-                                </div>
-                            </div>
-                        )
-                    }))
-                }
+
 
             </div>
         </div>
