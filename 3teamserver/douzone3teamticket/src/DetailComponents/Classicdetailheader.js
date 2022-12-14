@@ -5,13 +5,24 @@ import {useNavigate} from "react-router-dom";
 function Classicdetailheader() {
 
     let state = useSelector((state) => state)
-
-    let find = state.classic[localStorage.getItem('performanceId')]
-
     let navigate = useNavigate();
+
+    let find;
+
+    function sortAfter (){
+        let i;
+        
+        for (i = 0; i < state.classic.length; i++) {
+            if(localStorage.getItem('performanceId') == state.classic[i].id){
+                find = state.classic[i];
+                break;
+            }
+        }
+    }
 
     return (
         <div>
+            {sortAfter()}
             <div className="renew-wrap">
                 <div className="renew-content">
 

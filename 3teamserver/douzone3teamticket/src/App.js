@@ -1,5 +1,5 @@
 import './App.css';
-import {Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import MainNav from "./MainComponents/MainNav";
@@ -36,17 +36,17 @@ function App() {
             <Routes>
                 <Route path='/' element={<MainBody></MainBody>} />
                 {/* <Route path='/' element={<Concertdetailheader></Concertdetailheader>}/> */}
-                <Route path='/concert' element={<Concert/>}/>
-                <Route path='/musical' element={<Musical/>} />
-                <Route path='/theater' element={<Theater/>}/>
-                <Route path='/classic' element={<Classic/>}/>
-            
+                <Route path='/concert' element={<Concert />} />
+                <Route path='/musical' element={<Musical />} />
+                <Route path='/theater' element={<Theater />} />
+                <Route path='/classic' element={<Classic />} />
+
                 {/* {
                     state.concert.map((item, i) =>
                       <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
                     )
                 }   */}
-
+                
                 <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
                 <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
@@ -55,14 +55,14 @@ function App() {
                 <Route path='/' element={<MainBody></MainBody>}/>
 
                 <Route path={'/user'}>
-                    <Route path='login' element={<Login></Login>}/>
-                    <Route path='join' element={<Join></Join>}/>
+                    <Route path='login' element={<Login></Login>} />
+                    <Route path='join' element={<Join></Join>} />
                 </Route>
 
                 <Route path='/mypage' element={<Mypage></Mypage>}></Route>
 
-                <Route path='/pay' element={<Pay></Pay>}/>
-                <Route path='/success' element={<Success></Success>}/>
+                <Route path='/pay' element={<Pay></Pay>} />
+                <Route path='/success' element={<Success></Success>} />
 
                 <Route path='/basket' element={<Basket></Basket>}/>
 
@@ -73,7 +73,6 @@ function App() {
             {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
                 {/* <MainBody></MainBody> */}
-                
             </div>
 
             <Footer></Footer>

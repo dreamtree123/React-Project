@@ -6,6 +6,7 @@ import '../css/Detailbody.css'
 
 function Concertdetailbody(){
     let state = useSelector((state) => state)
+    
     let [clickTab, setClickTab] = useState(0);
     const [visible, setvisible] = useState(true);
     return(
@@ -47,8 +48,9 @@ function TabContent({clickTab}) {
   let state = useSelector((state) => state)
   let divstate = true;
 
-  let find = state.concertinfo[localStorage.getItem('performanceId')]
-  let find2 = state.concert[localStorage.getItem('performanceId')]
+    let find = state.concertinfo[localStorage.getItem('performanceId')]
+    let find2 = state.concert[localStorage.getItem('performanceId')]
+
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div class="rn-tab-boxes">

@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"
+import { configureStore, createSlice, current } from "@reduxjs/toolkit"
 
 let concert = createSlice({
     name: 'concert',
@@ -25,7 +25,7 @@ let concert = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202210/20221024/20221024-43889.jpg'
         },
         {
-            id: 3, title: '[서울] 2022년 ‘Dream 55’ 나훈아 앵콜 콘서트', rate: ' 만 10세이상',
+            id: 3, title: '서울 2022년 ‘Dream 55’ 나훈아 앵콜 콘서트', rate: ' 만 10세이상',
             showtime: '총 120분', cast: '나훈아',
             priceVIP: 165000, priceSR: 143000, priceR: 143000, priceS: 121000,
             showyear: 2022, showmonth: 12, showday: 18, starttime: 15, delivery: '현장 수령',
@@ -46,8 +46,34 @@ let concert = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-44299.jpg'
         }
     ]
-})
-// export let { changeName, userNameChange, increase } = user.actions
+    , reducers : {
+        sortConcert (state, action) {   
+
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                // console.log(state);
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                // console.log(state);
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            // console.log(state);
+            return state;
+            }
+        }}
+    }
+)
+export let { sortConcert } = concert.actions
 
 let concertinfo = createSlice({
     name: 'concertinfo',
@@ -108,7 +134,6 @@ let concertinfo = createSlice({
         }
     ]
 })
-// export let { increase2, decrease2, set } = cart.actions
 
 let theater = createSlice({
     name: 'theater',
@@ -151,7 +176,29 @@ let theater = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221206/20221206-43999.jpg'
         }
     ]
+    , reducers : {
+        sortTheater (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
+export let { sortTheater } = theater.actions
 
 let theaterinfo = createSlice({
     name: 'theaterinfo',
@@ -254,10 +301,29 @@ let musical = createSlice({
             showyear: 2022, showmonth: 11, showday: 10, starttime: 19, delivery: '현장 수령만 가능',
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-43451.jpg'
         }
-    ]
+    ], reducers : {
+        sortMusical (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
-
-// export let { changeName, userNameChange, increase } = user.actions
+export let { sortMusical } = musical.actions
 
 
 
@@ -372,8 +438,29 @@ let classic = createSlice({
             showyear: 2022, showmonth: 12, showday: 29, starttime: 20, delivery: '현장 수령',
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221107/20221107-44031.jpg'
         }
-    ]
+    ], reducers : {
+        sortClassic (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
+export let { sortClassic } = classic.actions
 
 let classicinfo = createSlice({
     name: 'classicinfo',
@@ -744,8 +831,8 @@ let check = createSlice({
 // 사용자 정보
 let userInfo = createSlice({
     name: 'userInfo',
-    initialState: [{id : 0, name: 'King', userid: '1111', pwd: '1111', email:'123@gmail.com'},
-        {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com'}]
+    initialState: [{ id: 0, name: 'King', userid: '1111', pwd: '1111', email: '123@gmail.com' },
+    { id: 1, name: 'Smile', userid: '2222', pwd: '2222', email: '456@gmail.com' }]
 })
 
 // 예매창으로 넘어가기 위해 사용
