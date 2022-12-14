@@ -1,5 +1,5 @@
 .categoryCont {
-    height: 1600px;
+    height: 2000px;
 }
 
 .categoryTable {
@@ -64,11 +64,12 @@
 
 .sort_performance p:hover {
     color : #6c757d;
+    /* color:#d94844 */
 }
 
-.sort_performance p:focus {
+/* .sort_performance p:focus {
     color : red;
-}
+} */
 
 /* 이미지 슬라이드 */
 .sliderImg {

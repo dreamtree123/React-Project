@@ -4,18 +4,25 @@
   margin-top: 50px;
 }
 
+.slideTitleColor {
+  /* color:skyblue */
+  color:#d94844
+}
+
 .slideImg {
   /*background-color: #282c34;*/
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  /* padding-top: 1rem; */
-  /* padding-bottom: 0.5rem; */
-  margin-bottom: 50px;
+  max-width: 1300px;
+  margin: 80px auto;
+
 }
 
 .slideImg img {
+  /* width: 200px;
+  height: 200px; */
   width: 300px;
-  height: 300px;
+  height: 400px;
 
 }
 
@@ -24,7 +31,7 @@
   margin-right: 1rem;
   /* margin : 10px 1rem; */
   margin: 0 auto;
-  margin-bottom: -30px;
+  /* margin-bottom: -30px; */
   width: 85%;
 }
 

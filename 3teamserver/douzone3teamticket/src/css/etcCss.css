@@ -44,7 +44,7 @@
 
 .card{
     width: 20%;
-    height: 28rem;
+    height: 40rem;
     margin-top: 50px;
     border-radius: 10px 10px;
     
@@ -61,9 +61,10 @@
 }
 
 .card button {
-    width: 50%;
-    /* margin-top: 1rem; */
+    /* width: 50%; */
+    width: 100px;
     margin: auto auto;
+    margin-top: 20px;
 }
 
 .list-group-item {
@@ -116,6 +117,10 @@
 .profileTable td {
     width: 500px;
 }
+
+
+/* mypage - Management */
+
 
 
 /* mypage - Inquiry */
@@ -173,6 +178,11 @@
     font-size: 8px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.askbtn button {
+    width: 100px;
+    margin: 0 10px;
 }
 
 

@@ -29,7 +29,7 @@ const ConcertSlide = () => {
 
     return (
             <div>
-                <div className={'slideTitle'}>HOT CONCERT LIST</div>
+                <div className={'slideTitle'}><span className="slideTitleColor">ㅡ</span> CONCERT <span className="slideTitleColor">ㅡ</span></div>
                 <br/>
                 <div className={'slideImg'}>
                     <Slider {...settings}>
@@ -106,7 +106,7 @@ const MusicalSlide = () => {
 
     return (
             <div>
-                <div className={'slideTitle'}>HOT MUSICAL LIST</div>
+                <div className={'slideTitle'}><span className="slideTitleColor">ㅡ</span> MUSICAL <span className="slideTitleColor">ㅡ</span></div>
                 <br/>
                 <div className={'slideImg'}>
                     <Slider {...settings}>
@@ -183,7 +183,7 @@ const TheaterSlide = () => {
 
     return (
             <div>
-                <div className={'slideTitle'}>HOT THEATER LIST</div>
+                <div className={'slideTitle'}><span className="slideTitleColor">ㅡ</span> THEATER <span className="slideTitleColor">ㅡ</span></div>
                 <br/>
                 <div className={'slideImg'}>
                     <Slider {...settings}>
@@ -260,7 +260,7 @@ const ClassicSlide = () => {
 
     return (
             <div>
-                <div className={'slideTitle'}>HOT CLASSIC LIST</div>
+                <div className={'slideTitle'}><span className="slideTitleColor">ㅡ</span> CLASSIC <span className="slideTitleColor">ㅡ</span></div>
                 <br/>
                 <div className={'slideImg'}>
                     <Slider {...settings}>
