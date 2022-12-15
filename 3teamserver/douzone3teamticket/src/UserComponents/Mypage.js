@@ -2,6 +2,9 @@ import {useNavigate} from "react-router-dom";
 import '../css/etcCss.css'
 import {useState} from "react";
 import {useSelector} from "react-redux";
+
+import Table from 'react-bootstrap/Table';
+
 function Mypage(){
 
     let navigate = useNavigate();
@@ -133,14 +136,58 @@ function Management(){
         return state;
     });
 
+    let pur = JSON.parse(localStorage.getItem("buy") || "[]");
+    let findbuy = [];
+
+
+    function findpurchased(){
+
+        let fn = localStorage.getItem('userId');
+
+        let i;
+        for(i = 0; i < pur.length; i++){
+            if(pur[i].userid == fn){
+                findbuy.push(pur[i]);
+            }
+        }
+
+        return(
+            <div>
+                <Table striped bordered hover>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>구매 날짜</th>
+                        <th>좌석</th>
+                        <th>총 금액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        findbuy.map((number, index) => (
+                            <tr>
+                                <td>{index + 1}</td>
+                                <td>{number.purdate}</td>
+                                <td>{number.seatnum}</td>
+                                <td>{number.totalprice}</td>
+                            </tr>
+                        ))
+                    }
+                    </tbody>
+                </Table>
+
+            </div>
+        );
+    }
+
     return(
         <div>
             <img className={"profileImg"} src="https://cdn.pixabay.com/photo/2017/03/29/04/09/shopping-icon-2184065_960_720.png"/>
             <h1 className={"profileTitle"}>예매 내역</h1>
             <hr/><br/>
 
-            <div>
-                
+            <div className={'buylist'}>
+                {findpurchased()}
             </div>
         </div>
     );

@@ -57,7 +57,7 @@ function Pay() {
 
             pur.push({userid: localStorage.getItem('userId'), seatnum:[...state.selectseat],
             cate: localStorage.getItem('gocategory'), cateid: localStorage.getItem('performanceId'),
-            purdate: buydate});
+            purdate: buydate, totalprice : state.totalprice});
 
             localStorage.setItem('buy', JSON.stringify(pur));
 
