@@ -26,10 +26,6 @@ export default function Seat() {
                 <SeatAllocationComponent />
             </div>
 
-            <div>
-            <Seatbottom></Seatbottom>
-            </div>
-
         </div>
     );
 }

@@ -86,7 +86,7 @@ function Seattop() {
                                     </li>
                                     <li className="cell_discount_detail2 order_address_form box_address">
                                         <div>
-                                            <span id="delivery-addr">강원도 춘천시 중앙로3가 방송길7번길 6 402호</span>
+                                            <span id="delivery-addr">{u.address}</span>
                                         </div>
                                     </li>
                                 </ul>

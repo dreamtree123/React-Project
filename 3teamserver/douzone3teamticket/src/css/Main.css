@@ -162,3 +162,11 @@
   margin: 1rem;
   margin-top: 3rem;
 }
+
+.imgsl{
+  background-color: black;
+}
+
+.imgsl img{
+  margin: 0 auto;
+}

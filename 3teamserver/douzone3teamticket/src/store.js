@@ -445,8 +445,11 @@ let check = createSlice({
 // 사용자 정보
 let userInfo = createSlice({
     name: 'userInfo',
-    initialState: [{id : 0, name: 'King', userid: '1111', pwd: '1111', email:'123@gmail.com', phone:'010-1111-1111'},
-        {id : 1, name: 'Smile', userid: '2222', pwd: '2222', email:'456@gmail.com', phone:'010-2222-2222'}]
+    initialState: [
+        {id : 0, name: 'King', userid: '1111', pwd: '1111',
+            email:'123@gmail.com', phone:'010-1111-1111', address: '강원도 춘천시 111길'},
+        {id : 1, name: 'Smile', userid: '2222', pwd: '2222',
+            email:'456@gmail.com', phone:'010-2222-2222', address: '서울특별시 종로구 254'}]
 })
 
 let selectseat = createSlice({
