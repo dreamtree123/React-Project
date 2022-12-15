@@ -114,14 +114,11 @@ function Concert_album() {
                     }).map((val, k) => {
                         return (
                             <div className="stuff" key={{ i }}>
-                                {console.log(i)}
                                 <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id); }}>
-                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i); }}></span> */}
                                     <img src={state.concert[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">
                                     <span className="stuff_title">{state.concert[i].title}</span><br />
-                                    {/* <span>{state.concert[i].cast}</span><br /> */}
                                     <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday} </span><br />
                                     <span>{state.concert[i].showtime}</span><br />
                                     <span>{state.concert[i].priceS}원</span><br />

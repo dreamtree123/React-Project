@@ -13,12 +13,6 @@ export default function CenterMode() {
     let state = useSelector( (state) => { return state });
 
     const settings = {
-        // dots: true,
-        // dotsClass: "slick-dots slick-thumb",
-        // infinite: true,
-        // speed: 500,
-        // slidesToShow: 1,
-        // slidesToScroll: 1
         dots: true,
         infinite: true,
         slidesToShow: 1,

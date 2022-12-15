@@ -13,9 +13,6 @@ const ConcertSort = () => {
 
     //첫 렌더링 후 한번 실행, 그 후에는 []<-안의 값이 없데이트 될 때만 실행
     useEffect( () => { 
-        console.log(state.concert);
-        // state.concert.priceS = state;
-        // Concert_list(state);
     },[state])
 
     return (
@@ -42,7 +39,6 @@ const MusicalSort = () => {
 
     //첫 렌더링 후 한번 실행, 그 후에는 []<-안의 값이 없데이트 될 때만 실행
     useEffect( () => { 
-        console.log(state.musical);
     },[state])
 
     return (
@@ -69,7 +65,6 @@ const TheaterSort = () => {
 
     //첫 렌더링 후 한번 실행, 그 후에는 []<-안의 값이 없데이트 될 때만 실행
     useEffect( () => { 
-        console.log(state.theater);
     },[state])
 
     return (
@@ -96,7 +91,6 @@ const ClassicSort = () => {
 
     //첫 렌더링 후 한번 실행, 그 후에는 []<-안의 값이 없데이트 될 때만 실행
     useEffect( () => { 
-        console.log(state.classic);
     },[state])
 
     return (

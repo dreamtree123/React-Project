@@ -11,7 +11,6 @@ import Join from "./UserComponents/Join";
 import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
-import Basket from "./BasketComponents/Basket";
 
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
@@ -35,18 +34,11 @@ function App() {
 
             <Routes>
                 <Route path='/' element={<MainBody></MainBody>} />
-                {/* <Route path='/' element={<Concertdetailheader></Concertdetailheader>}/> */}
                 <Route path='/concert' element={<Concert/>}/>
                 <Route path='/musical' element={<Musical/>} />
                 <Route path='/theater' element={<Theater/>}/>
                 <Route path='/classic' element={<Classic/>}/>
             
-                {/* {
-                    state.concert.map((item, i) =>
-                      <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
-                    )
-                }   */}
-
                 <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
                 <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
@@ -64,16 +56,11 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>}/>
                 <Route path='/success' element={<Success></Success>}/>
 
-                <Route path='/basket' element={<Basket></Basket>}/>
-
                 <Route path='/seat' element={<Seat></Seat>}/>
 
             </Routes>
 
-            {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
-                {/* <MainBody></MainBody> */}
-                
             </div>
 
             <Footer></Footer>

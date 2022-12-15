@@ -69,7 +69,6 @@ function Musical_list() {
                             }
                         }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
-                                {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
                                 <td>
                                     <span onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
                                         <img className={styles.categoryImg} src={state.musical[i].imageadr}></img>
@@ -116,14 +115,11 @@ function Musical_album() {
                     }).map((val, k) => {
                         return (
                             <div className="stuff" key={{ i }}>
-                                {console.log(i)}
                                 <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
-                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}> */}
                                     <img src={state.musical[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">
                                     <span className="stuff_title">{state.musical[i].title}</span><br />
-                                    {/* <span>{state.musical[i].cast}</span><br /> */}
                                     <span>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday} </span><br />
                                     <span>{state.musical[i].showtime}</span><br />
                                     <span>{state.musical[i].priceS}원</span><br />

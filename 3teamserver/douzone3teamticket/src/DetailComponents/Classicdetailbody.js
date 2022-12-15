@@ -94,7 +94,6 @@ function TabContent({clickTab}) {
                     <div className="rn-0803">
                         <p className="rn08-tit">공연정보</p>
                         <div className="rn08-txt" id="divPerfContent">
-                            {/* <p style="text-align: center;"></p> */}
                             <p className="PageDetailImage1">
                                 <img src={find.imageadr1} className="txc-image">
                                 </img>

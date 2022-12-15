@@ -3,9 +3,6 @@ import '../css/etcCss.css'
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { func } from "prop-types";
-// import { BsFillBasketFill } from "react-icons/bs"
-// import { AiOutlineShoppingCart } from "react-icons/ai"
-
 function Mypage(){
 
     let navigate = useNavigate();
@@ -35,7 +32,6 @@ function Mypage(){
                         <li className="list-group-item" onClick={ ()=>{setCheck(2)} }>1:1 문의</li>
                     </ul>
 
-                    {/* <button type="button" className="btn btn-dark" onClick={ ()=>{ navigate('/basket'); }}>구매 내역</button> */}
                     <button type="button" className="btn btn-dark logout" onClick={ ()=>{
                         localStorage.setItem('userId', '');
                         navigate('/');
@@ -77,8 +73,6 @@ function Profile(){
         let n = state.userInfo
         let i;
         for(i = 0; i < n.length && tf == true; i++){
-            // console.log(n[i].userid);
-            console.log(n.length)
             if(n[i].userid == localStorage.getItem('userId')){
                 u = n[i];
                 break;
@@ -124,8 +118,6 @@ function Management(){
 
     return(
         <div>
-            {/* <BsFillBasketFill/> */}
-            {/* <img src="https://e7.pngegg.com/pngimages/876/563/png-clipart-purchasing-computer-icons-purchase-order-bank-purchase-requisition-bank-blue-company.png" alt="구매내역"/> */}
             <img className={"profileImg"} src="https://cdn.pixabay.com/photo/2017/03/29/04/09/shopping-icon-2184065_960_720.png"/>
             <h1 className={"profileTitle"}>예매 내역</h1>
             <hr/><br/>
@@ -134,38 +126,25 @@ function Management(){
 }
 
 //1:1문의 Tab
-// function submitCancle() {
 const submitCancle = () => {
-    // let navigate = useNavigate()
 
     if (window.confirm("정말 취소하시겠습니까?")) {
         alert("메인으로 이동합니다.");
         window.location = '/';
-        // document.location.href("/")
-        // return <Navigate to="/"></Navigate>;
-        // navigate(`/`);
-        // <Link to="/"></Link>
     } 
 
 };
 
 function Inquiry(){
-    // let naviate = useNavigate()
     
     return(
         <div>
-            {/* <img src="//ticketimage.interpark.com/TicketImage/Customer/img_Q.gif" alt="1:1문의하기 - 고객님이 문의하신 질문과 답변 내용을 확인하실 수 있습니다."/> */}
             <img className={"profileImg"} src="https://www.sc.ac.kr/static/img/sample/icon_info_28.png"/>
             <h1 className={"profileTitle"}>1:1 문의</h1>
             <hr/><br/>
             
             <div className={"ask"}>
-               {/* <table width="100%" border="0" cellspacing="0" cellpadding="0"> */}
                <table className={"askTable"}>
-
-                {/* <colgroup>
-                    <col width="160px"/>
-                </colgroup> */}
 
                 <tbody>
                     <tr className={"askTR"}>
