@@ -15,9 +15,9 @@ function Concert() {
         <div>
             <button className="switchBtn"
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
-                {visibleList 
-                ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div> 
-                : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
+                {visibleList
+                    ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
             </button>
 
             {visibleList && <Concert_list />}
@@ -30,9 +30,10 @@ function Concert() {
 function Concert_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -45,24 +46,37 @@ function Concert_list() {
                 </thead>
                 <tbody>
                     {
-                        state.concert.map((item, index) =>
-                            <tr key={{ index }} className={styles.categoryContent}>
-                                {/* <td><Link to={"/concert/detail/" + index}><img className={styles.categoryImg} src={state.concert[index].imageadr}></img></Link></td> */}
+                        state.concert.map((item, i) => [item].filter((val) => {
+                            console.log(item.title)
+                            if (search == "") {
+                                return val
+                            }
+                            else if
+                                (item.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, k) =>
+                            <tr key={{ i }} className={styles.categoryContent}>
+                                {/* <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={ ()=>{localStorage.setItem('performanceId', index); naviate('/concert/detail/' + index);} }>
-                                    <img className={styles.categoryImg} src={state.concert[index].imageadr}></img>
+                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i); }}>
+                                        <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
                                     </span>
                                 </td>
-                                <td>{state.concert[index].title}</td>
-                                <td>{state.concert[index].cast}</td>
-                                <td>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday}</td>
-                                <td>{state.concert[index].showtime}</td>
+                                <td >{state.concert[i].title}</td>
+                                <td>{state.concert[i].cast}</td>
+                                <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
+                                <td>{state.concert[i].showtime}</td>
                             </tr>
+
+                        )
                         )
                     }
+
                 </tbody>
             </table>
-        </div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+        </div >
     );
 
 }
@@ -71,31 +85,72 @@ function Concert_album() {
 
     let state = useSelector((state) => state)
     let naviate = useNavigate()
-
+    const [search, setSearch] = useState('')
     return (
         <div>
+            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
                 {
-                    state.concert.map((item, index) =>
-                        <div className="stuff">
-                            {/* <span className="stuff_img"><Link to={"/concert/detail/" + index}> <img src={state.concert[index].imageadr}></img></Link></span> */}
-                            
-                            {/* <span className="stuff_img"><img src={state.concert[index].imageadr}></img></span>
-                            state.performanceId = {index};
-                            naviate('/concert/detail/' + {index}); */}
-                            
-                            <span className="stuff_img" onClick={ ()=>{state.performanceId = index; naviate('/concert/detail/' + index);} }>
-                                <img src={state.concert[index].imageadr}></img>
-                            </span>
-                            
-                            <div className="stuff_content">
-                                <span className="stuff_title">{state.concert[index].title}</span><br />
-                                <span>{state.concert[index].showyear}-{state.concert[index].showmonth}-{state.concert[index].showday} </span><br />
-                                <span>{state.concert[index].showtime}</span><br />
-                            </div>
-                        </div>
-                    )
+                    () => {
+                        state.musical.map((test1, i) => [test1].filter((val) => {
+                            console.log("title all")
+                            if (search == "") {
+                                return val
+                            }
+                            else if
+                                (test1.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, k) => {
+
+                            return (
+
+                                <div className="stuff" key={{ i }}>
+
+                                    <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                        <img src={state.musical[i].imageadr}></img>
+                                    </span>
+                                    <div className="stuff_content">
+                                        <span className="stuff_title">{state.musical[i].title}</span><br />
+                                        {/* <span>{state.musical[i].cast}</span><br /> */}
+                                        <span>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday} </span><br />
+                                        <span>{state.musical[i].showtime}</span><br />
+                                    </div>
+                                </div>
+
+                            )
+                        }))
+                        if (search == "") {
+                            state.concert.map((test2, i) => [test2].filter((val) => {
+                                if (search == "") {
+
+                                    return val
+                                }
+                                else if
+                                    (test2.title.toLowerCase().includes(search.toLowerCase())) {
+                                    return val
+                                }
+                            }).map((val, k) => {
+                                return (
+                                    <div className="stuff" key={{ i }}>
+
+                                        <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                            <img src={state.concert[i].imageadr}></img>
+                                        </span>
+                                        <div className="stuff_content">
+                                            <span className="stuff_title">{state.concert[i].title}</span><br />
+                                            {/* <span>{state.musical[i].cast}</span><br /> */}
+                                            <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.musical[i].showday} </span><br />
+                                            <span>{state.concert[i].showtime}</span><br />
+                                        </div>
+                                    </div>
+
+                                )
+                            }))
+                        }
+                    }
                 }
+
             </div>
         </div>
 
