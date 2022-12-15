@@ -42,14 +42,16 @@ input[type="checkbox"]:checked {
 }
 
 .seatcsfirstdiv{
-    /* display: flex; */
-    /* width: 1400px; */
-    margin: auto auto;
+    display: flex;
+    width: 1100px;
+    /* margin: auto auto; */
+    margin-left: 350px;
 }
 
 .sideclass{
+    text-align: center;
     width: 30%;
-    height: 30%;
+    margin-left: 5rem;
     margin: auto auto;
 }
 

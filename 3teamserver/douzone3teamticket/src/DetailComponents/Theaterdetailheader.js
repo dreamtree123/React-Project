@@ -111,7 +111,7 @@ function Theaterdetailheader() {
                                 alert('로그인 필요');
                                 navigate('/user/login');
                             }else{
-                                state.gocategory = 'theater';
+                                localStorage.setItem('gocategory', 'theater')
                                 navigate('/seat');
                             }
                         } } className='rn-bb03'>예매하기</a>

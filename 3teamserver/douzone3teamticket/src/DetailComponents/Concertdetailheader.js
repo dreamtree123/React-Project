@@ -108,7 +108,7 @@ function Concertdetailheader() {
                                 alert('로그인 필요');
                                 navigate('/user/login');
                             }else{
-                                state.gocategory = 'concert';
+                                localStorage.setItem('gocategory', 'concert')
                                 navigate('/seat');
                             }
                         } } className='rn-bb03'>예매하기</a>

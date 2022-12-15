@@ -558,12 +558,6 @@ let userInfo = createSlice({
             email:'456@gmail.com', phone:'010-2222-2222', address: '서울특별시 종로구 254'}]
 })
 
-// 예매창으로 넘어가기 위해 사용
-let gocategory = createSlice({
-    name: 'gocategory',
-    initialState: ''
-})
-
 // 선택한 좌석
 let selectseat = createSlice({
     name: 'selectseat',
@@ -589,7 +583,6 @@ export default configureStore({
         classicinfo: classicinfo.reducer,
         check: check.reducer,
         userInfo: userInfo.reducer,
-        gocategory: gocategory.reducer,
         selectseat: selectseat.reducer,
         totalprice: totalprice.reducer
     }

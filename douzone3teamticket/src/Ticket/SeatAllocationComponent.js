@@ -17,29 +17,25 @@ export default function SeatAllocationComponent() {
 
     let navigate = useNavigate();
 
-    let [us, setUs] = useState([state])
-
     let gc = localStorage.getItem('gocategory');
 
     let choiceCate;
 
-
     function findcate() {
         switch (gc) {
             case 'concert':
-                choiceCate = us[0].concert;
+                choiceCate = state.concert;
                 break;
             case 'theater':
-                choiceCate = us[0].theater;
+                choiceCate = state.theater;
                 break;
             case 'musical':
-                choiceCate = us[0].musical;
+                choiceCate = state.musical;
                 break;
             case 'classic':
-                choiceCate = us[0].classic;
+                choiceCate = state.classic;
                 break;
         }
-
     }
 
     useEffect(() => {

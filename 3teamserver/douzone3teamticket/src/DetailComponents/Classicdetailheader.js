@@ -108,7 +108,7 @@ function Classicdetailheader() {
                                 alert('로그인 필요');
                                 navigate('/user/login');
                             }else{
-                                state.gocategory = 'classic';
+                                localStorage.setItem('gocategory', 'classic')
                                 navigate('/seat');
                             }
                         } } className='rn-bb03'>예매하기</a>

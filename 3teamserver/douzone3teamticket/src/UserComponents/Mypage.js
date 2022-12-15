@@ -1,8 +1,10 @@
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import '../css/etcCss.css'
 import {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import { func } from "prop-types";
+import {useSelector} from "react-redux";
+
+import Table from 'react-bootstrap/Table';
+
 function Mypage(){
 
     let navigate = useNavigate();
@@ -13,10 +15,22 @@ function Mypage(){
 
     let [check, setCheck] = useState(0);
 
+    let u = '';
+    function whoislogin(){
+
+        let n = state.userInfo
+        let i;
+        for(i = 0; i < n.length; i++){
+            if(n[i].userid == localStorage.getItem('userId')){
+                u = n[i];
+                break;
+            }
+        }
+    }
+
     return(
-
         <div className={"mypage"}>
-
+            {whoislogin()}
             <div className={"mypage-header"}>
                 <p>마이페이지</p>
             </div>
@@ -65,13 +79,12 @@ function Profile(){
         return state;
     });
 
-    let tf = true;
     let u = '';
     function whoislogin(){
 
         let n = state.userInfo
         let i;
-        for(i = 0; i < n.length && tf == true; i++){
+        for(i = 0; i < n.length; i++){
             if(n[i].userid == localStorage.getItem('userId')){
                 u = n[i];
                 break;
@@ -100,6 +113,14 @@ function Profile(){
                         <td>이메일</td>
                         <td>{u.email}</td>
                     </tr>
+                    <tr>
+                        <td>전화번호</td>
+                        <td>{u.phone}</td>
+                    </tr>
+                    <tr>
+                        <td>주소</td>
+                        <td>{u.address}</td>
+                    </tr>
                 </table>
 
             </div>
@@ -111,11 +132,63 @@ function Profile(){
 //예매 내역 Tab
 function Management(){
 
+    let state = useSelector((state) => {
+        return state;
+    });
+
+    let pur = JSON.parse(localStorage.getItem("buy") || "[]");
+    let findbuy = [];
+
+
+    function findpurchased(){
+
+        let fn = localStorage.getItem('userId');
+
+        let i;
+        for(i = 0; i < pur.length; i++){
+            if(pur[i].userid == fn){
+                findbuy.push(pur[i]);
+            }
+        }
+
+        return(
+            <div>
+                <Table striped bordered hover>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>구매 날짜</th>
+                        <th>좌석</th>
+                        <th>총 금액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        findbuy.map((number, index) => (
+                            <tr>
+                                <td>{index + 1}</td>
+                                <td>{number.purdate}</td>
+                                <td>{number.seatnum}</td>
+                                <td>{number.totalprice}</td>
+                            </tr>
+                        ))
+                    }
+                    </tbody>
+                </Table>
+
+            </div>
+        );
+    }
+
     return(
         <div>
             <img className={"profileImg"} src="https://cdn.pixabay.com/photo/2017/03/29/04/09/shopping-icon-2184065_960_720.png"/>
             <h1 className={"profileTitle"}>예매 내역</h1>
             <hr/><br/>
+
+            <div className={'buylist'}>
+                {findpurchased()}
+            </div>
         </div>
     );
 }

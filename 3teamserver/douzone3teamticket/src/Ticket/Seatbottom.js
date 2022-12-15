@@ -81,18 +81,18 @@ function Seatbottom() {
                                                     </select>
                                                 </div>
 
-                                                <div id="div_kkopay">
+                                                {/* <div id="div_kkopay">
                                                     <div>● 카카오페이 : 카카오톡에서 카드 등록 후 비밀번호만으로 결제 가능</div>
                                                     <div>● 지원 카드 : 모든 카드 등록/결제 가능</div>
-                                                    {/* <ul className="order-notice__bullet">
+                                                    <ul className="order-notice__bullet">
                                                         <li className="order-notice__bullet-item">
                                                             ●카카오페이 : 카카오톡에서 카드 등록 후 비밀번호만으로 결제 가능
                                                         </li>
                                                         <li className="order-notice__bullet-item">
                                                             지원 카드 : 모든 카드 등록/결제 가능
                                                         </li>
-                                                    </ul> */}
-                                                </div>
+                                                    </ul>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </li>
@@ -100,7 +100,6 @@ function Seatbottom() {
                             </div>
                         </div>
                     </div>
-
 
                     <div className="btn_wrap order_form__payment-button-wrap">
                         <a id="btn_pay" onclick="Order.payment();" className="order_form__payment-button">

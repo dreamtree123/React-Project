@@ -539,6 +539,7 @@ let userInfo = createSlice({
 >>>>>>> origin/geonho
 })
 
+<<<<<<< HEAD
 let performanceId = createSlice({
     name: 'performanceId',
     // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
@@ -547,6 +548,8 @@ let performanceId = createSlice({
 <<<<<<< HEAD
 =======
 
+=======
+>>>>>>> origin/geonho
 // 선택한 좌석
 let selectseat = createSlice({
     name: 'selectseat',
@@ -573,9 +576,12 @@ export default configureStore({
         classicinfo: classicinfo.reducer,
         userInfo: userInfo.reducer,
 <<<<<<< HEAD
+<<<<<<< HEAD
         performanceId: performanceId.reducer
 =======
         gocategory: gocategory.reducer,
+=======
+>>>>>>> origin/geonho
         selectseat: selectseat.reducer,
         totalprice: totalprice.reducer
 >>>>>>> origin/geonho
