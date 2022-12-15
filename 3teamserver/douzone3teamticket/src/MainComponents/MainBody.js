@@ -44,13 +44,9 @@ function MainBody() {
     return (
         <div className={'bodyStart'} {...settings}>
 
-            {/* ///////////////////////////// */}
-
             <div className={'Mainbody'}>
                 <ImgSlide></ImgSlide>
             </div>
-
-            {/* ///////////////////////////// */}
 
             <div>
                 <div className={'divtitle'}>WHAT'S HOT</div>

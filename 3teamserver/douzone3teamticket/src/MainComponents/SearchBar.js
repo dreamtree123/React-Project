@@ -50,7 +50,7 @@ function SearchBar() {
         <div div >
             <div className="success" onClick={() => { onReset() }}>
 
-                <input className="searchInput" type="text" value={search} onBlur={() => { setSearch(""); }} placeholder="Search..." onChange={event => {
+                <input className="searchInput" type="text" value={search} placeholder="Search..." onChange={event => {
                     setSearch(event.target.value)
                     // localStorage.setItem('searchtitle', JSON.parse(search))
                 }} />
