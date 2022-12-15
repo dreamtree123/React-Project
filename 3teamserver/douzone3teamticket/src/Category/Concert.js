@@ -69,11 +69,7 @@ function Concert_list() {
                         }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
                                 <td>
-                                    {/* <span onClick={ ()=>{localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i);} }> */}
-                                    {/* 위처럼 히면 디테일헤더는 잘나오지만 디테일바디가 모두 박진영만 나옴 */}
-                                    
                                     <span onClick={ ()=>{localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id);} }>
-                                    {/* 위처럼 히면 디테일헤더는 잘나오지만 디테일바디가 원래 정렬되어있던 id값으로 나옴 */}
                                           <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
                                     </span>
                                 </td>
@@ -90,7 +86,8 @@ function Concert_list() {
 
                 </tbody>
             </table>
-        </div>
+            {/* <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} /> */}
+        </div >
     );
 
 }
@@ -118,9 +115,8 @@ function Concert_album() {
                         return (
                             <div className="stuff" key={{ i }}>
                                 {console.log(i)}
-                                {/* <span className="stuff_img" onClick={ ()=>{state.performanceId = i; naviate('/concert/detail/' + i);} }> */}
-                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail'); }}> */}
                                 <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id); }}>
+                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i); }}></span> */}
                                     <img src={state.concert[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">

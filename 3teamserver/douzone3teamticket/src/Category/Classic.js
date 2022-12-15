@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { createPath, Link, useNavigate } from 'react-router-dom'
 
 import '../css/Category.css'
 import styles from "../css/Category.module.css";
@@ -87,7 +87,7 @@ function Classic_list() {
 
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 
 }
@@ -115,7 +115,8 @@ function Classic_album() {
                         return (
                             <div className="stuff" key={{ i }}>
                                 {console.log(i)}
-                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/classic/detail/' + i); }}>
+                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.classic[i].id); naviate('/classic/detail/' + state.classic[i].id); }}>
+                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/classic/detail/' + i); }}> */}
                                     <img src={state.classic[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">

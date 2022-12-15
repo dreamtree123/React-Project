@@ -117,7 +117,8 @@ function Musical_album() {
                         return (
                             <div className="stuff" key={{ i }}>
                                 {console.log(i)}
-                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
+                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}> */}
                                     <img src={state.musical[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">

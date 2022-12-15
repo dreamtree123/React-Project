@@ -1,4 +1,4 @@
-import {Link, useNavigate} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
 import '../css/etcCss.css'
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -63,6 +63,7 @@ function TabContext({check}) {
     );
 }
 
+//계정 관리 Tab
 function Profile(){
 
     let state = useSelector((state) => {
@@ -88,7 +89,7 @@ function Profile(){
     return(
         <div>
             <img className={"profileImg"} src="https://paidion.org/img/base/icon_login.png"/>
-            <h1 className={"profileTitle"}>Profile</h1>
+            <h1 className={"profileTitle"}>계정 관리</h1>
             <hr/>
 
             <div>
@@ -114,6 +115,7 @@ function Profile(){
     );
 }
 
+//예매 내역 Tab
 function Management(){
 
     let state = useSelector((state) => {
@@ -125,19 +127,23 @@ function Management(){
             {/* <BsFillBasketFill/> */}
             {/* <img src="https://e7.pngegg.com/pngimages/876/563/png-clipart-purchasing-computer-icons-purchase-order-bank-purchase-requisition-bank-blue-company.png" alt="구매내역"/> */}
             <img className={"profileImg"} src="https://cdn.pixabay.com/photo/2017/03/29/04/09/shopping-icon-2184065_960_720.png"/>
-            <h1 className={"profileTitle"}>Management</h1>
+            <h1 className={"profileTitle"}>예매 내역</h1>
             <hr/><br/>
         </div>
     );
 }
 
+//1:1문의 Tab
 // function submitCancle() {
 const submitCancle = () => {
     // let navigate = useNavigate()
 
     if (window.confirm("정말 취소하시겠습니까?")) {
         alert("메인으로 이동합니다.");
-        // navigate(`/comment/id/등등 내가 원하는 주소`);
+        window.location = '/';
+        // document.location.href("/")
+        // return <Navigate to="/"></Navigate>;
+        // navigate(`/`);
         // <Link to="/"></Link>
     } 
 
@@ -149,8 +155,8 @@ function Inquiry(){
     return(
         <div>
             {/* <img src="//ticketimage.interpark.com/TicketImage/Customer/img_Q.gif" alt="1:1문의하기 - 고객님이 문의하신 질문과 답변 내용을 확인하실 수 있습니다."/> */}
-            <img className={"profileImg"} src="https://o.remove.bg/downloads/e7271376-087a-40dd-8d32-c26631c45ba1/images-removebg-preview.png"/>
-            <h1 className={"profileTitle"}>Q n A</h1>
+            <img className={"profileImg"} src="https://www.sc.ac.kr/static/img/sample/icon_info_28.png"/>
+            <h1 className={"profileTitle"}>1:1 문의</h1>
             <hr/><br/>
             
             <div className={"ask"}>
@@ -235,10 +241,7 @@ function Inquiry(){
                 
                 <div className="askbtn" >
                     <button type="button" className="btn btn-dark" onClick={() => alert('글이 등록되었습니다.')}>등록</button>
-                    {/* <button type="button" className="btn btn-dark" onClick={() => naviate('/')}>취소</button> */}
                     <button type="button" className="btn btn-dark" onClick={() => submitCancle()}>취소</button>
-                    {/* <span><img src="//ticketimage.interpark.com/TicketImage/Customer/btn_write.gif" alt="등록" onClick={() => alert('글이 등록되었습니다.')}/></span> */}
-                    {/* <span><img src="//ticketimage.interpark.com/TicketImage/Customer/btn_cancel.gif" alt="취소"/></span> */}
                 </div>
                 
                 </div>
