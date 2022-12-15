@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
 import '../css/SearchBar.css'
@@ -47,11 +47,13 @@ function SearchBar() {
 
     return (
 
-        <div>
-            <div className="success">
+        <div div >
+            <div className="success" onClick={() => { onReset() }}>
 
-
-                <input className="searchInput" type="text" value={search} placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+                <input className="searchInput" type="text" value={search} onBlur={() => { setSearch(""); }} placeholder="Search..." onChange={event => {
+                    setSearch(event.target.value)
+                    // localStorage.setItem('searchtitle', JSON.parse(search))
+                }} />
                 {
                     // console.log(data[4][6개])
 

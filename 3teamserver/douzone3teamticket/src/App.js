@@ -46,11 +46,11 @@ function App() {
                       <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
                     )
                 }   */}
-                
-                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
-                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
-                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
-                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>}/>
+
+                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>} />
+                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>} />
+                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>} />
+                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>} />
 
                 <Route path='/' element={<MainBody></MainBody>} />
 
@@ -64,9 +64,9 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>} />
                 <Route path='/success' element={<Success></Success>} />
 
-                <Route path='/basket' element={<Basket></Basket>}/>
+                <Route path='/basket' element={<Basket></Basket>} />
 
-                <Route path='/seat' element={<Seat></Seat>}/>
+                <Route path='/seat' element={<Seat></Seat>} />
 
             </Routes>
 

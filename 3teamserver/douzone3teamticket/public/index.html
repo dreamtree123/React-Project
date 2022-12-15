@@ -1,128 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
-      crossorigin
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      charset="UTF-8"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-    />
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
 
-    <!-- 디테일 페이지 css 시작 -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://tkfile.yes24.com/New/Css/reset.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://tkfile.yes24.com/New/Css/common.css?v=9"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://tkfile.yes24.com/New/Css/main2.css?v=2020012203"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://tkfile.yes24.com/New/Css/sub.css?v=9"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://tkfile.yes24.com/New/Css/etc.css"
-    />
+  <link rel="stylesheet" type="text/css" charset="UTF-8"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
-    <link
-      href="http://tkfile.yes24.com/New/Css/jquery-ui.css?v=2020031102"
-      type="text/css"
-      rel="stylesheet"
-    />
-    <!-- <link rel='shortcut icon' href='http://tkfile.yes24.com/img/favicon.ico?ver=150825a' type='image/x-icon' /> -->
-    <script
-      type="text/javascript"
-      src="http://tkfile.yes24.com/New/Js/jquery-3.4.1_min.js"
-    ></script>
+  <!-- 디테일 페이지 css 시작 -->
+  <link rel="stylesheet" type="text/css" href="http://tkfile.yes24.com/New/Css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="http://tkfile.yes24.com/New/Css/common.css?v=9" />
+  <link rel="stylesheet" type="text/css" href="http://tkfile.yes24.com/New/Css/main2.css?v=2020012203" />
+  <link rel="stylesheet" type="text/css" href="http://tkfile.yes24.com/New/Css/sub.css?v=9" />
+  <link rel="stylesheet" type="text/css" href="http://tkfile.yes24.com/New/Css/etc.css" />
 
-    <!-- 예지 api key -->
-    <script
-      type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=925030b91d0adc5336ec42d439900c05"
-    ></script>
+  <link href="http://tkfile.yes24.com/New/Css/jquery-ui.css?v=2020031102" type="text/css" rel="stylesheet" />
+  <!-- <link rel='shortcut icon' href='http://tkfile.yes24.com/img/favicon.ico?ver=150825a' type='image/x-icon' /> -->
+  <script type="text/javascript" src="http://tkfile.yes24.com/New/Js/jquery-3.4.1_min.js"></script>
 
-    <!-- 디테일 페이지 css 종료 -->
+  <!-- 민석 api key -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee56c2c30e559dcf4aa18df62b163f72"></script>
 
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PVHFWWM");
-    </script>
+  <!-- 디테일 페이지 css 종료 -->
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      charset="UTF-8"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-    />
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-PVHFWWM");
+  </script>
 
-    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <link rel="stylesheet" type="text/css" charset="UTF-8"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
-    <title>React App</title>
-  </head>
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+  <title>React App</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
 </html>
