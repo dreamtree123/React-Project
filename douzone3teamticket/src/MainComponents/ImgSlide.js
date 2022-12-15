@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 import '../css/Main.css'
@@ -13,8 +13,6 @@ function ImgSlide() {
     });
 
     let navigate = useNavigate();
-
-    let dispatch = useDispatch();
 
     const settings = {
         dots: true,

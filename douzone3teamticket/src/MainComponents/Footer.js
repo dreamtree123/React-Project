@@ -11,8 +11,6 @@ function Footer() {
                     <a href="/UserGuide/inquiry" target="_blank">티켓판매안내</a>
                 </div>
                 <div className="footer-txt">
-                    <a href="/New/Main.aspx?Gcode=009_201" className="flogo"><img
-                        src="http://tkfile.yes24.com/imgNew/common/flogo.png" alt=""/></a>
                     <div className="footxt">
                     </div>
                     <div className="foo-right">
