@@ -20,7 +20,7 @@ const Pay = (effect, deps) => {
 
     const onClickPayment = () => {
         const { IMP } = window;
-        IMP.init([]); // 결제 데이터 정의
+        // IMP.init(["imp02185252"]); // 결제 데이터 정의
         const data = {
             // pg: 'html5_inicis',
             pg: 'kakaopay',// PG사 (필수항목)

@@ -1,45 +1,63 @@
 .success{
-    width: 385px;
-    max-width: 185px;
+    width: 450px;
+    max-width: 450px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
     position: absolute;
-    margin-left: -250px;
+    margin-left: -450px;
     margin-top: -15px;
     z-index: 1000;
     background: #fff;
     color: black;
     border-bottom: 1px solid black;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:auto;
+    max-height:400px;
 }
 
+  .success::-webkit-scrollbar {
+    width: 10px;
+  }
+  .success::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+  }
+  .success::-webkit-scrollbar-track {
+    background-color: grey;
+  }
+
 .searchInput {
-width: 185px;
-max-width: 185px;
+width: 450px;
+max-width: 450px;
 overflow:hidden;
 text-overflow:ellipsis;
 white-space:nowrap;   
 background: #fff;
 color: black;
-border-bottom: 1px solid black;
+
 }
 
 .searchBox{
     height: 100px;
-    width: 190px;
-    padding: 3 3 3 3;
-    background-color: rgb(216, 216, 221);
-}
-.searchResult{
-    border-bottom: 1px solid rgb(131, 126, 126);
-    height: 100px;
-    width: 185px;
+    width: 450px;
+    background-color: rgb(234 234 246);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    border-bottom: 1px solid black;
+}
+.searchResult{
+    height: 100px;
+    width: 185px;
+    
 }
 .searchBox:hover{
-    background: rgb(207, 11, 11);
+    color: #fff;
+    outline: 0;
+    box-shadow: 40px 40px 100px 40px rgb(53, 52, 52) inset;
+
 }
 
 .searchResult img{
@@ -48,19 +66,16 @@ border-bottom: 1px solid black;
 }
 .search1{
     float: left;
-    width: 70px;
+    width: 80px;
+    
 }
-.line::before{
-    content:"";
-    position:absolute;
-    background: rgba(230, 230, 230, 0.7);
-    display: inline-block;
-    transition: all 0.3s;
-    left: 10%;
-    top: 10%;
-    width: 0%;
-    height: 2px;
-}
-.searchBox:hover .line::before{
-    width:80%;
+.search2{
+    font-size: 15px;
+    margin-top: 35px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-top: 5px;
 }
