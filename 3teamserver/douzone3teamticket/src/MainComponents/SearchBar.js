@@ -53,14 +53,11 @@ function SearchBar() {
 
                 <input className="searchInput" type="text" value={search} placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
                 {
-                    // console.log(data[4][6개])
 
                     data.map((item, i) =>
 
                         item.map((item2, j) =>
                             [item2].filter((val) => {
-                                // console.log(data)
-                                // console.log(j)
                                 if (search == "") {
                                     return
                                 }
@@ -69,8 +66,6 @@ function SearchBar() {
                                     return val
                                 }
                             }).map((val, k) => {
-                                console.log(data[i])
-                                // console.log(val)
 
                                 if (i == 0) {
                                     return (

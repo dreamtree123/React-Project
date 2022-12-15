@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"
+import { configureStore, createSlice, current } from "@reduxjs/toolkit"
 
 let concert = createSlice({
     name: 'concert',
@@ -8,6 +8,7 @@ let concert = createSlice({
             showtime: '총 120분', cast: '박진영',
             priceVIP: 165000, priceSR: 143000, priceR: 121000, priceS: 110000,
             showyear: 2022, showmonth: 12, showday: 25, starttime: 17, delivery: '현장 수령',
+            showdate : '2022-12-25', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221118/20221118-44117.jpg'
         },
         {
@@ -15,6 +16,7 @@ let concert = createSlice({
             showtime: '총 100분', cast: '비비',
             priceVIP: 77000, priceSR: 77000, priceR: 77000, priceS: 77000,
             showyear: 2022, showmonth: 12, showday: 28, starttime: 20, delivery: '2022년 12월 09일부터 순차 배송됩니다.',
+            showdate : '2022-12-28',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221202/20221202-44323.jpg'
         },
         {
@@ -22,6 +24,7 @@ let concert = createSlice({
             showtime: '120분', cast: '멜로망스',
             priceVIP: 132000, priceSR: 121000, priceR: 121000, priceS: 110000,
             showyear: 2022, showmonth: 12, showday: 11, starttime: 17, delivery: '현장 수령',
+            showdate : '2022-12-21',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202210/20221024/20221024-43889.jpg'
         },
         {
@@ -29,6 +32,7 @@ let concert = createSlice({
             showtime: '총 120분', cast: '나훈아',
             priceVIP: 165000, priceSR: 143000, priceR: 143000, priceS: 121000,
             showyear: 2022, showmonth: 12, showday: 18, starttime: 15, delivery: '현장 수령',
+            showdate : '2022-12-18',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221107/20221107-44018.jpg'
         },
         {
@@ -36,6 +40,7 @@ let concert = createSlice({
             showtime: '총 75분', cast: '해리 스타일스 (Harry Styles)',
             priceVIP: 250000, priceSR: 165000, priceR: 165000, priceS: 143000,
             showyear: 2023, showmonth: 3, showday: 20, starttime: 20, delivery: '현장 수령',
+            showdate : '2023-03-20', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221116/20221116-44112.jpg'
         },
         {
@@ -43,11 +48,34 @@ let concert = createSlice({
             showtime: '총 75분', cast: '켈라니 (Kehlani)',
             priceVIP: 110000, priceSR: 110000, priceR: 110000, priceS: 110000,
             showyear: 2023, showmonth: 2, showday: 13, starttime: 20, delivery: '2023년 01월 13일부터 순차 배송됩니다.',
+            showdate : '2023-02-13', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-44299.jpg'
         }
-    ]
-})
-// export let { changeName, userNameChange, increase } = user.actions
+    ] , reducers : {
+        sortConcert (state, action) {   
+
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
+    }
+)
+export let { sortConcert } = concert.actions
 
 let concertinfo = createSlice({
     name: 'concertinfo',
@@ -102,7 +130,6 @@ let concertinfo = createSlice({
         }
     ]
 })
-// export let { increase2, decrease2, set } = cart.actions
 
 let theater = createSlice({
     name: 'theater',
@@ -112,40 +139,67 @@ let theater = createSlice({
             showtime: '총 100분', cast: '강부자,윤유선,유정기,김남진,이요성,김찬훈,조유미',
             priceVIP: 77000, priceSR: 66000, priceR: 61000, priceS: 580000,
             showyear: 2023, showmonth: 1, showday: 13, starttime: 14, delivery: '현장 수령',
+            showdate : '2023-01-13',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221121/20221121-44220.jpg'
         }, {
             id: 1, title: '연애하기좋은날', rate: '13세 이상',
             showtime: '총 100분', cast: '이재혁,최지훈,차도하,신아라,박한울,이성은,김동현,김초롱,김영재',
             priceVIP: 20000, priceSR: 16000, priceR: 13000, priceS: 10000,
             showyear: 2022, showmonth: 12, showday: 24, starttime: 17, delivery: '현장 수령',
+            showdate : '2022-12-24', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202202/20220203/20220203-40226.jpg'
         }, {
             id: 2, title: '옥탑방 고양이', rate: '13세 이상',
             showtime: '총 100분', cast: '곽근영,윤정윤,양보현,양시환,박수정,마수연,임채민,정지호,김동진,유민휘,함원태,이제민,박지민,조윤진,심채아,이주하',
             priceVIP: 20000, priceSR: 16000, priceR: 13000, priceS: 10000,
             showyear: 2022, showmonth: 12, showday: 23, starttime: 12, delivery: '현장 수령',
+            showdate : '2022-12-23',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202110/20211001/20211001-40181.jpg'
         }, {
             id: 3, title: '빛나는 버러지', rate: '13세 이상',
             showtime: '총 120분', cast: '황석정,정다희,송인성,최미소,배윤범,오정택',
             priceVIP: 55000, priceSR: 48000, priceR: 35000, priceS: 28000,
             showyear: 2023, showmonth: 1, showday: 8, starttime: 19, delivery: '현장 수령',
+            showdate : '2023-01-08',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221205/20221205-43981.jpg'
         }, {
             id: 4, title: '2호선 세입자', rate: '14세 이상',
             showtime: '총 90분', cast: '이선준,강병준,이준혁,혀윤지,최지수,김지현',
             priceVIP: 20000, priceSR: 16000, priceR: 13000, priceS: 10000,
             showyear: 2022, showmonth: 12, showday: 31, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-31',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202201/20220113/20220113-41225.jpg'
         }, {
             id: 5, title: '굿모닝 홍콩', rate: '12세 이상',
             showtime: '총 90분', cast: '김동현,최영도,공재민,김여진,김수민,김설빈,이창민,조수빈,강기혁,권나현',
             priceVIP: 40000, priceSR: 32000, priceR: 28000, priceS: 24000,
             showyear: 2022, showmonth: 12, showday: 11, starttime: 15, delivery: '현장 수령',
+            showdate : '2022-12-17',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221206/20221206-43999.jpg'
         }
-    ]
+    ], reducers : {
+        sortTheater (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
+export let { sortTheater } = theater.actions
 
 let theaterinfo = createSlice({
     name: 'theaterinfo',
@@ -204,6 +258,7 @@ let musical = createSlice({
             showtime: '150분(인터미션 20분 포함)', cast: '--',
             priceVIP: 150000, priceSR: 130000, priceR: 100000, priceS: 80000,
             showyear: 2022, showmonth: 12, showday: 13, starttime: 21, delivery: '현장 수령',
+            showdate : '2023-12-13',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221205/20221205-43815.jpg'
         },
         {
@@ -211,6 +266,7 @@ let musical = createSlice({
             showtime: '160분(인터미션 포함)', cast: ' 조아나 암필(그리자벨라)잭 댄슨(럼 텀 터거)브래드 리틀(올드 듀터러노미)',
             priceVIP: 170000, priceSR: 140000, priceR: 110000, priceS: 77000,
             showyear: 2023, showmonth: 5, showday: 13, starttime: 11, delivery: '현장 수령만 가능',
+            showdate : '2023-05-13',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221108/20221108-43998.jpg'
         },
         {
@@ -218,6 +274,7 @@ let musical = createSlice({
             showtime: '160분(인터미션 20분)', cast: ' 송일국, 이종혁, 정영주',
             priceVIP: 140000, priceSR: 140000, priceR: 100000, priceS: 70000,
             showyear: 2022, showmonth: 11, showday: 5, starttime: 19, delivery: '현장 수령만 가능',
+            showdate : '2023-04-05',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202209/20220922/20220922-43616.jpg'
         },
         {
@@ -225,6 +282,7 @@ let musical = createSlice({
             showtime: '총 70분 (인터미션 없음)', cast: '--',
             priceVIP: 121000, priceSR: 121000, priceR: 121000, priceS: 121000,
             showyear: 2022, showmonth: 11, showday: 30, starttime: 19, delivery: '현장 수령',
+            showdate : '2022-12-25', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202212/20221205/20221205-43293.jpg'
         },
         {
@@ -232,6 +290,7 @@ let musical = createSlice({
             showtime: '--', cast: '박효신, 박은태, 카이, 조정은, 옥주현, 윤공주, 이해준',
             priceVIP: 170000, priceSR: 140000, priceR: 110000, priceS: 80000,
             showyear: 2023, showmonth: 1, showday: 12, starttime: 19, delivery: '현장 수령',
+            showdate : '2023-01-12',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221117/20221117-44155.jpg'
         },
         {
@@ -240,12 +299,33 @@ let musical = createSlice({
             cast: '마이클리, 임태경, 한지상, 윤형렬, 백형훈, 서은광, 김보경, 장은아, 제이민',
             priceVIP: 150000, priceSR: 120000, priceR: 80000, priceS: 60000,
             showyear: 2022, showmonth: 11, showday: 10, starttime: 19, delivery: '현장 수령만 가능',
+            showdate : '2023-02-10',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221128/20221128-43451.jpg'
         }
-    ]
+    ], reducers : {
+        sortMusical (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
+export let { sortMusical } = musical.actions
 
-// export let { changeName, userNameChange, increase } = user.actions
 
 let musicalinfo = createSlice({
     name: 'musicalinfo',
@@ -313,6 +393,7 @@ let classic = createSlice({
             showtime: '120분(인터미션 20분 포함)', cast: ' 박슬기, 심현희, 한나래, 박예은, 곽화경, 조연재, 이재우, 허서명, 김기완, 하지석, 구현모, 김명규, 박종석',
             priceVIP: 100000, priceSR: 80000, priceR: 60000, priceS: 40000,
             showyear: 2022, showmonth: 12, showday: 25, starttime: 19, delivery: '현장 수령',
+            showdate : '2023-11-25', vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221121/20221121-44182.jpg'
         },
         {
@@ -320,6 +401,7 @@ let classic = createSlice({
             showtime: '120분 (인터미션 15분 포함)', cast: '조수미, 홍진호, 대니 구, 길병민, 나리, 최영선, 프라임 필하모닉 오케스트라',
             priceVIP: 150000, priceSR: 120000, priceR: 100000, priceS: 80000,
             showyear: 2022, showmonth: 12, showday: 23, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-23',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221107/20221107-44033.jpg'
         },
         {
@@ -327,6 +409,7 @@ let classic = createSlice({
             showtime: '100분 (인터미션 15분 포함)', cast: ' 사라 장',
             priceVIP: 170000, priceSR: 130000, priceR: 100000, priceS: 60000,
             showyear: 2022, showmonth: 12, showday: 27, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-27',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221108/20221108-44028.jpg'
         },
         {
@@ -334,6 +417,7 @@ let classic = createSlice({
             showtime: '95분(인터미션 15분)', cast: '에릭 루',
             priceVIP: 70000, priceSR: 50000, priceR: 50000, priceS: 30000,
             showyear: 2022, showmonth: 12, showday: 26, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-26',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202207/20220727/20220727-43026.jpg'
         },
         {
@@ -341,6 +425,7 @@ let classic = createSlice({
             showtime: '120분 (인터미션 20분 포함)', cast: ' 파보 예르비, 강주미, 도이치 캄머필하모닉',
             priceVIP: 200000, priceSR: 150000, priceR: 100000, priceS: 60000,
             showyear: 2022, showmonth: 12, showday: 25, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-25',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221107/20221107-44043.jpg'
         },
         {
@@ -348,10 +433,32 @@ let classic = createSlice({
             showtime: '85분 (인터미션 15분 포함)', cast: '리처드 용재 오닐, 줄리앙 라브로, 문태국, 양인모, 체임버 오케스트라',
             priceVIP: 120000, priceSR: 90000, priceR: 70000, priceS: 50000,
             showyear: 2022, showmonth: 12, showday: 29, starttime: 20, delivery: '현장 수령',
+            showdate : '2022-12-29',vipticket : 20, srticket : 20, sticket : 20, rticket : 20, 
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202211/20221107/20221107-44031.jpg'
         }
-    ]
+    ], reducers : {
+        sortClassic (state, action) { 
+            if (action.payload === "sortLowPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => a.priceS - b.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortHighPrice") {
+                const newSort = [...current(state)];
+                newSort.sort((a, b) => b.priceS - a.priceS);
+                state = [...newSort]
+                return state;
+            } 
+            else if (action.payload === "sortTitle") {
+            const newSort = [...current(state)];
+            newSort.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+            state = [...newSort]
+            return state;
+            }
+        }}
 })
+export let { sortClassic } = classic.actions
 
 let classicinfo = createSlice({
     name: 'classicinfo',
@@ -407,11 +514,29 @@ let classicinfo = createSlice({
     ]
 })
 
+<<<<<<< HEAD
 // 사용자 정보
 let userInfo = createSlice({
     name: 'userInfo',
     initialState: [{ id: 0, name: 'King', userid: '1111', pwd: '1111', email: '123@gmail.com' },
     { id: 1, name: 'Smile', userid: '2222', pwd: '2222', email: '456@gmail.com' }]
+=======
+
+// 로그인 판단 유무
+let check = createSlice({
+    name: 'check',
+    initialState: ['false', '']
+})
+
+// 사용자 정보
+let userInfo = createSlice({
+    name: 'userInfo',
+    initialState: [
+        {id : 0, name: 'King', userid: '1111', pwd: '1111',
+            email:'123@gmail.com', phone:'010-1111-1111', address: '강원도 춘천시 111길'},
+        {id : 1, name: 'Smile', userid: '2222', pwd: '2222',
+            email:'456@gmail.com', phone:'010-2222-2222', address: '서울특별시 종로구 254'}]
+>>>>>>> origin/geonho
 })
 
 let performanceId = createSlice({
@@ -419,6 +544,23 @@ let performanceId = createSlice({
     // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
     initialState: 0
 })
+<<<<<<< HEAD
+=======
+
+// 선택한 좌석
+let selectseat = createSlice({
+    name: 'selectseat',
+    initialState: []
+})
+
+// 총 티켓 가격
+let totalprice = createSlice({
+    name: 'totalprice',
+    initialState: 0
+})
+
+// reducer 설정
+>>>>>>> origin/geonho
 export default configureStore({
     reducer: {
         concert: concert.reducer,
@@ -430,6 +572,12 @@ export default configureStore({
         classic: classic.reducer,
         classicinfo: classicinfo.reducer,
         userInfo: userInfo.reducer,
+<<<<<<< HEAD
         performanceId: performanceId.reducer
+=======
+        gocategory: gocategory.reducer,
+        selectseat: selectseat.reducer,
+        totalprice: totalprice.reducer
+>>>>>>> origin/geonho
     }
 })

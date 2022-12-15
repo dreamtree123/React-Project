@@ -11,7 +11,10 @@ import Join from "./UserComponents/Join";
 import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/geonho
 
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
@@ -33,6 +36,7 @@ function App() {
 
             <Routes>
                 <Route path='/' element={<MainBody></MainBody>} />
+<<<<<<< HEAD
                 {/* <Route path='/' element={<Concertdetailheader></Concertdetailheader>}/> */}
                 <Route path='/concert' element={<Concert />} />
                 <Route path='/musical' element={<Musical />} />
@@ -49,6 +53,17 @@ function App() {
                 <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>} />
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>} />
                 <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>} />
+=======
+                <Route path='/concert' element={<Concert/>}/>
+                <Route path='/musical' element={<Musical/>} />
+                <Route path='/theater' element={<Theater/>}/>
+                <Route path='/classic' element={<Classic/>}/>
+            
+                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
+                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
+                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
+                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>}/>
+>>>>>>> origin/geonho
 
                 <Route path='/' element={<MainBody></MainBody>} />
 
@@ -62,13 +77,19 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>} />
                 <Route path='/success' element={<Success></Success>} />
 
+<<<<<<< HEAD
+=======
+                <Route path='/seat' element={<Seat></Seat>}/>
+>>>>>>> origin/geonho
 
             </Routes>
 
-            {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
+<<<<<<< HEAD
                 {/* <MainBody></MainBody> */}
 
+=======
+>>>>>>> origin/geonho
             </div>
 
             <Footer></Footer>
