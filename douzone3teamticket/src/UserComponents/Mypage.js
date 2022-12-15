@@ -1,8 +1,7 @@
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import '../css/etcCss.css'
 import {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import { func } from "prop-types";
+import {useSelector} from "react-redux";
 function Mypage(){
 
     let navigate = useNavigate();
@@ -13,13 +12,24 @@ function Mypage(){
 
     let [check, setCheck] = useState(0);
 
+    let u = '';
+    function whoislogin(){
+
+        let n = state.userInfo
+        let i;
+        for(i = 0; i < n.length; i++){
+            if(n[i].userid == localStorage.getItem('userId')){
+                u = n[i];
+                break;
+            }
+        }
+    }
+
     return(
-
         <div className={"mypage"}>
-
+            {whoislogin()}
             <div className={"mypage-header"}>
-                {/* <p>마이페이지</p> */}
-                <p>{state.userInfo.name}님의 마이페이지</p> <br/>
+                <p>{u.name}님의 마이페이지</p> <br/>
             </div>
             
             <div className={"mypagebody"}>
@@ -66,13 +76,12 @@ function Profile(){
         return state;
     });
 
-    let tf = true;
     let u = '';
     function whoislogin(){
 
         let n = state.userInfo
         let i;
-        for(i = 0; i < n.length && tf == true; i++){
+        for(i = 0; i < n.length; i++){
             if(n[i].userid == localStorage.getItem('userId')){
                 u = n[i];
                 break;
@@ -101,6 +110,14 @@ function Profile(){
                         <td>이메일</td>
                         <td>{u.email}</td>
                     </tr>
+                    <tr>
+                        <td>전화번호</td>
+                        <td>{u.phone}</td>
+                    </tr>
+                    <tr>
+                        <td>주소</td>
+                        <td>{u.address}</td>
+                    </tr>
                 </table>
 
             </div>
@@ -121,6 +138,10 @@ function Management(){
             <img className={"profileImg"} src="https://cdn.pixabay.com/photo/2017/03/29/04/09/shopping-icon-2184065_960_720.png"/>
             <h1 className={"profileTitle"}>예매 내역</h1>
             <hr/><br/>
+
+            <div>
+                
+            </div>
         </div>
     );
 }

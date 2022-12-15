@@ -75,13 +75,8 @@
 
 .tabct {
   width: 85%;
-  height: 40rem;
   margin: 0 auto;
   margin-top: 20px;
-}
-
-.tabct div {
-  height: 60rem;
 }
 
 /* mypage - profile */
@@ -113,6 +108,7 @@
 
 .profileTable td {
   width: 500px;
+  height: 3rem;
 }
 
 /* mypage - Management */
