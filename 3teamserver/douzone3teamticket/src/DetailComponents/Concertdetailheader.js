@@ -14,12 +14,24 @@ function Concertdetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.concert[localStorage.getItem('performanceId')]
+    let find;
+
+    function sortAfter (){
+        let i;
+        
+        for (i = 0; i < state.concert.length; i++) {
+            if(localStorage.getItem('performanceId') == state.concert[i].id){
+                find = state.concert[i];
+                break;
+            }
+        }
+    }
 
     let navigate = useNavigate();
 
     return (
         <div>
+            {sortAfter()}
             <div className="renew-wrap">
                 <div className="renew-content">
 
@@ -113,18 +125,26 @@ export default Concertdetailheader;
 
 function Calender() {
     let state = useSelector((state) => state);
+    let find;
+    let i;
+    for (i = 0; i < state.musical.length; i++) {
+        if(localStorage.getItem('performanceId') == state.musical[i].id){
+            find = state.musical[i];
+            break;
+        }
+    }
     const [startDate, setStartDate] = useState(null);
-    let showdate = state.concert[localStorage.getItem('performanceId')].showdate
-    let showtime = state.concert[localStorage.getItem('performanceId')].starttime
-    let vip = state.concert[localStorage.getItem('performanceId')].vipticket
-    let sr = state.concert[localStorage.getItem('performanceId')].srticket
-    let r = state.concert[localStorage.getItem('performanceId')].rticket
-    let s = state.concert[localStorage.getItem('performanceId')].sticket
+    let showdate = find.showdate
+    let showtime = find.starttime
+    let vip = find.vipticket
+    let sr = find.srticket
+    let r = find.rticket
+    let s = find.sticket
 
-    let priceVIP = state.concert[localStorage.getItem('performanceId')].priceVIP
-    let priceSR = state.concert[localStorage.getItem('performanceId')].priceSR
-    let priceR = state.concert[localStorage.getItem('performanceId')].priceR
-    let priceS = state.concert[localStorage.getItem('performanceId')].priceS
+    let priceVIP = find.priceVIP
+    let priceSR = find.priceSR
+    let priceR = find.priceR
+    let priceS = find.priceS
 
     return (
         <div>

@@ -14,12 +14,26 @@ function Theaterdetailheader() {
 
     let state = useSelector((state) => state)
 
-    let find = state.theater[localStorage.getItem('performanceId')]
+    let find;
+
+    function sortAfter (){
+        let i;
+        
+        for (i = 0; i < state.theater.length; i++) {
+            if(localStorage.getItem('performanceId') == state.theater[i].id){
+                find = state.theater[i];
+                break;
+            }
+        }
+    }
+
+    
 
     let navigate = useNavigate();
 
     return (
         <div>
+            {sortAfter()}
             <div className="renew-wrap">
                 <div className="renew-content">
 
@@ -50,6 +64,7 @@ function Theaterdetailheader() {
                                     <dt id="dtPrice">가격</dt>
                                     <dd id="divPrice" className="rn-product-price">
                                         <ul className="rn-product-price1">
+                                            {find.title}
                                             <li>VIP석 <span className='rn-red'>{find.priceVIP}</span>원</li>
                                             <li>SR석 <span className='rn-red'>{find.priceSR}</span>원</li>
                                             <li>R석 <span className='rn-red'>{find.priceR}</span>원</li>
@@ -113,18 +128,28 @@ export default Theaterdetailheader;
 
 function Calender() {
     let state = useSelector((state) => state);
-    const [startDate, setStartDate] = useState(null);
-    let showdate = state.theater[localStorage.getItem('performanceId')].showdate
-    let showtime = state.theater[localStorage.getItem('performanceId')].starttime
-    let vip = state.theater[localStorage.getItem('performanceId')].vipticket
-    let sr = state.theater[localStorage.getItem('performanceId')].srticket
-    let r = state.theater[localStorage.getItem('performanceId')].rticket
-    let s = state.theater[localStorage.getItem('performanceId')].sticket
+    let find;
+    let i;
 
-    let priceVIP = state.theater[localStorage.getItem('performanceId')].priceVIP
-    let priceSR = state.theater[localStorage.getItem('performanceId')].priceSR
-    let priceR = state.theater[localStorage.getItem('performanceId')].priceR
-    let priceS = state.theater[localStorage.getItem('performanceId')].priceS
+    for (i = 0; i < state.musical.length; i++) {
+        if(localStorage.getItem('performanceId') == state.musical[i].id){
+            find = state.musical[i];
+            break;
+        }
+    }
+
+    const [startDate, setStartDate] = useState(null);
+    let showdate = find.showdate
+    let showtime = find.starttime
+    let vip = find.vipticket
+    let sr = find.srticket
+    let r = find.rticket
+    let s = find.sticket
+
+    let priceVIP = find.priceVIP
+    let priceSR = find.priceSR
+    let priceR = find.priceR
+    let priceS = find.priceS
 
     return (
         <div>
