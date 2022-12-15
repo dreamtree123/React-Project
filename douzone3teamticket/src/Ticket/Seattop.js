@@ -13,15 +13,12 @@ function Seattop() {
         let n = state.userInfo
         let i;
         for(i = 0; i < n.length; i++){
-            console.log(n.length)
             if(n[i].userid == localStorage.getItem('userId')){
                 u = n[i];
                 break;
             }
         }
     }
-
-    console.log(u);
 
     return (
         <div>

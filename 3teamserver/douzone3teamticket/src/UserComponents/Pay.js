@@ -15,7 +15,6 @@ function Pay() {
         IMP.init('imp02185252');
 
         const data = {
-            // pg: 'html5_inicis',
             pg: 'kakaopay',
             pay_method: 'card',
             merchant_uid: `mid_${new Date().getTime()}`,
@@ -35,10 +34,30 @@ function Pay() {
 
         if (success) {
             let pur = JSON.parse(localStorage.getItem("buy") || "[]");
-            pur.push({userid: localStorage.getItem('userId'), seatnum:[...state.selectseat],
-            cate: localStorage.getItem('gocategory'), cateid: localStorage.getItem('performanceId')})
 
-            console.log(pur);
+            let today = new Date();
+
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let date = today.getDate();  // 날짜
+            let day = today.getDay();  // 요일
+
+            switch (day){
+                case 1: day = '월'; break;
+                case 2: day = '화'; break;
+                case 3: day = '수'; break;
+                case 4: day = '목'; break;
+                case 5: day = '금'; break;
+                case 6: day = '토'; break;
+                case 7: day = '일'; break;
+            }
+
+            let buydate = year + '/' + month + '/' + date + '/' + day;
+
+
+            pur.push({userid: localStorage.getItem('userId'), seatnum:[...state.selectseat],
+            cate: localStorage.getItem('gocategory'), cateid: localStorage.getItem('performanceId'),
+            purdate: buydate});
 
             localStorage.setItem('buy', JSON.stringify(pur));
 

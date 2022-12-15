@@ -19,8 +19,6 @@ export default function SeatAllocationComponent() {
 
     let [us, setUs] = useState([state])
 
-    // console.log(us[0].concert);
-
     let gc = localStorage.getItem('gocategory');
 
     let choiceCate;
@@ -41,7 +39,6 @@ export default function SeatAllocationComponent() {
                 choiceCate = us[0].classic;
                 break;
         }
-        console.log(choiceCate[localStorage.getItem('performanceId')])
 
     }
 
@@ -54,12 +51,10 @@ export default function SeatAllocationComponent() {
     let [total, setTotal] = useState(0);
 
     useEffect(() => {
-        console.log(count);
         findcate()
     }, [count])
 
     useEffect(() => {
-        console.log(total);
         state.totalprice = total;
     }, [total])
 
@@ -91,7 +86,6 @@ export default function SeatAllocationComponent() {
                 state.selectseat = [...state.selectseat, w];
                 setCount(count + 1);
                 setTotal(total + money);
-                console.log('+++', state.selectseat);
             } else {
                 alert('4매까지 구매 가능합니다.');
                 $(document.getElementById(w)).prop("checked", false);
@@ -100,7 +94,6 @@ export default function SeatAllocationComponent() {
             for (let i = 0; i < state.selectseat.length; i++) {
                 if (w == state.selectseat[i]) {
                     state.selectseat.splice(i, 1);
-                    console.log('---', state.selectseat);
                     setCount(count - 1);
                     setTotal(total - money);
                 }

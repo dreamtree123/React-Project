@@ -398,9 +398,6 @@ export default function VarietyInfo(){
                     </div>
                 </Modal.Body>
             </Modal>
-            {/*////////////////////////////////////////////////////////////////////////*/}
-
-
         </div>
     );
 }

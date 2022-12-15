@@ -34,18 +34,11 @@ function App() {
 
             <Routes>
                 <Route path='/' element={<MainBody></MainBody>} />
-                {/* <Route path='/' element={<Concertdetailheader></Concertdetailheader>}/> */}
                 <Route path='/concert' element={<Concert/>}/>
                 <Route path='/musical' element={<Musical/>} />
                 <Route path='/theater' element={<Theater/>}/>
                 <Route path='/classic' element={<Classic/>}/>
             
-                {/* {
-                    state.concert.map((item, i) =>
-                      <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
-                    )
-                }   */}
-
                 <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
                 <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>

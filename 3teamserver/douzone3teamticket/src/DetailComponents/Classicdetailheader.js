@@ -1,6 +1,14 @@
 import { useSelector } from "react-redux";
 import ClassicdetailBody from "./Classicdetailbody";
 import {useNavigate} from "react-router-dom";
+import 'react-calendar/dist/Calendar.css'; // css import
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState} from "react";
+import { ko } from "date-fns/esm/locale";
+import '../css/Detailheader.css'
+import moment from "moment";
+import 'react-calendar/dist/Calendar.css'; // css import
 
 function Classicdetailheader() {
 
@@ -63,15 +71,33 @@ function Classicdetailheader() {
 
                         </div>
                     </div>
-
                     <div className="rn-05">
+                        <div className="calender2-1">
+                            
+                                <a className="calender3-1">날짜 선택 및 일정</a>
+                            
+                            <div className="calender3-2">
+                                <Calender />
+                                <div className="calender4-2">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div className="calender2-2">
+                            <div className="calender3-3">
+
+                            </div>
+                            <div className="caleder3-4">
+
+                            </div>
+                        </div>
                         <a onClick={ () => {
                             if (localStorage.getItem('userId') == ''){
                                 alert('로그인 필요');
                                 navigate('/user/login');
                             }else{
-                                localStorage.setItem('gocategory', 'classic');
-                                window.location.href='/seat';
+                                state.gocategory = 'classic';
+                                navigate('/seat');
                             }
                         } } className='rn-bb03'>예매하기</a>
                     </div>
@@ -84,3 +110,60 @@ function Classicdetailheader() {
 }
 
 export default Classicdetailheader;
+
+function Calender() {
+    let state = useSelector((state) => state);
+    const [startDate, setStartDate] = useState(null);
+    let showdate = state.classic[localStorage.getItem('performanceId')].showdate
+    let showtime = state.classic[localStorage.getItem('performanceId')].starttime
+    let vip = state.classic[localStorage.getItem('performanceId')].vipticket
+    let sr = state.classic[localStorage.getItem('performanceId')].srticket
+    let r = state.classic[localStorage.getItem('performanceId')].rticket
+    let s = state.classic[localStorage.getItem('performanceId')].sticket
+
+    let priceVIP = state.classic[localStorage.getItem('performanceId')].priceVIP
+    let priceSR = state.classic[localStorage.getItem('performanceId')].priceSR
+    let priceR = state.classic[localStorage.getItem('performanceId')].priceR
+    let priceS = state.classic[localStorage.getItem('performanceId')].priceS
+
+    return (
+        <div>
+            <DatePicker
+            locale={ko}
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            includeDates={[new Date(), new Date(showdate)]}
+            inline
+            />
+            <p className="calender3-1">
+                * {moment(startDate).format("YYYY년 MM월 DD일")}의 예매 가능 일정 *
+                {
+                    moment(startDate).format("YYYY-MM-DD") === showdate ?
+                    <p className="calender3-1-1">
+                        <br />
+                        <br />
+                        {showtime}시에 공연 예정입니다.
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                         #예매 가능한 좌석 
+                         <br/>
+                         <br/>
+                         <div className="ticket">
+                            <span className="ticket1"> VIP 좌석 {priceVIP} 원</span> <span className="ticket2">잔여 {vip} 석</span> <br/>
+                            <br/><span className="ticket1">SR 좌석 {priceR} 원</span><span className="ticket2">잔여 {sr} 석</span> <br/>
+                            <br/><span className="ticket1">R 좌석 {priceR} 원</span><span className="ticket2"> 잔여 {r} 석</span> <br/>
+                            <br/><span className="ticket1">S 좌석 {priceS} 원</span><span className="ticket2"> 잔여 {s} 석</span>
+                         </div>
+                    </p>
+                    
+                    : <p className="calender3-1-1">
+                        일정이 없습니다.
+                    </p>
+                }
+            </p>
+            
+        </div>
+    );
+  };
