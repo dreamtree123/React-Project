@@ -397,7 +397,7 @@ let classic = createSlice({
     name: 'classic',
     initialState: [
         {
-            id: 0, title: 'P 〈호두까기인형〉', rate: '48개월이상 관람가능',
+            id: 0, title: '2022 예술의전당 ＆ 국립발레단 〈호두까기인형〉', rate: '48개월이상 관람가능',
             showtime: '120분(인터미션 20분 포함)', cast: ' 박슬기, 심현희, 한나래, 박예은, 곽화경, 조연재, 이재우, 허서명, 김기완, 하지석, 구현모, 김명규, 박종석',
             priceVIP: 100000, priceSR: 80000, priceR: 60000, priceS: 40000,
             showyear: 2022, showmonth: 12, showday: 25, starttime: 19, delivery: '현장 수령',
