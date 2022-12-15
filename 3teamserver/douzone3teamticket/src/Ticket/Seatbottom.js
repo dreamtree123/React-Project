@@ -20,9 +20,6 @@ function Seatbottom() {
     return (
         <div>
             <div className="right_contents section_payment">
-                {/* <h3 className="title-box font-mss">Payment info / Agreement 
-                <span className="korSub">결제 정보 / 주문자 동의</span>
-                </h3> */}
                 <div>
                     <div className="cell_order_form">
                         <div className="clear cell_order_form1 border_add_order" id="payment_info_area">
@@ -80,19 +77,6 @@ function Seatbottom() {
                                                         <option value="12">12개월</option>
                                                     </select>
                                                 </div>
-
-                                                {/* <div id="div_kkopay">
-                                                    <div>● 카카오페이 : 카카오톡에서 카드 등록 후 비밀번호만으로 결제 가능</div>
-                                                    <div>● 지원 카드 : 모든 카드 등록/결제 가능</div>
-                                                    <ul className="order-notice__bullet">
-                                                        <li className="order-notice__bullet-item">
-                                                            ●카카오페이 : 카카오톡에서 카드 등록 후 비밀번호만으로 결제 가능
-                                                        </li>
-                                                        <li className="order-notice__bullet-item">
-                                                            지원 카드 : 모든 카드 등록/결제 가능
-                                                        </li>
-                                                    </ul>
-                                                </div> */}
                                             </div>
                                         </div>
                                     </li>

@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import MainNav from "./MainComponents/MainNav";
@@ -44,11 +44,11 @@ function App() {
                 <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
                 <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>}/>
 
-                <Route path='/' element={<MainBody></MainBody>} />
+                <Route path='/' element={<MainBody></MainBody>}/>
 
                 <Route path={'/user'}>
-                    <Route path='login' element={<Login></Login>} />
-                    <Route path='join' element={<Join></Join>} />
+                    <Route path='login' element={<Login></Login>}/>
+                    <Route path='join' element={<Join></Join>}/>
                 </Route>
 
                 <Route path='/mypage' element={<Mypage></Mypage>}></Route>
@@ -64,7 +64,6 @@ function App() {
             </div>
 
             <Footer></Footer>
-
         </div>
     );
 }

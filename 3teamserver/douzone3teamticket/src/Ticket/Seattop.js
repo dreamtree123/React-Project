@@ -36,7 +36,9 @@ function Seattop() {
 
                             {/* <div className="cell_order_form1"> */}
                                 {/* <h3 className="title-box font-mss"><span className="korSub">수령자 정보</span></h3> */}
+                                <div className="korDiv">
                                  <span className="korSub">수령자 정보</span>
+                                 </div>
                             {/* </div> */}
                         {/* </div> */}
 

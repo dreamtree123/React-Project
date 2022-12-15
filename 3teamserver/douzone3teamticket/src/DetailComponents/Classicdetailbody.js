@@ -50,9 +50,10 @@ function TabContent({clickTab}) {
   }, [clickTab])
   let state = useSelector((state) => state)
   let divstate = true;
+  
+  let find = state.classicinfo[localStorage.getItem('performanceId')]
+  let find2 = state.classic[localStorage.getItem('performanceId')]
 
-    let find = state.classicinfo[localStorage.getItem('performanceId')]
-    let find2 = state.classic[localStorage.getItem('performanceId')]
   return (
       <div className= {`start  ${fade}`} >
         {[<div><div className="rn-tab-boxes">

@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 import '../css/Main.css'

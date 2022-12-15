@@ -1,7 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
 
+<<<<<<< HEAD
 import {useSelector} from "react-redux";
+=======
+import {useDispatch, useSelector} from "react-redux";
+>>>>>>> origin/Bob
 import {useNavigate} from "react-router-dom";
 
 import '../css/Main.css'
@@ -14,6 +18,11 @@ function ImgSlide() {
 
     let navigate = useNavigate();
 
+<<<<<<< HEAD
+=======
+    let dispatch = useDispatch();
+
+>>>>>>> origin/Bob
     const settings = {
         dots: true,
         lazyLoad: true,

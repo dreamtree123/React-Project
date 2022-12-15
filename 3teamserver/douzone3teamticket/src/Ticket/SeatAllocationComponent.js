@@ -98,7 +98,7 @@ export default function SeatAllocationComponent() {
     }
 
     return (
-  <div className={'seatcs'}>
+        <div className={'seatcs'}>
             <div className={'seatcsfirstdiv'}>
                 <div className={'vipclass'}>
                     <div>
@@ -689,13 +689,12 @@ export default function SeatAllocationComponent() {
                     </div>
 
 
-                    {/* <div className="btn btn-dark"> */}
-                    {/* <div className="btn_wrap order_form__payment-button-wrap"> */}
+                    <div className="submitBtn">
                             <Button className="btn btn-dark" onClick={()=>{
                                 state.totalprice = total;
                                 navigate('/pay');
                             }}>{total}원</Button>
-                    {/* </div> */}
+                    </div>
                 </div>
             </div>
         </div>

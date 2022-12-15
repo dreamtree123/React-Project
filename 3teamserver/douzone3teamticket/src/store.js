@@ -28,7 +28,7 @@ let concert = createSlice({
             imageadr: 'http://tkfile.yes24.com/upload2/PerfBlog/202210/20221024/20221024-43889.jpg'
         },
         {
-            id: 3, title: '서울 2022년 ‘Dream 55’ 나훈아 앵콜 콘서트', rate: ' 만 10세이상',
+            id: 3, title: '[서울] 2022년 ‘Dream 55’ 나훈아 앵콜 콘서트', rate: ' 만 10세이상',
             showtime: '총 120분', cast: '나훈아',
             priceVIP: 165000, priceSR: 143000, priceR: 143000, priceS: 121000,
             showyear: 2022, showmonth: 12, showday: 18, starttime: 15, delivery: '현장 수령',
@@ -337,6 +337,7 @@ let musical = createSlice({
         }}
 })
 export let { sortMusical } = musical.actions
+
 
 
 

@@ -23,9 +23,12 @@ function MainNav() {
 
                         <Nav className="me-auto">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             {/* <Nav.Link onClick={ ()=>{ navigate('/pagedetail'); }}>콘서트</Nav.Link> */}
 =======
 >>>>>>> origin/geonho
+=======
+>>>>>>> origin/Bob
                             <Nav.Link onClick={() => { navigate('/concert'); }}>콘서트</Nav.Link>
                             <Nav.Link onClick={() => { navigate('/musical'); }}>뮤지컬</Nav.Link>
                             <Nav.Link onClick={() => { navigate('/theater'); }}>연극</Nav.Link>

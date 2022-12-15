@@ -8,24 +8,13 @@
     margin-top: 10px;
 }
 
-.right_area {
-    /*position: absolute;*/
-    /*left: 300px;*/
-    /*top: 20px;*/
-    /*right: 300px;*/
-    /*min-width: 1229px;*/
-    /*border-top: 1px solid #ddd;*/
-    /*border-left: 1px solid #ddd;*/
-    /*border-right: 1px solid #ddd;*/
-}
-
 .right_contents {
     clear: both;
     position: relative;
     padding: 20px;
     /* border-bottom: 1px solid #ddd; */
     width: 800px;
-    margin: auto auto;
+    margin: auto ;
 }
 
 .box_address_cell{
@@ -50,6 +39,11 @@
     border-top: 1px solid #ddd;
 }
 
+/* .cell_order_form {
+    margin-bottom: 10px;
+    margin-top: 18px;
+} */
+
 .clear cell_order_form1 border_add_order{
     border-top: 1px solid #ddd;
 }
@@ -61,15 +55,15 @@
     font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
+.korDiv{
+    margin-bottom: 30px;
+}
+
 .korSub {
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 50px;
+    /* margin-bottom: 100px; */
 }
-
-/* .title-box.font-mss {
-    margin: auto auto;
-} */
 
 .section_payment {
     margin-top: 50px;

@@ -26,11 +26,16 @@ function Concert() {
                 {visibleList
                     ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
 =======
                     : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
                 }
 >>>>>>> origin/geonho
+=======
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
+                }
+>>>>>>> origin/Bob
             </button>
 
             {visibleList && <Concert_list />}
@@ -49,10 +54,14 @@ function Concert_list() {
     return (
         <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
 >>>>>>> origin/geonho
+=======
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+>>>>>>> origin/Bob
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -68,9 +77,12 @@ function Concert_list() {
                     {
                         state.concert.map((item, i) => [item].filter((val) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             console.log(item.title)
 =======
 >>>>>>> origin/geonho
+=======
+>>>>>>> origin/Bob
                             if (search == "") {
                                 return val
                             }
@@ -81,16 +93,20 @@ function Concert_list() {
                         }).map((val, k) =>
                             <tr key={{ i }} className={styles.categoryContent}>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 {/* <td><img className={styles.categoryImg} src={state.concert[i].imageadr}></img></td> */}
+=======
+>>>>>>> origin/Bob
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/concert/detail/' + i); }}>
-                                        <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
+                                    <span onClick={ ()=>{localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id);} }>
+                                          <img className={styles.categoryImg} src={state.concert[i].imageadr}></img>
                                     </span>
                                 </td>
-                                <td >{state.concert[i].title}</td>
+                                <td>{state.concert[i].title}</td>
                                 <td>{state.concert[i].cast}</td>
                                 <td>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.concert[i].showday}</td>
                                 <td>{state.concert[i].showtime}</td>
+<<<<<<< HEAD
 =======
                                 <td>
                                     <span onClick={ ()=>{localStorage.setItem('performanceId', state.concert[i].id); naviate('/concert/detail/' + state.concert[i].id);} }>
@@ -103,6 +119,9 @@ function Concert_list() {
                                 <td>{state.concert[i].showtime}</td>
                                 <td>{state.concert[i].priceS}원</td>
 >>>>>>> origin/geonho
+=======
+                                <td>{state.concert[i].priceS}원</td>
+>>>>>>> origin/Bob
                             </tr>
 
                         )
@@ -112,10 +131,14 @@ function Concert_list() {
                 </tbody>
             </table>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
 =======
             {/* <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} /> */}
 >>>>>>> origin/geonho
+=======
+            {/* <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} /> */}
+>>>>>>> origin/Bob
         </div >
     );
 
@@ -129,66 +152,19 @@ function Concert_album() {
     return (
         <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+=======
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+>>>>>>> origin/Bob
             <div className="mu">
                 {
-                    () => {
-                        state.musical.map((test1, i) => [test1].filter((val) => {
-                            console.log("title all")
-                            if (search == "") {
-                                return val
-                            }
-                            else if
-                                (test1.title.toLowerCase().includes(search.toLowerCase())) {
-                                return val
-                            }
-                        }).map((val, k) => {
+                    state.concert.map((item, i) => [item].filter((val) => {
 
-                            return (
-
-                                <div className="stuff" key={{ i }}>
-
-                                    <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
-                                        <img src={state.musical[i].imageadr}></img>
-                                    </span>
-                                    <div className="stuff_content">
-                                        <span className="stuff_title">{state.musical[i].title}</span><br />
-                                        {/* <span>{state.musical[i].cast}</span><br /> */}
-                                        <span>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday} </span><br />
-                                        <span>{state.musical[i].showtime}</span><br />
-                                    </div>
-                                </div>
-
-                            )
-                        }))
                         if (search == "") {
-                            state.concert.map((test2, i) => [test2].filter((val) => {
-                                if (search == "") {
-
-                                    return val
-                                }
-                                else if
-                                    (test2.title.toLowerCase().includes(search.toLowerCase())) {
-                                    return val
-                                }
-                            }).map((val, k) => {
-                                return (
-                                    <div className="stuff" key={{ i }}>
-
-                                        <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
-                                            <img src={state.concert[i].imageadr}></img>
-                                        </span>
-                                        <div className="stuff_content">
-                                            <span className="stuff_title">{state.concert[i].title}</span><br />
-                                            {/* <span>{state.musical[i].cast}</span><br /> */}
-                                            <span>{state.concert[i].showyear}-{state.concert[i].showmonth}-{state.musical[i].showday} </span><br />
-                                            <span>{state.concert[i].showtime}</span><br />
-                                        </div>
-                                    </div>
-
-                                )
-                            }))
+                            return val
                         }
+<<<<<<< HEAD
                     }
 =======
             <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
@@ -199,6 +175,8 @@ function Concert_album() {
                         if (search == "") {
                             return val
                         }
+=======
+>>>>>>> origin/Bob
                         else if
                             (item.title.toLowerCase().includes(search.toLowerCase())) {
                             return val
@@ -219,7 +197,10 @@ function Concert_album() {
 
                         )
                     }))
+<<<<<<< HEAD
 >>>>>>> origin/geonho
+=======
+>>>>>>> origin/Bob
                 }
 
             </div>

@@ -25,11 +25,16 @@ function Classic() {
                 {visibleList
                     ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
 =======
                     : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
                 }
 >>>>>>> origin/geonho
+=======
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
+                }
+>>>>>>> origin/Bob
             </button>
 
             {visibleList && <Classic_list />}
@@ -46,43 +51,9 @@ function Classic_list() {
     const [search, setSearch] = useState('')
 <<<<<<< HEAD
 
-    let data = [];
-    let temp = [];
-
-    state.concert.map((data1) => {
-        temp.push(data1)
-    })
-
-    data.push(temp)
-    temp = [];
-
-    state.musical.map((data2) => {
-        temp.push(data2)
-    })
-
-    data.push(temp);
-    temp = [];
-
-
-    state.classic.map((data3) => {
-        temp.push(data3)
-    })
-
-    data.push(temp)
-    temp = [];
-
-    state.theater.map((data4) => {
-        temp.push(data4)
-    })
-
-    data.push(temp)
-    temp = [];
-
-    // console.log(data)
-    //titel 비교z를 위한 배열
-
     return (
         <div>
+<<<<<<< HEAD
             <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
 =======
 
@@ -90,6 +61,9 @@ function Classic_list() {
         <div>
             <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
 >>>>>>> origin/geonho
+=======
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+>>>>>>> origin/Bob
             <table className={styles.categoryTable}>
                 <thead>
                     <tr className={styles.categoryTableTitle}>
@@ -103,11 +77,17 @@ function Classic_list() {
                 </thead>
                 <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                     {
                         state.classic.map((item, i) => [item].filter((val) => {
 
+=======
+                    {
+                        state.classic.map((item, i) => [item].filter((val) => {
+
+>>>>>>> origin/Bob
                             if (search == "") {
                                 return val
                             }
@@ -133,7 +113,10 @@ function Classic_list() {
                         )
                         )
                     }
+<<<<<<< HEAD
 >>>>>>> origin/geonho
+=======
+>>>>>>> origin/Bob
 
                 </tbody>
             </table>
@@ -148,12 +131,41 @@ function Classic_album() {
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
 <<<<<<< HEAD
+<<<<<<< HEAD
     let arr = [];
+=======
+>>>>>>> origin/Bob
     return (
         <div>
-            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
+                {
+                    state.classic.map((item, i) => [item].filter((val) => {
 
+                        if (search == "") {
+                            return val
+                        }
+                        else if
+                            (item.title.toLowerCase().includes(search.toLowerCase())) {
+                            return val
+                        }
+                    }).map((val, k) => {
+                        return (
+                            <div className="stuff" key={{ i }}>
+                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.classic[i].id); naviate('/classic/detail/' + state.classic[i].id); }}>
+                                    <img src={state.classic[i].imageadr}></img>
+                                </span>
+                                <div className="stuff_content">
+                                    <span className="stuff_title">{state.classic[i].title}</span><br />
+                                    <span>{state.classic[i].showyear}-{state.classic[i].showmonth}-{state.classic[i].showday} </span><br />
+                                    <span>{state.classic[i].showtime}</span><br />
+                                    <span>{state.classic[i].priceS}원</span><br />
+                                </div>
+                            </div>
+
+                        )
+                    }))
+                }
 
 =======
     return (
