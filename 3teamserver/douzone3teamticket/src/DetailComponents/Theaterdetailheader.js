@@ -1,14 +1,28 @@
 import { useSelector } from "react-redux";
 import TheaterdetailBody from "./Theaterdetailbody";
+import {useNavigate} from "react-router-dom";
 
 function Theaterdetailheader() {
 
     let state = useSelector((state) => state)
+    let navigate = useNavigate();
 
-    let find = state.theater[localStorage.getItem('performanceId')]
+    let find;
+
+    function sortAfter (){
+        let i;
+        
+        for (i = 0; i < state.theater.length; i++) {
+            if(localStorage.getItem('performanceId') == state.theater[i].id){
+                find = state.theater[i];
+                break;
+            }
+        }
+    }
 
     return (
         <div>
+            {sortAfter()}
             <div className="renew-wrap">
                 <div className="renew-content">
 
@@ -62,11 +76,19 @@ function Theaterdetailheader() {
                     </div>
 
                     <div className="rn-05">
-                        <a href='src/DetailComponents/Theaterdetailheader' onClick='' className='rn-bb03'>예매하기</a>
+                        <a onClick={ () => {
+                            if (localStorage.getItem('userId') == ''){
+                                alert('로그인 필요');
+                                navigate('/user/login');
+                            }else{
+                                state.gocategory = 'theater';
+                                navigate('/seat');
+                            }
+                        } } className='rn-bb03'>예매하기</a>
                     </div>
+                    <TheaterdetailBody/>
                 </div>
             </div>
-            <TheaterdetailBody/>
         </div>
     )
 }

@@ -12,7 +12,6 @@ function SearchBar() {
     let data = [];
     let temp = [];
 
-
     state.concert.map((data1) => {
         temp.push(data1)
     })

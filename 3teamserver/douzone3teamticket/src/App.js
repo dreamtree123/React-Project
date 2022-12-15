@@ -11,7 +11,7 @@ import Join from "./UserComponents/Join";
 import Pay from "./UserComponents/Pay";
 import Success from "./UserComponents/Success";
 import Mypage from "./UserComponents/Mypage";
-
+import Basket from "./BasketComponents/Basket";
 
 import Concert from "./Category/Concert";
 import Musical from "./Category/Musical";
@@ -22,6 +22,8 @@ import Concertdetailheader from "./DetailComponents/Concertdetailheader";
 import Musicaldetailheader from "./DetailComponents/Musicaldetailheader";
 import Theaterdetailheader from "./DetailComponents/Theaterdetailheader";
 import Classicdetailheader from "./DetailComponents/Classicdetailheader";
+
+import Seat from "./Ticket/Seat";
 
 function App() {
 
@@ -44,11 +46,11 @@ function App() {
                       <Route path={'/concert/detail/' + {i}} element={<Concertdetailheader></Concertdetailheader>}/>
                     )
                 }   */}
-
-                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>} />
-                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>} />
-                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>} />
-                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>} />
+                
+                <Route path='/concert/detail/:find' element={<Concertdetailheader></Concertdetailheader>}/>
+                <Route path='/musical/detail/:find' element={<Musicaldetailheader></Musicaldetailheader>}/>
+                <Route path='/theater/detail/:find' element={<Theaterdetailheader></Theaterdetailheader>}/>
+                <Route path='/classic/detail/:find' element={<Classicdetailheader></Classicdetailheader>}/>
 
                 <Route path='/' element={<MainBody></MainBody>} />
 
@@ -62,13 +64,15 @@ function App() {
                 <Route path='/pay' element={<Pay></Pay>} />
                 <Route path='/success' element={<Success></Success>} />
 
+                <Route path='/basket' element={<Basket></Basket>}/>
+
+                <Route path='/seat' element={<Seat></Seat>}/>
 
             </Routes>
 
             {/* <ImgSlide></ImgSlide> */}
             <div className={'Mainbody'}>
                 {/* <MainBody></MainBody> */}
-
             </div>
 
             <Footer></Footer>

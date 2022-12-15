@@ -14,31 +14,177 @@
     margin-top: 6rem;
 }
 
-.card{
-    width: 20%;
-    height: 20rem;
+
+
+/* mypage */
+.mypage {
+    width: 1200px;
+    height: 850px;
+    margin: 50px auto;
+    border: 1px;
 }
 
-.list-group-item:hover{
-    background-color: lightgray;
+.mypage-header {
+    background-color: #6c757d;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px;
+}
+
+.mypage-header p {
+    color:white;
+    font-size: 30px;
+    height: 80px;
+    line-height: 80px;
 }
 
 .mypagebody{
     display: flex;
 }
 
-.tabct{
-    width: 70%;
-    height: 30rem;
-    margin: 0 auto;
-    margin-top: 3rem;
+.card{
+    width: 20%;
+    height: 40rem;
+    margin-top: 50px;
+    border-radius: 10px 10px;
+    
 }
 
-.card button{
-    width: 50%;
-    margin: auto;
-    margin-top: 1rem;
+.card-header {
+    background: #212529;
+    color: white;
 }
+
+.card-header p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card button {
+    /* width: 50%; */
+    width: 100px;
+    margin: auto auto;
+    margin-top: 20px;
+}
+
+.list-group-item {
+    height: 60px;
+    line-height: 50px;
+}
+
+.list-group-item:hover{
+    background-color: lightgray;
+}
+
+.tabct{
+    width: 85%;
+    height: 40rem;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.tabct div {
+    height: 60rem;
+}
+
+
+/* mypage - profile */
+.profileImg {
+    width: 100px;
+    height: 100px;
+}
+
+.profileTitle {
+    font-size: 30px;
+}
+
+.profileTable{
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 100%;
+    height: 8rem;
+}
+
+.profileTable tr, .profileTable td{
+    border: 1px solid darkgray;
+    padding-top: 0.8rem;
+}
+
+.profileTable td:nth-child(1){
+    background-color: #cccccc;
+}
+
+.profileTable td {
+    width: 500px;
+}
+
+
+/* mypage - Management */
+
+
+
+/* mypage - Inquiry */
+.askTable {
+    width:100%;
+}
+
+.askTable th {
+    background-color: #f6f6f6;
+    width: 100px;
+    height: 60px;
+}
+
+.askTable .txt-w565 {
+    width:80%;
+    height: 20px;
+}
+
+.radiocheck {
+    margin: auto 4px;
+}
+
+.w565 {
+    width: 80%;
+}
+
+.txt11-txt {
+    margin-left: 80px;
+    margin-right: 5px;
+}
+
+.gray-w60 {
+    width: 120px;
+    height: 20px;
+}
+
+.gray-w70 {
+    width: 120px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#EmailSelect {
+    width: 120px;
+    margin-left: 10px;
+}
+
+.askTable .askTR {
+    font-size: 8px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.askBottom {
+    font-size: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.askbtn button {
+    width: 100px;
+    margin: 0 10px;
+}
+
 
 .upload{
     width: 30rem;

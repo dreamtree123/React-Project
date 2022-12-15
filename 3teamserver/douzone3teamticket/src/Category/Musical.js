@@ -2,31 +2,37 @@ import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
-import './Category.css'
-import styles from "./Category.module.css";
+import '../css/Category.css'
+import styles from "../css/Category.module.css";
+
+import {MusicalSlide} from "./CatrgoryImgSlide";
+import {MusicalSort} from "./PerformanceSort";
 
 function Musical() {
     const [visibleList, setVisibleList] = useState(true);
     const [visibleAlbum, setVisibleAlbum] = useState(false);
+
     return (
-        // let state = useSelector((state) => state);
-        // let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
+        <div className={styles.categoryCont}>
+
+        <MusicalSlide/>
+
+        <MusicalSort/>
 
         <div>
-            {/* <button onClick={() => { <Musical_album /> }}>앨범</button>
-            {/* <button onClick={() => { <Musical_list /> }}>리스트</button> */}
-
-            <button className="switchBtn"
+            <button className={styles.switchBtn}
                 onClick={() => { setVisibleAlbum(!visibleAlbum); setVisibleList(!visibleList); }}>
                 {visibleList
                     ? <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchListImg.jpg"></img></div>
-                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>}
+                    : <div className="switchListImg"><img src="https://raw.githubusercontent.com/sunhyung2007/team3React/01b1f300b90409ee59de5605fd510fa4c282e03c/douzone3teamticket/src/image/Category/switchAlbumImg.jpg"></img></div>
+                }
             </button>
 
             {visibleList && <Musical_list />}
             {visibleAlbum && <Musical_album />}
 
-        </div >
+        </div>
+        </div>
     );
 }
 
@@ -34,9 +40,10 @@ function Musical_list() {
     let state = useSelector((state) => state)
     let naviate = useNavigate()
     const [search, setSearch] = useState('')
+    
     return (
         <div>
-            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <table className={styles.categoryTable}>
 
                 <thead>
@@ -46,6 +53,7 @@ function Musical_list() {
                         <th scope="col">출연진</th>
                         <th scope="col">공연일</th>
                         <th scope="col">상영시간</th>
+                        <th scope="col">가격 (S석 기준)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,7 +71,7 @@ function Musical_list() {
                             <tr key={{ i }} className={styles.categoryContent}>
                                 {/* <td><img className={styles.categoryImg} src={state.musical[i].imageadr}></img></td> */}
                                 <td>
-                                    <span onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                    <span onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
                                         <img className={styles.categoryImg} src={state.musical[i].imageadr}></img>
                                     </span>
                                 </td>
@@ -71,6 +79,7 @@ function Musical_list() {
                                 <td>{state.musical[i].cast}</td>
                                 <td>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday}</td>
                                 <td>{state.musical[i].showtime}</td>
+                                <td>{state.musical[i].priceS}원</td>
                             </tr>
 
                         )
@@ -92,7 +101,7 @@ function Musical_album() {
     return (
 
         < div >
-            <input type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
+            <input className={styles.searchInput} type="text" placeholder="Search..." onChange={event => { setSearch(event.target.value) }} />
             <div className="mu">
                 {
                     state.musical.map((item, i) => [item].filter((val) => {
@@ -108,7 +117,8 @@ function Musical_album() {
                         return (
                             <div className="stuff" key={{ i }}>
                                 {console.log(i)}
-                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}>
+                                <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', state.musical[i].id); naviate('/musical/detail/' + state.musical[i].id); }}>
+                                {/* <span className="stuff_img" onClick={() => { localStorage.setItem('performanceId', i); naviate('/musical/detail/' + i); }}> */}
                                     <img src={state.musical[i].imageadr}></img>
                                 </span>
                                 <div className="stuff_content">
@@ -116,6 +126,7 @@ function Musical_album() {
                                     {/* <span>{state.musical[i].cast}</span><br /> */}
                                     <span>{state.musical[i].showyear}-{state.musical[i].showmonth}-{state.musical[i].showday} </span><br />
                                     <span>{state.musical[i].showtime}</span><br />
+                                    <span>{state.musical[i].priceS}원</span><br />
                                 </div>
                             </div>
 
