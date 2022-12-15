@@ -42,7 +42,7 @@
 
 .card {
   width: 20%;
-  height: 40rem;
+  height: 45rem;
   margin-top: 50px;
   border-radius: 10px 10px;
 }
@@ -110,6 +110,8 @@
   width: 500px;
   height: 3rem;
 }
+
+/* mypage - Management */
 
 /* mypage - Inquiry */
 .askTable {
