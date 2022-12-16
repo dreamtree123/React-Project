@@ -37,19 +37,21 @@ input[type="checkbox"]:checked {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 100%;
 }
 
 .seatcsfirstdiv{
     display: flex;
-    width: 100%;
+    width: 1200px;
+    margin-left: 300px;
 }
 
 .sideclass{
-    /*text-align: center;*/
+    text-align: center;
     width: 30%;
     margin-left: 5rem;
+    margin: auto auto;
 }
 
 .sideclass span{
@@ -60,7 +62,6 @@ input[type="checkbox"]:checked {
 .seatnum{
     font-size: 2rem;
     margin-top: 5rem;
-
 }
 
 .seatprice{
@@ -73,11 +74,10 @@ input[type="checkbox"]:checked {
     margin-left: 5rem;
 }
 
-.btn_wrap Button{
+.submitBtn Button{
     width: 13rem;
     height: 5rem;
     font-size:1.5rem;
 }
-
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/

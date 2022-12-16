@@ -655,8 +655,8 @@ export default function SeatAllocationComponent() {
             </div>
 
             <div className="right_contents section_payment">
-                <h3 className="title-box font-mss">Payment info / Agreement <span
-                    className="korSub">결제 정보 / 주문자 동의</span></h3>
+                {/* <h3 className="title-box font-mss">Payment info / Agreement <span
+                    className="korSub">결제 정보 / 주문자 동의</span></h3> */}
                 <div>
                     <div className="cell_order_form">
                         <div className="clear cell_order_form1 border_add_order" id="payment_info_area">
@@ -667,7 +667,7 @@ export default function SeatAllocationComponent() {
                                         <div id="pay_info2">
                                             <div id="div_card" className="box-payment-method">
                                                 <div id="div_kkopay">
-                                                    <ul className="order-notice__bullet">
+                                                    {/* <ul className="order-notice__bullet">
                                                         <li className="order-notice__bullet-item">
                                                             카카오페이는 카카오톡에서 카드를 등록, 간단하게 비밀번호만으로 결제할 수 있는 빠르고 편리한 모바일 결제
                                                             서비스입니다.
@@ -675,7 +675,10 @@ export default function SeatAllocationComponent() {
                                                         <li className="order-notice__bullet-item">
                                                             지원 카드 : 모든 카드 등록/결제 가능
                                                         </li>
-                                                    </ul>
+                                                    </ul> */}
+                                                    <div></div>
+                                                    <div>- 카카오페이 : 카카오톡에서 카드 등록 후 비밀번호만으로 결제 가능</div>
+                                                    <div>- 지원 카드 : 모든 카드 등록/결제 가능</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -686,8 +689,8 @@ export default function SeatAllocationComponent() {
                     </div>
 
 
-                    <div className="btn_wrap order_form__payment-button-wrap">
-                            <Button onClick={()=>{
+                    <div className="submitBtn">
+                            <Button className="btn btn-dark" onClick={()=>{
                                 state.totalprice = total;
                                 navigate('/pay');
                             }}>{total}원</Button>

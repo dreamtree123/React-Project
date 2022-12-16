@@ -32,7 +32,7 @@ function Mypage(){
         <div className={"mypage"}>
             {whoislogin()}
             <div className={"mypage-header"}>
-                <p>{u.name}님의 마이페이지</p> <br/>
+                <p>마이페이지</p>
             </div>
             
             <div className={"mypagebody"}>
@@ -244,8 +244,6 @@ function Inquiry(){
                         <td><input name="HpNo" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" className="gray-w60" maxlength="3"/> 
                         - <input name="HpNo" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" className="gray-w60" maxlength="4"/> 
                         - <input name="HpNo" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" className="gray-w60" maxlength="4"/>
-                        <input name="SmsYN" type="checkbox" className="txt11-txt" /> 
-                        <span>답변완료시 문자로 알림 받기</span>
                         </td>
                     </tr>
 
@@ -275,8 +273,6 @@ function Inquiry(){
                                 <option value="yahoo.co.kr">yahoo.co.kr</option>
                                 <option value="">직접입력</option>
                             </select>
-                            <input name="EmailYN" type="checkbox" className="txt11-txt" value=""/> 
-                            <span>답변내용 이메일로 받기</span>
                         </td>
                     </tr>
 

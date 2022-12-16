@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
+import '../css/SeatTB.css'
 
 function Seatbottom() {
 
@@ -19,14 +20,13 @@ function Seatbottom() {
     return (
         <div>
             <div className="right_contents section_payment">
-                <h3 className="title-box font-mss">Payment info / Agreement <span
-                    className="korSub">결제 정보 / 주문자 동의</span></h3>
                 <div>
                     <div className="cell_order_form">
                         <div className="clear cell_order_form1 border_add_order" id="payment_info_area">
                             <div className="__payment-view __payment-pg-view">
+                                <h1>결제 안내</h1>
                                 <ul className="list_payment_order">
-                                    <li className="cell_discount_tit new-payment-area">결제 안내</li>
+                                    {/* <li className="cell_discount_tit new-payment-area">결제 안내</li> */}
                                     <li className="cell_discount_detail payment-area">
                                         <div className="payment-area-wrap">
 
@@ -77,18 +77,6 @@ function Seatbottom() {
                                                         <option value="12">12개월</option>
                                                     </select>
                                                 </div>
-
-                                                <div id="div_kkopay">
-                                                    <ul className="order-notice__bullet">
-                                                        <li className="order-notice__bullet-item">
-                                                            카카오페이는 카카오톡에서 카드를 등록, 간단하게 비밀번호만으로 결제할 수 있는 빠르고 편리한 모바일 결제
-                                                            서비스입니다.
-                                                        </li>
-                                                        <li className="order-notice__bullet-item">
-                                                            지원 카드 : 모든 카드 등록/결제 가능
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -96,7 +84,6 @@ function Seatbottom() {
                             </div>
                         </div>
                     </div>
-
 
                     <div className="btn_wrap order_form__payment-button-wrap">
                         <a id="btn_pay" onclick="Order.payment();" className="order_form__payment-button">

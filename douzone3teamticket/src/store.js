@@ -337,12 +337,9 @@ let musical = createSlice({
         }}
 })
 export let { sortMusical } = musical.actions
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> origin/Bob
 
 
 let musicalinfo = createSlice({
@@ -545,58 +542,6 @@ let classicinfo = createSlice({
     ]
 })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-// 사용자 정보
-let userInfo = createSlice({
-    name: 'userInfo',
-    initialState: [{ id: 0, name: 'King', userid: '1111', pwd: '1111', email: '123@gmail.com' },
-    { id: 1, name: 'Smile', userid: '2222', pwd: '2222', email: '456@gmail.com' }]
-=======
-
-// 로그인 판단 유무
-let check = createSlice({
-    name: 'check',
-    initialState: ['false', '']
-})
-
-// 사용자 정보
-let userInfo = createSlice({
-    name: 'userInfo',
-    initialState: [
-        {id : 0, name: 'King', userid: '1111', pwd: '1111',
-            email:'123@gmail.com', phone:'010-1111-1111', address: '강원도 춘천시 111길'},
-        {id : 1, name: 'Smile', userid: '2222', pwd: '2222',
-            email:'456@gmail.com', phone:'010-2222-2222', address: '서울특별시 종로구 254'}]
->>>>>>> origin/geonho
-})
-
-<<<<<<< HEAD
-let performanceId = createSlice({
-    name: 'performanceId',
-    // initialState: [{id : 0}, {id : 1}, {id : 2}, {id : 3}, {id : 4}, {id : 5}]
-    initialState: 0
-})
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> origin/geonho
-// 선택한 좌석
-let selectseat = createSlice({
-    name: 'selectseat',
-    initialState: []
-})
-
-// 총 티켓 가격
-let totalprice = createSlice({
-    name: 'totalprice',
-    initialState: 0
-})
-
-// reducer 설정
->>>>>>> origin/geonho
-=======
 
 // 로그인 판단 유무
 let check = createSlice({
@@ -627,7 +572,6 @@ let totalprice = createSlice({
 })
 
 // reducer 설정
->>>>>>> origin/Bob
 export default configureStore({
     reducer: {
         concert: concert.reducer,
@@ -640,20 +584,7 @@ export default configureStore({
         classicinfo: classicinfo.reducer,
         check: check.reducer,
         userInfo: userInfo.reducer,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        performanceId: performanceId.reducer
-=======
-        gocategory: gocategory.reducer,
-=======
->>>>>>> origin/geonho
         selectseat: selectseat.reducer,
         totalprice: totalprice.reducer
->>>>>>> origin/geonho
-=======
-        selectseat: selectseat.reducer,
-        totalprice: totalprice.reducer
->>>>>>> origin/Bob
     }
 })

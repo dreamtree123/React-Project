@@ -20,11 +20,7 @@ function Footer() {
             </div>
         </footer>
 
-<<<<<<< HEAD
-        </div>
-=======
     </div>
->>>>>>> origin/Bob
 
     );
 }

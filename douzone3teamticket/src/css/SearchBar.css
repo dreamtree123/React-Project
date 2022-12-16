@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .success{
   width: 450px;
   max-width: 450px;
@@ -11,6 +10,7 @@
   z-index: 1000;
   background: rgb(255, 253, 253);
   background-color:rgba(0, 0, 0, 0.0);
+  border-bottom:0.3px solid rgb(0, 0, 0) ;
   color: black;
   overflow:scroll;
   overflow-x:hidden;
@@ -80,90 +80,6 @@ margin-left: -10px;
   width: 80px;
   
 }
-<<<<<<< HEAD
-.line::before{
-    content:"";
-    position:absolute;
-    background: rgba(230, 230, 230, 0.7);
-    display: inline-block;
-    transition: all 0.3s;
-    left: 10%;
-    top: 10%;
-    width: 0%;
-    height: 2px;
-}
-.searchBox:hover .line::before{
-    width:80%;
-}
-=======
-.success {
-  width: 385px;
-  max-width: 185px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  position: absolute;
-  margin-left: -250px;
-  margin-top: -15px;
-  z-index: 1000;
-  background: #fff;
-  color: black;
-  border-bottom: 1px solid black;
-}
-
-.searchInput {
-  width: 185px;
-  max-width: 185px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  background: #fff;
-  color: black;
-  border-bottom: 1px solid black;
-}
-
-.searchBox {
-  height: 100px;
-  width: 190px;
-  padding: 3 3 3 3;
-  background-color: rgb(216, 216, 221);
-}
-.searchResult {
-  border-bottom: 1px solid rgb(131, 126, 126);
-  height: 100px;
-  width: 185px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.searchBox:hover {
-  background: rgb(207, 11, 11);
-}
-
-.searchResult img {
-  width: 100%;
-  height: 100%;
-}
-.search1 {
-  float: left;
-  width: 70px;
-}
-.line::before {
-  content: "";
-  position: absolute;
-  background: rgba(230, 230, 230, 0.7);
-  display: inline-block;
-  transition: all 0.3s;
-  left: 10%;
-  top: 10%;
-  width: 0%;
-  height: 2px;
-}
-.searchBox:hover .line::before {
-  width: 80%;
-}
->>>>>>> origin/geonho
-=======
 .search2{
   font-size: 15px;
   margin-top: 35px;
@@ -174,4 +90,3 @@ margin-left: -10px;
   padding-left: 5px;
   padding-top: 5px;
 }
->>>>>>> origin/Bob

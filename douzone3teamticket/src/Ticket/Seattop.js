@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import '../css/SeatTB.css'
 import {useSelector} from "react-redux";
 
 function Seattop() {
@@ -27,17 +26,21 @@ function Seattop() {
                 <div className="right_area page_order_form">
 
                     <div className="right_contents">
+                        <hr/>
                         <h2 className="title-page">Order / Payment</h2>
+                        <hr/>
                     </div>
 
                     <div className="right_contents section_address section_address--line">
-                        <div className="cell_order_form article_tit">
+                        {/* <div className="cell_order_form article_tit"> */}
 
-                            <div className="cell_order_form1">
-                                <h3 className="title-box font-mss">Recipient Info <span className="korSub">수령자 정보</span>
-                                </h3>
-                            </div>
-                        </div>
+                            {/* <div className="cell_order_form1"> */}
+                                {/* <h3 className="title-box font-mss"><span className="korSub">수령자 정보</span></h3> */}
+                                <div className="korDiv">
+                                 <span className="korSub">수령자 정보</span>
+                                 </div>
+                            {/* </div> */}
+                        {/* </div> */}
 
                         <div className="cell_order_form box_address_cell">
                             <div className="clear cell_order_form1 border_add_order">

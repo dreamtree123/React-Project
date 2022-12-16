@@ -12,13 +12,6 @@ function SearchBar() {
     let data = [];
     let temp = [];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/geonho
-=======
->>>>>>> origin/Bob
     state.concert.map((data1) => {
         temp.push(data1)
     })
@@ -62,20 +55,11 @@ function SearchBar() {
                     // localStorage.setItem('searchtitle', JSON.parse(search))
                 }} />
                 {
-<<<<<<< HEAD
-                    // console.log(data[4][6개])
-=======
->>>>>>> origin/geonho
 
                     data.map((item, i) =>
 
                         item.map((item2, j) =>
                             [item2].filter((val) => {
-<<<<<<< HEAD
-                                // console.log(data)
-                                // console.log(j)
-=======
->>>>>>> origin/geonho
                                 if (search == "") {
                                     return
                                 }
@@ -84,11 +68,6 @@ function SearchBar() {
                                     return val
                                 }
                             }).map((val, k) => {
-<<<<<<< HEAD
-                                console.log(data[i])
-                                // console.log(val)
-=======
->>>>>>> origin/geonho
 
                                 if (i == 0) {
                                     return (
